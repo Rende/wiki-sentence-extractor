@@ -31,12 +31,14 @@ import de.dfki.mlt.wre.preferences.Config;
  *
  */
 public class WikiRelationExtractionApp {
+
 	public static ElasticsearchService esService = new ElasticsearchService();
 	public static final Logger LOG = LoggerFactory
 			.getLogger(WikiRelationExtractionApp.class);
 
 	public static void main(String[] args) throws IOException, SAXException {
-
+		long start = System.currentTimeMillis();
+		LOG.debug("Wikidata knowledgebase extraction started.");
 		// readAndCompareProperties();
 		// esService.checkProperties();
 		// esService.findNonItemizedProperties();
@@ -44,6 +46,9 @@ public class WikiRelationExtractionApp {
 		IArticleFilter handler = new ArticleFilter();
 		WikiXMLParser wxp = new WikiXMLParser(dumpfile, handler);
 		wxp.parse();
+		long elapsedTimeMillis = System.currentTimeMillis() - start;
+		float elapsedTimeHour = elapsedTimeMillis / (60 * 60 * 1000F);
+		LOG.debug("Time spent in hours: " + elapsedTimeHour);
 		// crawler();
 	}
 
@@ -53,7 +58,7 @@ public class WikiRelationExtractionApp {
 			doc = Jsoup
 					.connect(
 							"https://www.wikidata.org/wiki/Wikidata:Database_reports/List_of_properties/all")
-					.maxBodySize(1024*1024*2).get();
+					.maxBodySize(1024 * 1024 * 2).get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
