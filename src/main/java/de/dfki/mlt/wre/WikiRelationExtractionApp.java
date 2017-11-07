@@ -42,10 +42,20 @@ public class WikiRelationExtractionApp {
 		// readAndCompareProperties();
 		// esService.checkProperties();
 		// esService.findNonItemizedProperties();
-		String dumpfile = Config.getInstance().getString(Config.DIRECTORY_PATH);
-		IArticleFilter handler = new ArticleFilter();
-		WikiXMLParser wxp = new WikiXMLParser(dumpfile, handler);
-		wxp.parse();
+		boolean isIndexCreated = false;
+		try {
+			isIndexCreated = esService.checkAndCreateIndex("wikipedia-index");
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		if (isIndexCreated) {
+			String dumpfile = Config.getInstance().getString(
+					Config.DIRECTORY_PATH);
+			IArticleFilter handler = new ArticleFilter();
+			WikiXMLParser wxp = new WikiXMLParser(dumpfile, handler);
+			wxp.parse();
+
+		}
 		long elapsedTimeMillis = System.currentTimeMillis() - start;
 		float elapsedTimeHour = elapsedTimeMillis / (60 * 60 * 1000F);
 		LOG.debug("Time spent in hours: " + elapsedTimeHour);

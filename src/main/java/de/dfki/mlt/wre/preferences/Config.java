@@ -21,6 +21,8 @@ public final class Config {
 	public static final String ENTITY_TYPE_NAME = "entity.type.name";
 	public static final String RELATION_TYPE_NAME = "relation.type.name";
 	public static final String WIKIPEDIA_EXTENSION = "wikipedia.extension";
+	public static final String NUMBER_OF_SHARDS = "number_of_shards";
+	public static final String NUMBER_OF_REPLICAS = "number_of_replicas";
 
 	private static PropertiesConfiguration config;
 

@@ -16,6 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
+import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequestBuilder;
+import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
@@ -25,6 +29,7 @@ import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.client.IndicesAdminClient;
 import org.elasticsearch.client.Requests;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.cluster.node.DiscoveryNode;
@@ -385,6 +390,43 @@ public class ElasticsearchService {
 				.index("wikipedia-index").type("wikipedia-entity").source(json);
 		getBulkProcessor().add(indexRequest);
 
+	}
+
+	public boolean checkAndCreateIndex(String indexName) throws IOException,
+			InterruptedException {
+		boolean result = false;
+		IndicesAdminClient indicesAdminClient = getClient().admin().indices();
+		final IndicesExistsResponse indexExistReponse = indicesAdminClient
+				.prepareExists(indexName).execute().actionGet();
+		if (indexExistReponse.isExists()) {
+			deleteIndex(indicesAdminClient, indexName);
+		}
+		result = createIndex(indicesAdminClient, indexName);
+		return result;
+	}
+
+	private void deleteIndex(IndicesAdminClient indicesAdminClient,
+			String indexName) {
+		final DeleteIndexRequestBuilder delIdx = indicesAdminClient
+				.prepareDelete(indexName);
+		delIdx.execute().actionGet();
+	}
+
+	private boolean createIndex(IndicesAdminClient indicesAdminClient,
+			String indexName) {
+		final CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient
+				.prepareCreate(indexName).setSettings(
+						Settings.settingsBuilder()
+								.put(Config.NUMBER_OF_SHARDS,
+										Config.getInstance().getInt(
+												Config.NUMBER_OF_SHARDS))
+								.put(Config.NUMBER_OF_REPLICAS,
+										Config.getInstance().getInt(
+												Config.NUMBER_OF_REPLICAS)));
+		CreateIndexResponse createIndexResponse = null;
+		createIndexResponse = createIndexRequestBuilder.execute().actionGet();
+		return createIndexResponse != null
+				&& createIndexResponse.isAcknowledged();
 	}
 
 }
