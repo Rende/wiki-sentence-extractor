@@ -288,7 +288,7 @@ public class ElasticsearchService {
 							.toString());
 				}
 				count++;
-				WikiRelationExtractionApp.LOG.debug(count + " part processed:");
+				WikiRelationExtractionApp.LOG.info(count + " part processed:");
 				scrollResp = getClient()
 						.prepareSearchScroll(scrollResp.getScrollId())
 						.setScroll(new TimeValue(60000)).execute().actionGet();
@@ -329,7 +329,7 @@ public class ElasticsearchService {
 						public void beforeBulk(long executionId,
 								BulkRequest request) {
 							WikiRelationExtractionApp.LOG
-									.debug("Number of request processed: "
+									.info("Number of request processed: "
 											+ request.numberOfActions());
 						}
 

@@ -38,7 +38,7 @@ public class WikiRelationExtractionApp {
 
 	public static void main(String[] args) throws IOException, SAXException {
 		long start = System.currentTimeMillis();
-		LOG.debug("Wikipedia relation extraction started.");
+		LOG.info("Wikipedia relation extraction started.");
 		// readAndCompareProperties();
 		// esService.checkProperties();
 		// esService.findNonItemizedProperties();
@@ -58,7 +58,7 @@ public class WikiRelationExtractionApp {
 		}
 		long elapsedTimeMillis = System.currentTimeMillis() - start;
 		float elapsedTimeHour = elapsedTimeMillis / (60 * 60 * 1000F);
-		LOG.debug("Time spent in hours: " + elapsedTimeHour);
+		LOG.info("Time spent in hours: " + elapsedTimeHour);
 		// crawler();
 	}
 
