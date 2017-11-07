@@ -1,0 +1,602 @@
+P264 record label
+P2439 language
+P2318 debut participant
+P2319 elector
+P1227 astronomical filter
+P1349 ploidy
+P1346 winner
+P1347 military casualty classification
+P1589 deepest point
+P1344 participant of
+P1465 category for people who died here
+P2673 next crossing upstream
+P1464 category for people born here
+P2550 recording or performance of
+P1462 standards body
+P272 production company
+P137 operator
+P136 genre
+P138 named after
+P375 space launch vehicle
+P376 located on astronomical body
+P134 has dialect
+P1456 list of monuments
+P1336 territory claimed by
+P2667 corresponding template
+P3876 category for alumni of educational institution
+P1454 legal form
+P1576 lifestyle
+P1455 list of works
+P2541 operating area
+P2784 Mercalli intensity scale
+P1211 fuel system
+P1571 codomain
+P3871 tributary orientation
+P140 religion
+P141 IUCN conservation status
+P169 chief executive officer
+P166 award received
+P286 head coach
+P289 vessel class
+P2417 stage classification
+P1568 domain
+P3989 members have occupation
+P2416 sports discipline competed in
+P1445 fictional universe described in
+P1204 Wikimedia portal's main topic
+P3985 supports programming language
+P1444 destination point
+P1686 for work
+P1441 present in work
+P1321 place of origin (Switzerland)
+P2652 partnership with
+P1200 bodies of water basin category
+P2770 source of income
+P2650 interested in
+P172 ethnic group
+P279 subclass of
+P276 location
+P397 parent astronomical body
+P275 license
+P399 companion of
+P277 programming language
+P156 followed by
+P3858 route diagram
+P398 child astronomical body
+P1557 manifestation of
+P1678 has vertex figure
+P1313 office held by head of government
+P1434 takes place in fictional universe
+P3975 secretary general
+P1435 heritage designation
+P1432 B-side
+P2643 Carnegie Classification of Institutions of Higher Education
+P1433 published in
+P3610 fare zone
+P2522 victory
+P2882 relegated
+P1431 executive producer
+P1791 category of people buried here
+P1792 category of associated people
+P2881 promoted
+P162 producer
+P189 location of discovery
+P2239 first aid measures
+P1269 facet of
+P3448 stepparent
+P2359 Roman nomen gentilicium
+P1389 product certification
+P1268 represents organisation
+P1387 political alignment
+P2352 applies to taxon
+P3320 board member
+P1264 valid in period
+P1382 partially coincident with
+P196 minor planet group
+P190 sister city
+P193 main building contractor
+P177 crosses
+P176 manufacturer
+P179 series
+P178 developer
+P1018 language regulatory body
+P3679 stock market index
+P3437 people or cargo transported
+P2348 period
+P3432 parent cell line
+P1013 criterion used
+P2462 member of the deme
+P3310 muscle action
+P2341 indigenous to
+P1011 excluding
+P184 doctoral advisor
+P183 endemic to
+P186 material used
+P180 depicts
+P3428 INCAA film rating
+P3306 ICAA rating
+P2578 studies
+P3301 broadcast by
+P2453 nominee
+P1001 applies to jurisdiction
+P3300 musical conductor
+P1002 engine configuration
+P1000 record held
+P3781 has active ingredient
+P199 business division
+P2329 antagonist muscle
+P1479 has contributing factor
+P3776 inhibitor of
+P1598 consecrator
+P2445 metasubclass of
+P2684 Kijkwijzer rating
+P1595 charge
+P2321 general classification of race participants
+P2563 superhuman feature or ability
+P1596 penalty
+P2443 stage reached
+P1593 defender
+P2682 is verso of
+P1594 judge
+P3650 JMK film rating
+P1591 defendant
+P1592 prosecutor
+P2560 GPU
+P2279 ambitus
+P3489 pregnancy category
+P3005 valid in place
+P2159 solves
+P2156 pseudo crystal habit
+P2157 lithography
+P2033 Category for pictures taken with camera
+P2396 image of function
+P1066 student of
+P2155 solid solution series with
+P2152 antiparticle
+P1064 track gauge
+P2392 teaching method
+P1060 pathogen transmission process
+P1056 product or material produced
+P4202 WFD Chemical status
+P2388 office held by head of the organisation
+P1299 depicted by
+P1057 chromosome
+P2384 statement describes
+P1050 medical condition
+P1290 godparent
+P1170 transmitted signal type
+P3103 has tense
+P2376 superpartner of
+P1046 discovery method
+P2012 cuisine
+P1165 home world
+P2375 has superpartner
+P1283 filmography
+P3461 designated as terrorist by
+P3460 colonel-in-chief
+P1040 film editor
+P2371 FAO risk status
+P1399 convicted of
+P3578 autologous cell line
+P1158 location of landing
+P3335 hazard on site
+P2365 Roman cognomen
+P1398 structure replaces
+P2366 Roman agnomen
+P2363 NMHH film rating
+P1151 topic's main Wikimedia portal
+P2361 online service
+P3450 sports season of
+P2360 intended public
+P2079 fabrication method
+P908 PEGI rating
+P4006 overrules
+P3279 statistical leader
+P4002 WFD Ecological status
+P3275 storyboard artist
+P3032 adjacent building
+P3274 content deliverer
+P2184 history of topic
+P926 postsynaptic connection
+P925 presynaptic connection
+P807 separated from
+P927 anatomical location
+P922 magnetic ordering
+P921 main subject
+P800 notable work
+P924 medical treatment
+P803 professorship
+P802 student
+P2176 drug used for treatment
+P3264 radix
+P3263 base
+P2175 medical condition treated
+P2293 genetic association
+P3262 has anatomical branch
+P3261 anatomical branch of
+P2291 charted in
+P1080 from fictional universe
+P6 head of government
+P915 filming location
+P914 USK rating
+P3019 railway signalling system
+P916 GSRR rating
+P3018 located in protected area
+P3259 intangible cultural heritage status
+P2288 lymphatic drainage
+P913 notation
+P1199 mode of inheritance
+P3015 backup or reserve team or crew
+P1078 valvetrain configuration
+P2289 venous drainage
+P912 has facility
+P4224 category contains
+P3014 laws applied
+P1079 launch contractor
+P2286 arterial supply
+P4101 dissertation submitted to
+P3374 endianness
+P4100 parliamentary group
+P1196 manner of death
+P3373 sibling
+P4220 order of battle
+P1075 rector
+P3493 legal status (medicine)
+P2283 uses
+P1194 received signal type
+P3491 muscle insertion
+P1192 connecting service
+P3490 muscle origin
+P1906 office held by head of state
+P942 theme music
+P941 inspired by
+P1903 volcanic explosivity index
+P706 located on terrain feature
+P826 tonality
+P708 diocese
+P707 satellite bus
+P828 has cause
+P702 encoded by
+P944 Code of nomenclature
+P823 speaker
+P943 programmer
+P822 mascot
+P825 dedicated to
+P945 allegiance
+P703 found in taxon
+P3085 qualifies for event
+P3082 destroyed
+P931 place served by airport
+P937 work location
+P816 decays to
+P817 decay mode
+P812 academic major
+P811 academic minor
+P814 IUCN protected areas category
+P4044 therapeutic area
+P4043 emulates
+P720 asteroid spectral type
+P841 feast day
+P840 narrative location
+P609 terminus location
+P608 exhibition history
+P726 candidate
+P725 voice actor
+P967 guest of honor
+P4032 reviewed by
+P4151 game mechanics
+P832 public holiday
+P710 participant
+P831 parent club
+P837 day in year for periodic occurrence
+P834 train depot
+P833 interchange station
+P4149 conjugate base
+P3179 territory overlaps
+P4147 conjugate acid
+P16 highway system
+P3174 art director
+P17 country
+P19 place of birth
+P500 exclave of
+P744 asteroid family
+P1706 together with
+P1704 is pollinator of
+P1703 is pollinated by
+P629 edition or translation of
+P749 parent organization
+P509 cause of death
+P504 home port
+P624 guidance system
+P21 sex or gender
+P748 appointed by
+P20 place of death
+P747 edition(s)
+P868 foods traditionally associated
+P22 father
+P25 mother
+P4099 metrically compatible typeface
+P612 mother house
+P974 tributary
+P1817 addressee
+P611 religious order
+P971 category combines topics
+P970 neurological function
+P739 ammunition
+P859 sponsor
+P735 given name
+P30 continent
+P734 family name
+P737 influenced by
+P736 cover artist
+P35 head of state
+P38 currency
+P37 official language
+P522 type of orbit
+P885 origin of the watercourse
+P400 platform
+P642 of
+P524 temporal range end
+P403 mouth of the watercourse
+P887 based on heuristic
+P765 surface played on
+P523 temporal range start
+P881 type of variable star
+P880 CPU
+P520 armament
+P641 sport
+P408 software engine
+P768 electoral district
+P647 drafted by
+P40 child
+P767 contributor(s) to the subject
+P404 game mode
+P407 language of work or name
+P527 has part
+P769 significant drug interaction
+P406 soundtrack album
+P47 shares border with
+P4195 category for employees of the organization
+P4070 identifier shared with
+P511 honorific prefix
+P631 structural engineer
+P873 phase point
+P634 captain
+P512 academic degree
+P1916 gene substitution association with
+P991 successful candidate
+P870 instrumentation
+P751 introduced feature
+P872 printed by
+P750 distributor
+P518 applies to part
+P636 route of administration
+P878 avionics
+P514 interleaves with
+P756 removed feature
+P517 interaction
+P516 powerplant
+P57 director
+P59 constellation
+P3096 KML file
+P4185 iconographic symbol
+P3095 practiced by
+P3094 develops from
+P3093 recovered by
+P786 stipe character
+P423 shooting handedness
+P301 category's main topic
+P785 hymenium attachment
+P543 oath made by
+P664 organizer
+P788 mushroom ecological type
+P546 docking port
+P1629 subject item of this property
+P425 field of this occupation
+P787 spore print color
+P545 torch lit by
+P2959 permanent duplicated item
+P2838 professional name (Japan)
+P660 EC classification
+P542 officially opened by
+P784 mushroom cap shape
+P421 located in time zone
+P541 office contested
+P783 hymenium type
+P3803 original film format
+P61 discoverer or inventor
+P306 operating system
+P669 located on street
+P427 taxonomic type
+P547 commemorates
+P789 edibility
+P65 site of astronomical discovery
+P66 ancestral home
+P69 educated at
+P790 approved by
+P533 target
+P412 voice type
+P654 direction relative to location
+P532 port of registry
+P411 canonization status
+P414 stock exchange
+P2828 corporate officer
+P534 streak color
+P413 position played on team / speciality
+P655 translator
+P770 cause of destruction
+P2827 flower color
+P531 diplomatic mission sent
+P410 military rank
+P530 diplomatic relation
+P2825 via
+P2701 file format
+P3912 newspaper format
+P1853 blood type
+P2700 protocol
+P537 twinning
+P658 tracklist
+P1851 input set
+P415 radio format
+P418 seal description
+P538 fracturing
+P417 patron saint
+P780 symptoms
+P566 basionym
+P565 crystal habit
+P568 overlies
+P689 afflicts
+P447 score by
+P567 underlies
+P688 encodes
+P2936 language used
+P2937 parliamentary term
+P1606 natural reservoir of
+P682 biological process
+P201 lake outflow
+P2813 mouthpiece
+P2935 connector
+P200 lake inflows
+P684 ortholog
+P81 connecting line
+P1962 patron
+P1963 properties for this type
+P85 anthem
+P449 original network
+P84 architect
+P1840 investigated by
+P87 librettist
+P209 highest judicial authority
+P208 executive body
+P88 commissioned by
+P690 space group
+P450 astronaut mission
+P797 authority
+P676 lyrics by
+P796 not in wikidata
+P556 crystal system
+P551 residence
+P793 significant event
+P550 chivalric order
+P1716 brand
+P553 website account on
+P795 located on linear feature
+P674 characters
+P1956 takeoff and landing capability
+P92 main regulatory text
+P91 sexual orientation
+P2922 month of the year
+P1830 owner of
+P1951 investor
+P559 terminus
+P437 distribution
+P98 editor
+P560 direction
+P681 cell component
+P680 molecular function
+P588 coolant
+P467 legislated by
+P103 native language
+P466 occupant
+P106 occupation
+P469 lakes on river
+P589 point group
+P468 dan/kyu rank
+P1429 has pet
+P344 director of photography
+P1427 start point
+P1425 ecoregion (WWF)
+P1547 depends on software
+P1789 chief operating officer
+P3602 candidacy in election
+P2512 spin-off
+P1423 template's main topic
+P1424 topic's main template
+P3842 located in present-day administrative territorial entity
+P1542 cause of
+P2632 place of detention
+P2992 software quality assurance
+P1420 taxon synonym
+P2872 tourist office
+P470 Eight Banner register
+P579 IMA status and/or rank
+P457 foundational text
+P452 industry
+P210 party chief representative
+P694 replaced synonym (for nom. nov.)
+P1419 shape
+P451 unmarried partner
+P2629 BBFC rating
+P693 cleavage
+P2989 has grammatical case
+P2868 subject has role
+P1537 contributing factor of
+P1659 see also
+P2869 record or record progression
+P1414 GUI toolkit or framework
+P1898 lowest note
+P1535 used by
+P1657 MPAA film rating
+P3834 RTC film rating
+P1412 languages spoken, written or signed
+P2743 this zoological name is coordinate with
+P1897 highest note
+P1534 end cause
+P1776 circle of
+P1652 referee
+P3831 object has role
+P1773 attributed to
+P1411 nominated for
+P1532 country for sport
+P2860 cites
+P1891 signatory
+P461 opposite of
+P460 said to be the same as
+P489 currency symbol description
+P127 owned by
+P369 Sandbox-Item
+P364 original language of work
+P2738 disjoint union of
+P122 basic form of government
+P485 archives at
+P121 item operated
+P1408 licensed to broadcast to
+P1647 subproperty of
+P1406 script directionality
+P2737 union of
+P1403 original combination
+P1887 vice-county
+P3823 Ethnologue language status
+P1885 cathedral
+P3822 rules for classification
+P2853 electrical plug type
+P2851 payment types accepted
+P129 physically interacts with
+P2852 emergency phone number
+P1640 curator
+P1880 measured by
+P371 presenter
+P131 located in the administrative territorial entity
+P115 home venue
+P598 commander of
+P358 discography
+P3818 KMRB film rating
+P479 input method
+P111 measured physical quantity
+P3938 named by
+P110 illustrator
+P3816 film script
+P3815 volcano observatory
+P1878 Vox-ATypI classification
+P2846 wheelchair accessibility
+P1637 undercarriage
+P1879 income classification (Philippines)
+P1876 vessel
+P1877 after a work by
+P1875 represented by
+P2964 right to vote
+P1754 category related to list
+P2841 age of onset
+P360 is a list of
+P241 military branch
+P361 part of

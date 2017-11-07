@@ -1,0 +1,318 @@
+P149 architectural style
+P144 based on
+P2679 author of foreword
+P2438 narrator
+P3403 coextensive with
+P2675 reply to
+P2554 production designer
+P3402 CNC film rating (Romania)
+P3764 pole position
+P3643 significant environmental impact
+P1221 compressor type
+P1343 described by source
+P2674 next crossing downstream
+P1582 natural product of taxon
+P1340 eye color
+P2551 used metre
+P2670 has parts of the class
+P150 contains administrative territorial entity
+P3081 damaged
+P3080 game artist
+P930 type of electrification
+P495 country of origin
+P135 movement
+P2789 connects with
+P2548 strand orientation
+P2545 bowling style
+P2546 sidekick of
+P3512 means of locomotion
+P2302 property constraint
+P1210 supercharger
+P1574 exemplar of
+P3075 official religion
+P3195 league points system
+P263 official residence
+P3190 innervates
+P287 designed by
+P167 structure replaced by
+P607 conflict
+P1327 professional or sports partner
+P1687 Wikidata property
+P2414 substrate of
+P1322 dual to
+P3501 Catholic rite
+P1201 space tug
+P1202 carries scientific instrument
+P3741 seed dispersal
+P2894 day of week
+P1560 given name version for other gender
+P3189 innervated by
+P2098 substitute/deputy/replacement of office/officeholder
+P2095 co-driver
+P2094 competition class
+P175 performer
+P171 parent taxon
+P291 place of publication
+P170 creator
+P159 headquarters location
+P2408 set in period
+P155 follows
+P3739 inflorescence
+P157 killed by
+P1318 proved by
+P2647 source of material
+P1558 tempo marking
+P1677 index case of
+P1312 has facet polytope
+P3730 next higher rank
+P1672 this taxon is source of
+P1552 has quality
+P3176 uses property
+P3173 offers view on
+P282 writing system
+P161 cast member
+P163 flag
+P741 playing hand
+P501 enclave within
+P740 location of formation
+P1029 crew member
+P2237 units used for this property
+P2358 Roman praenomen
+P1027 conferred by
+P2238 official symbol
+P1028 donated by
+P3205 patient of
+P3447 mirrors data from
+P1026 doctoral thesis
+P2596 culture
+P2354 has list
+P1145 Lagrangian point
+P505 general manager
+P2597 Gram staining
+P1142 political ideology
+P2353 statistical unit
+P3440 time signature
+P1383 contains settlement
+P27 country of citizenship
+P26 spouse
+P2591 grammatical option indicates
+P195 collection
+P194 legislative body
+P197 adjacent station
+P852 ESRB rating
+P610 highest point
+P972 catalog
+P853 CERO rating
+P618 source of energy
+P1811 list of episodes
+P3438 vehicle normally used
+P1137 fossil found in this unit
+P2587 has phoneme
+P1136 solved by
+P1012 including
+P3433 biological variant of
+P1376 capital of
+P31 instance of
+P36 capital
+P1372 binding of software library
+P39 position held
+P185 doctoral student
+P1809 choreographer
+P521 scheduled service destination
+P1924 vaccine for
+P1923 participating teams
+P2579 studied by
+P1366 replaced by
+P2577 admissible rule in
+P2695 type locality
+P1365 replaces
+P2575 measures
+P1363 points/goal scored by
+P2210 relative to
+P3780 active ingredient in
+P1917 posttranslational modification association with
+P1918 altered regulation leads to
+P1915 gene inversion association with
+P1913 gene duplication association with
+P1911 increased expression in
+P3416 end period
+P1910 decreased expression in
+P50 author
+P1478 has immediate cause
+P3415 start period
+P2567 amended by
+P2568 repealed by
+P515 phase of matter
+P3774 blocker of
+P54 member of sports team
+P53 family
+P2564 Köppen climate classification
+P3772 agonist of
+P2680 author of afterword
+P58 screenwriter
+P2681 is recto of
+P3092 film crew member
+P3091 mount
+P1909 side effect
+P2839 gait
+P1625 has melody
+P2715 elected in
+P2831 totem
+P1622 driving side
+P1740 category for films shot at this location
+P1620 plaintiff
+P1068 instruction set
+P1981 FSK film rating
+P3364 stereoisomer of
+P3484 name shares origin with
+P3919 contributed to published work
+P2822 by-product of
+P1855 Wikidata property example
+P2702 dataset distribution
+P1731 Fach
+P2820 cardinality of this set
+P3359 negative prognostic predictor
+P1611 NATO code for grade
+P2821 by-product
+P3358 positive prognostic predictor
+P2389 organisation directed from the office
+P3357 negative diagnostic predictor
+P3356 positive diagnostic predictor
+P3113 does not have part
+P3355 negative therapeutic predictor
+P3354 positive therapeutic predictor
+P78 top-level internet domain
+P3592 Saros cycle of eclipse
+P1171 approximation algorithm
+P205 basin country
+P2817 appears in the heritage monument list
+P562 central bank/issuer
+P1605 has natural reservoir
+P1604 biosafety level
+P3902 had as last meal
+P3349 designed to carry
+P1049 worshipped by
+P2499 league level above
+P2378 issued by
+P2379 deprecated in version
+P206 located next to body of water
+P86 composer
+P2377 MediaWiki hooks used
+P3342 significant person
+P1041 socket supported
+P2925 domain of saint or deity
+P552 handedness
+P1038 relative
+P2127 International Nuclear Event Scale
+P3216 ClassInd rating
+P1039 type of kinship
+P1037 manager/director
+P1950 second family name in Spanish name
+P1034 main food source
+P97 noble title
+P1035 honorific suffix
+P1032 Digital Rights Management system
+P1033 GHS signal word
+P1393 proxy
+P105 taxon rank
+P463 member of
+P1308 officeholder
+P3729 next lower rank
+P462 color
+P102 member of political party
+P2758 CNC film rating (France)
+P2637 RARS rating
+P3969 signed form
+P101 field of work
+P2517 category for recipients of this award
+P2756 EIRIN film rating
+P1546 motto
+P1304 central bank
+P3967 final event
+P2515 costume designer
+P3966 programming paradigm
+P1302 primary destinations
+P2633 geography of topic
+P1303 instrument
+P2634 model
+P108 employer
+P4132 linguistic typology
+P3161 has grammatical mood
+P3719 regulated by
+P2747 Filmiroda rating
+P1416 affiliation
+P2505 carries
+P3716 social classification
+P453 character role
+P1656 unveiled by
+P2746 production statistics
+P1536 immediate cause of
+P1654 wing configuration
+P3833 diaspora
+P2501 results
+P1533 family name identical to this given name
+P3712 objective of project or mission
+P1775 follower of
+P2502 classification of cycling race
+P1531 parent(s) of this hybrid
+P2500 league level below
+P459 determination method
+P3158 enclosure
+P3037 spatial reference system
+P3156 Australian Classification
+P3033 package management system
+P4000 has fruit type
+P3150 birthday
+P2061 aspect ratio
+P126 maintained by
+P488 chairperson
+P128 regulates (molecular biology)
+P248 stated in
+P3828 wears
+P2739 typeface/font
+P1889 different from
+P366 use
+P2978 wheel arrangement
+P123 publisher
+P2976 patronym or matronym
+P805 subject of the statement
+P2614 World Heritage criteria
+P928 activating neurotransmitter
+P2974 habitat
+P3701 incarnation of
+P2975 host
+P3148 repeals
+P1884 hair color
+P1881 list of characters
+P3026 closed on
+P2058 depositor
+P923 medical examinations
+P3025 open days
+P3022 flag bearer
+P114 airline alliance
+P237 coat of arms
+P2848 Wi-Fi
+P1639 pendant of
+P2849 produced by
+P355 subsidiary
+P113 airline hub
+P1999 UNESCO language status
+P112 founded by
+P1995 medical specialty
+P1753 list related to category
+P3931 copyright owner
+P119 place of interment
+P910 topic's main category
+P3137 parent peak
+P118 league
+P2962 title of chess player
+P1750 name day
+P3497 teams classification by time
+P3496 teams classification by points
+P1990 species kept
+P1074 fictional analog of
+P3494 points classification
+P1072 readable file format
+P1073 writable file format
+P1071 location of final assembly
+P483 recorded at

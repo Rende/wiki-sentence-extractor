@@ -1,0 +1,3905 @@
+P6 talk covi head of government
+P10 talk covi video
+P14 talk covi graphic symbol of thoroughfare
+P15 talk covi route map
+P16 talk covi highway system
+P17 talk covi country
+P18 talk covi image
+P19 talk covi place of birth
+P20 talk covi place of death
+P21 talk covi sex or gender
+P22 talk covi father
+P25 talk covi mother
+P26 talk covi spouse
+P27 talk covi country of citizenship
+P30 talk covi continent
+P31 talk covi instance of
+P35 talk covi head of state
+P36 talk covi capital
+P37 talk covi official language
+P38 talk covi currency
+P39 talk covi position held
+P40 talk covi child
+P41 talk covi flag image
+P47 talk covi shares border with
+P50 talk covi author
+P51 talk covi audio
+P53 talk covi family
+P54 talk covi member of sports team
+P57 talk covi director
+P58 talk covi screenwriter
+P59 talk covi constellation
+P61 talk covi discoverer or inventor
+P65 talk covi site of astronomical discovery
+P66 talk covi ancestral home
+P69 talk covi educated at
+P78 talk covi top-level internet domain
+P81 talk covi connecting line
+P84 talk covi architect
+P85 talk covi anthem
+P86 talk covi composer
+P87 talk covi librettist
+P88 talk covi commissioned by
+P91 talk covi sexual orientation
+P92 talk covi main regulatory text
+P94 talk covi coat of arms image
+P97 talk covi noble title
+P98 talk covi editor
+P101 talk covi field of work
+P102 talk covi member of political party
+P103 talk covi native language
+P105 talk covi taxon rank
+P106 talk covi occupation
+P108 talk covi employer
+P109 talk covi signature
+P110 talk covi illustrator
+P111 talk covi measured physical quantity
+P112 talk covi founded by
+P113 talk covi airline hub
+P114 talk covi airline alliance
+P115 talk covi home venue
+P117 talk covi chemical structure
+P118 talk covi league
+P119 talk covi place of interment
+P121 talk covi item operated
+P122 talk covi basic form of government
+P123 talk covi publisher
+P126 talk covi maintained by
+P127 talk covi owned by
+P128 talk covi regulates (molecular biology)
+P129 talk covi physically interacts with
+P131 talk covi located in the administrative territorial entity
+P134 talk covi has dialect
+P135 talk covi movement
+P136 talk covi genre
+P137 talk covi operator
+P138 talk covi named after
+P140 talk covi religion
+P141 talk covi IUCN conservation status
+P143 talk covi imported from
+P144 talk covi based on
+P149 talk covi architectural style
+P150 talk covi contains administrative territorial entity
+P154 talk covi logo image
+P155 talk covi follows
+P156 talk covi followed by
+P157 talk covi killed by
+P158 talk covi seal image
+P159 talk covi headquarters location
+P161 talk covi cast member
+P162 talk covi producer
+P163 talk covi flag
+P166 talk covi award received
+P167 talk covi structure replaced by
+P169 talk covi chief executive officer
+P170 talk covi creator
+P171 talk covi parent taxon
+P172 talk covi ethnic group
+P175 talk covi performer
+P176 talk covi manufacturer
+P177 talk covi crosses
+P178 talk covi developer
+P179 talk covi series
+P180 talk covi depicts
+P181 talk covi taxon range map image
+P183 talk covi endemic to
+P184 talk covi doctoral advisor
+P185 talk covi doctoral student
+P186 talk covi material used
+P189 talk covi location of discovery
+P190 talk covi sister city
+P193 talk covi main building contractor
+P194 talk covi legislative body
+P195 talk covi collection
+P196 talk covi minor planet group
+P197 talk covi adjacent station
+P199 talk covi business division
+P200 talk covi lake inflows
+P201 talk covi lake outflow
+P205 talk covi basin country
+P206 talk covi located next to body of water
+P207 talk covi bathymetry image
+P208 talk covi executive body
+P209 talk covi highest judicial authority
+P210 talk covi party chief representative
+P212 talk covi ISBN-13
+P213 talk covi ISNI
+P214 talk covi VIAF ID
+P215 talk covi spectral class
+P217 talk covi inventory number
+P218 talk covi ISO 639-1 code
+P219 talk covi ISO 639-2 code
+P220 talk covi ISO 639-3 code
+P221 talk covi ISO 639-6 code
+P223 talk covi galaxy morphological type
+P225 talk covi taxon name
+P227 talk covi GND ID
+P229 talk covi IATA airline designator
+P230 talk covi ICAO airline designator
+P231 talk covi CAS Registry Number
+P232 talk covi EC no.
+P233 talk covi canonical SMILES
+P234 talk covi InChI
+P235 talk covi InChIKey
+P236 talk covi ISSN
+P237 talk covi coat of arms
+P238 talk covi IATA airport code
+P239 talk covi ICAO airport code
+P240 talk covi FAA airport code
+P241 talk covi military branch
+P242 talk covi locator map image
+P243 talk covi OCLC control number
+P244 talk covi Library of Congress authority ID
+P245 talk covi ULAN ID
+P246 talk covi element symbol
+P247 talk covi COSPAR ID
+P248 talk covi stated in
+P249 talk covi ticker symbol
+P263 talk covi official residence
+P264 talk covi record label
+P267 talk covi ATC code
+P268 talk covi BnF ID
+P269 talk covi SUDOC authorities
+P270 talk covi CALIS ID
+P271 talk covi CiNii author ID
+P272 talk covi production company
+P274 talk covi chemical formula
+P275 talk covi license
+P276 talk covi location
+P277 talk covi programming language
+P278 talk covi GOST 7.75-97 code
+P279 talk covi subclass of
+P281 talk covi postal code
+P282 talk covi writing system
+P286 talk covi head coach
+P287 talk covi designed by
+P289 talk covi vessel class
+P291 talk covi place of publication
+P296 talk covi station code
+P297 talk covi ISO 3166-1 alpha-2 code
+P298 talk covi ISO 3166-1 alpha-3 code
+P299 talk covi ISO 3166-1 numeric code
+P300 talk covi ISO 3166-2 code
+P301 talk covi category's main topic
+P303 talk covi EE breed number
+P304 talk covi page(s)
+P305 talk covi IETF language tag
+P306 talk covi operating system
+P344 talk covi director of photography
+P345 talk covi IMDb ID
+P347 talk covi Joconde ID
+P348 talk covi software version
+P349 talk covi NDL Auth ID
+P350 talk covi RKDimages
+P351 talk covi Entrez Gene ID
+P352 talk covi UniProt ID
+P353 talk covi HGNC gene symbol
+P354 talk covi HGNC ID
+P355 talk covi subsidiary
+P356 talk covi DOI
+P358 talk covi discography
+P359 talk covi Rijksmonument ID
+P360 talk covi is a list of
+P361 talk covi part of
+P364 talk covi original language of work
+P366 talk covi use
+P367 talk covi astronomic symbol image
+P368 talk covi Sandbox-CommonsMediaFile
+P369 talk covi Sandbox-Item
+P370 talk covi Sandbox-String
+P371 talk covi presenter
+P373 talk covi Commons category
+P374 talk covi INSEE municipality code
+P375 talk covi space launch vehicle
+P376 talk covi located on astronomical body
+P377 talk covi SCN
+P380 talk covi Mérimée ID
+P381 talk covi PCP reference number
+P382 talk covi CBS municipality code
+P393 talk covi edition number
+P395 talk covi licence plate code
+P396 talk covi SBN ID
+P397 talk covi parent astronomical body
+P398 talk covi child astronomical body
+P399 talk covi companion of
+P400 talk covi platform
+P402 talk covi OpenStreetMap Relation identifier
+P403 talk covi mouth of the watercourse
+P404 talk covi game mode
+P405 talk covi taxon author
+P406 talk covi soundtrack album
+P407 talk covi language of work or name
+P408 talk covi software engine
+P409 talk covi NLA (Australia) ID
+P410 talk covi military rank
+P411 talk covi canonization status
+P412 talk covi voice type
+P413 talk covi position played on team / speciality
+P414 talk covi stock exchange
+P415 talk covi radio format
+P416 talk covi quantity symbol
+P417 talk covi patron saint
+P418 talk covi seal description
+P421 talk covi located in time zone
+P423 talk covi shooting handedness
+P424 talk covi Wikimedia language code
+P425 talk covi field of this occupation
+P426 talk covi aircraft registration
+P427 talk covi taxonomic type
+P428 talk covi botanist author abbreviation
+P429 talk covi dantai code
+P432 talk covi callsign of airline
+P433 talk covi issue
+P434 talk covi MusicBrainz artist ID
+P435 talk covi MusicBrainz work ID
+P436 talk covi MusicBrainz release group ID
+P437 talk covi distribution
+P439 talk covi German municipality key
+P440 talk covi German district key
+P442 talk covi China administrative division code
+P443 talk covi pronunciation audio
+P444 talk covi review score
+P447 talk covi score by
+P449 talk covi original network
+P450 talk covi astronaut mission
+P451 talk covi unmarried partner
+P452 talk covi industry
+P453 talk covi character role
+P454 talk covi Structurae ID (structure)
+P455 talk covi Emporis building ID
+P457 talk covi foundational text
+P458 talk covi IMO ship number
+P459 talk covi determination method
+P460 talk covi said to be the same as
+P461 talk covi opposite of
+P462 talk covi color
+P463 talk covi member of
+P464 talk covi NOR
+P465 talk covi sRGB color hex triplet
+P466 talk covi occupant
+P467 talk covi legislated by
+P468 talk covi dan/kyu rank
+P469 talk covi lakes on river
+P470 talk covi Eight Banner register
+P473 talk covi local dialing code
+P474 talk covi country calling code
+P476 talk covi CELEX number
+P477 talk covi Canadian Register of Historic Places ID
+P478 talk covi volume
+P479 talk covi input method
+P480 talk covi FilmAffinity ID
+P481 talk covi Palissy ID
+P483 talk covi recorded at
+P484 talk covi IMA Number, broad sense
+P485 talk covi archives at
+P486 talk covi MeSH ID
+P487 talk covi Unicode character
+P488 talk covi chairperson
+P489 talk covi currency symbol description
+P490 talk covi provisional designation
+P491 talk covi orbit diagram
+P492 talk covi OMIM ID
+P493 talk covi ICD-9
+P494 talk covi ICD-10
+P495 talk covi country of origin
+P496 talk covi ORCID iD
+P497 talk covi CBDB ID
+P498 talk covi ISO 4217 code
+P500 talk covi exclave of
+P501 talk covi enclave within
+P502 talk covi HURDAT identifier
+P503 talk covi ISO standard
+P504 talk covi home port
+P505 talk covi general manager
+P506 talk covi ISO 15924 alpha-4 code
+P507 talk covi Swedish county code
+P508 talk covi BNCF Thesaurus
+P509 talk covi cause of death
+P511 talk covi honorific prefix
+P512 talk covi academic degree
+P514 talk covi interleaves with
+P515 talk covi phase of matter
+P516 talk covi powerplant
+P517 talk covi interaction
+P518 talk covi applies to part
+P520 talk covi armament
+P521 talk scheduled service destination
+P522 talk covi type of orbit
+P523 talk covi temporal range start
+P524 talk covi temporal range end
+P525 talk covi Swedish municipality code
+P527 talk covi has part
+P528 talk covi catalog code
+P529 talk covi runway
+P530 talk covi diplomatic relation
+P531 talk covi diplomatic mission sent
+P532 talk covi port of registry
+P533 talk covi target
+P534 talk covi streak color
+P535 talk covi Find a Grave grave ID
+P536 talk covi ATP player ID
+P537 talk twinning
+P538 talk fracturing
+P539 talk covi Museofile
+P541 talk covi office contested
+P542 talk covi officially opened by
+P543 talk covi oath made by
+P545 talk covi torch lit by
+P546 talk covi docking port
+P547 talk commemorates
+P548 talk covi version type
+P549 talk covi Mathematics Genealogy Project ID
+P550 talk covi chivalric order
+P551 talk covi residence
+P552 talk covi handedness
+P553 talk covi website account on
+P554 talk covi website username
+P555 talk covi doubles record
+P556 talk covi crystal system
+P557 talk covi DiseasesDB
+P558 talk covi unit symbol
+P559 talk terminus
+P560 talk covi direction
+P561 talk covi NATO reporting name
+P562 talk covi central bank/issuer
+P563 talk covi ICD-O
+P564 talk covi singles record
+P565 talk covi crystal habit
+P566 talk covi basionym
+P567 talk covi underlies
+P568 talk covi overlies
+P569 talk covi date of birth
+P570 talk covi date of death
+P571 talk covi inception
+P574 talk covi date of taxon name publication
+P575 talk covi time of discovery
+P576 talk covi dissolved, abolished or demolished
+P577 talk covi publication date
+P578 talk covi Sandbox-TimeValue
+P579 talk covi IMA status and/or rank
+P580 talk covi start time
+P582 talk covi end time
+P585 talk covi point in time
+P586 talk covi IPNI author ID
+P587 talk covi MMSI
+P588 talk covi coolant
+P589 talk covi point group
+P590 talk covi GNIS ID
+P591 talk covi EC number
+P592 talk covi ChEMBL ID
+P593 talk covi HomoloGene ID
+P594 talk covi Ensembl Gene ID
+P595 talk covi Guide to Pharmacology Ligand ID
+P597 talk covi WTA player ID
+P598 talk covi commander of
+P599 talk covi ITF ID
+P600 talk covi Wine AppDB-ID
+P604 talk covi MedlinePlus ID
+P605 talk covi NUTS code
+P606 talk covi first flight
+P607 talk covi conflict
+P608 talk covi exhibition history
+P609 talk covi terminus location
+P610 talk covi highest point
+P611 talk covi religious order
+P612 talk covi mother house
+P613 talk covi OS grid reference
+P617 talk covi yard number
+P618 talk source of energy
+P619 talk covi time of spacecraft launch
+P620 talk covi time of spacecraft landing
+P621 talk covi time of spacecraft orbit decay
+P622 talk spacecraft docking/undocking date
+P624 talk covi guidance system
+P625 talk covi coordinate location
+P626 talk Sandbox-GeoCoordinateValue
+P627 talk covi IUCN ID
+P628 talk covi E number
+P629 talk covi edition or translation of
+P630 talk covi Paris city digital code
+P631 talk covi structural engineer
+P632 talk covi cultural properties of Belarus reference number
+P633 talk covi Quebec cultural heritage directory ID
+P634 talk covi captain
+P635 talk covi ISTAT ID
+P636 talk covi route of administration
+P637 talk covi RefSeq Protein ID
+P638 talk covi PDB ID
+P639 talk covi RefSeq RNA ID
+P640 talk covi Léonore ID
+P641 talk covi sport
+P642 talk covi of
+P644 talk covi genomic start
+P645 talk covi genomic end
+P646 talk covi Freebase ID
+P647 talk covi drafted by
+P648 talk covi Open Library ID
+P649 talk covi NRHP reference number
+P650 talk covi RKDartists ID
+P651 talk covi Biografisch Portaal number
+P652 talk covi UNII
+P653 talk covi PubMed Health
+P654 talk covi direction relative to location
+P655 talk covi translator
+P656 talk covi RefSeq
+P657 talk covi RTECS number
+P658 talk covi tracklist
+P659 talk covi genomic assembly
+P660 talk covi EC classification
+P661 talk covi ChemSpider ID
+P662 talk covi PubChem CID
+P663 talk covi DSM-IV
+P664 talk covi organizer
+P665 talk covi KEGG ID
+P667 talk covi ICPC 2 ID
+P668 talk covi GeneReviews ID
+P669 talk covi located on street
+P670 talk covi street number
+P671 talk covi Mouse Genome Informatics ID
+P672 talk covi MeSH Code
+P673 talk covi eMedicine
+P674 talk covi characters
+P675 talk covi Google Books ID
+P676 talk covi lyrics by
+P677 talk covi ÚSOP code
+P678 talk covi incertae sedis
+P679 talk covi ZVG number
+P680 talk covi molecular function
+P681 talk covi cell component
+P682 talk covi biological process
+P683 talk covi ChEBI ID
+P684 talk covi ortholog
+P685 talk covi NCBI Taxonomy ID
+P686 talk covi Gene Ontology ID
+P687 talk covi BHL Page ID
+P688 talk covi encodes
+P689 talk covi afflicts
+P690 talk covi space group
+P691 talk covi NKCR AUT ID
+P692 talk covi Gene Atlas Image
+P693 talk covi cleavage
+P694 talk covi replaced synonym (for nom. nov.)
+P695 talk covi UN number
+P696 talk covi Neurolex ID
+P697 talk covi ex taxon author
+P698 talk covi PubMed ID
+P699 talk covi Disease Ontology ID
+P700 talk covi Kemler code
+P701 talk covi Dodis ID
+P702 talk covi encoded by
+P703 talk covi found in taxon
+P704 talk covi Ensembl Transcript ID
+P705 talk covi Ensembl Protein ID
+P706 talk covi located on terrain feature
+P707 talk covi satellite bus
+P708 talk covi diocese
+P709 talk covi Historic Scotland ID
+P710 talk covi participant
+P711 talk covi Strunz 8th edition (series ID, updated)
+P712 talk covi Nickel-Strunz 9th edition (updated 2009)
+P713 talk covi Nickel-Strunz 10th (pending) edition
+P714 talk covi Dana 8th edition
+P715 talk covi Drugbank ID
+P716 talk covi JPL Small-Body Database ID
+P717 talk covi Minor Planet Center observatory code
+P718 talk covi Canmore ID
+P720 talk covi asteroid spectral type
+P721 talk covi OKATO ID
+P722 talk covi UIC station code
+P723 talk covi DBNL author ID
+P724 talk covi Internet Archive ID
+P725 talk covi voice actor
+P726 talk covi candidate
+P727 talk covi Europeana ID
+P728 talk covi GHS hazard statement
+P729 talk covi service entry
+P730 talk covi service retirement
+P731 talk covi Litholex ID
+P732 talk covi BGS Lexicon ID
+P733 talk covi DINOloket
+P734 talk covi family name
+P735 talk covi given name
+P736 talk covi cover artist
+P737 talk covi influenced by
+P739 talk covi ammunition
+P740 talk covi location of formation
+P741 talk covi playing hand
+P742 talk covi pseudonym
+P744 talk covi asteroid family
+P745 talk covi Low German Bibliography and Biography ID
+P746 talk covi date of disappearance
+P747 talk covi edition(s)
+P748 talk covi appointed by
+P749 talk covi parent organization
+P750 talk covi distributor
+P751 talk covi introduced feature
+P756 talk covi removed feature
+P757 talk covi World Heritage Site ID
+P758 talk covi Kulturminne ID
+P759 talk covi Alberta Register of Historic Places ID
+P760 talk covi DPLA ID
+P761 talk covi Lake ID (Sweden)
+P762 talk covi Czech cultural heritage ID
+P763 talk covi PEI Register of Historic Places ID
+P764 talk covi OKTMO ID
+P765 talk covi surface played on
+P767 talk covi contributor(s) to the subject
+P768 talk covi electoral district
+P769 talk covi significant drug interaction
+P770 talk cause of destruction
+P771 talk covi Swiss municipality code
+P772 talk covi INE municipality code
+P773 talk covi ISO 3166-3
+P774 talk covi FIPS 55-3 (locations in the US)
+P775 talk covi Swedish urban area code
+P776 talk covi Swedish minor urban area code
+P777 talk covi Swedish civil parish code/ATA code
+P778 talk covi Church of Sweden parish code
+P779 talk covi Church of Sweden Pastoratskod
+P780 talk covi symptoms
+P781 talk covi SIKART ID
+P782 talk covi LAU
+P783 talk covi hymenium type
+P784 talk covi mushroom cap shape
+P785 talk covi hymenium attachment
+P786 talk covi stipe character
+P787 talk covi spore print color
+P788 talk covi mushroom ecological type
+P789 talk covi edibility
+P790 talk approved by
+P791 talk covi ISIL
+P792 talk covi chapter
+P793 talk covi significant event
+P794 talk covi as
+P795 talk covi located on linear feature
+P797 talk authority
+P798 talk covi military designation
+P799 talk Air Ministry specification ID
+P800 talk covi notable work
+P802 talk covi student
+P803 talk covi professorship
+P804 talk covi GNIS Antarctica ID
+P805 talk covi subject of the statement
+P806 talk covi Italian cadastre code
+P807 talk covi separated from
+P808 talk covi code Bien de Interés Cultural
+P809 talk covi WDPA ID
+P811 talk covi academic minor
+P812 talk covi academic major
+P813 talk covi retrieved
+P814 talk covi IUCN protected areas category
+P815 talk covi ITIS TSN
+P816 talk covi decays to
+P817 talk covi decay mode
+P818 talk covi arXiv ID
+P819 talk covi ADS bibcode
+P820 talk covi arXiv classification
+P821 talk covi CGNDB Unique ID
+P822 talk covi mascot
+P823 talk covi speaker
+P824 talk covi Meteoritical Bulletin Database ID
+P825 talk covi dedicated to
+P826 talk covi tonality
+P827 talk covi BBC programme ID
+P828 talk covi has cause
+P829 talk covi OEIS ID
+P830 talk covi Encyclopedia of Life ID
+P831 talk covi parent club
+P832 talk covi public holiday
+P833 talk covi interchange station
+P834 talk train depot
+P835 talk covi author citation (zoology)
+P836 talk covi GSS code (2011)
+P837 talk covi day in year for periodic occurrence
+P838 talk covi BioLib ID
+P839 talk covi IMSLP ID
+P840 talk covi narrative location
+P841 talk covi feast day
+P842 talk covi Fossilworks ID
+P843 talk covi SIRUTA code
+P844 talk covi UBIGEO code
+P845 talk covi Saskatchewan Register of Heritage Property ID
+P846 talk covi Global Biodiversity Information Facility ID
+P847 talk covi United States Navy aircraft designation
+P849 talk covi Japanese military aircraft designation
+P850 talk covi WoRMS-ID
+P852 talk covi ESRB rating
+P853 talk covi CERO rating
+P854 talk covi reference URL
+P855 talk covi Sandbox-URL
+P856 talk covi official website
+P858 talk covi ESPNscrum player ID
+P859 talk sponsor
+P860 talk covi e-archiv.li ID
+P861 talk covi PremiershipRugby.com ID
+P862 talk covi Operational Requirement of the UK Air Ministry
+P863 talk covi InPhO ID
+P864 talk covi ACM Digital Library author ID
+P865 talk covi BMLO
+P866 talk covi Perlentaucher ID
+P867 talk covi ROME Occupation Code (v3)
+P868 talk foods traditionally associated
+P870 talk covi instrumentation
+P872 talk covi printed by
+P873 talk covi phase point
+P874 talk covi UN class
+P875 talk UN code classification
+P876 talk UN packaging group
+P877 talk covi NFPA Other
+P878 talk covi avionics
+P879 talk covi pennant number
+P880 talk covi CPU
+P881 talk covi type of variable star
+P882 talk covi FIPS 6-4 (US counties)
+P883 talk covi FIPS 5-2 (code for US states)
+P884 talk covi State Water Register Code (Russia)
+P885 talk covi origin of the watercourse
+P886 talk covi LIR
+P887 talk covi based on heuristic
+P888 talk covi JSTOR article ID
+P889 talk covi Mathematical Reviews ID
+P892 talk covi RfC ID
+P893 talk covi Social Science Research Network ID
+P894 talk covi zbMATH ID
+P897 talk covi United States Army and Air Force aircraft designation
+P898 talk covi IPA transcription
+P901 talk covi FIPS 10-4 (countries and regions)
+P902 talk covi HDS ID
+P905 talk covi PORT film ID
+P906 talk covi SELIBR
+P908 talk covi PEGI rating
+P909 talk covi Nova Scotia Register of Historic Places ID
+P910 talk covi topic's main category
+P911 talk covi South African municipality code
+P912 talk has facility
+P913 talk notation
+P914 talk covi USK rating
+P915 talk covi filming location
+P916 talk covi GSRR rating
+P917 talk covi GRAU index
+P918 talk covi NOC Occupation Code
+P919 talk covi SOC Code (2010)
+P920 talk covi LEM ID
+P921 talk covi main subject
+P922 talk covi magnetic ordering
+P923 talk covi medical examinations
+P924 talk covi medical treatment
+P925 talk covi presynaptic connection
+P926 talk covi postsynaptic connection
+P927 talk anatomical location
+P928 talk covi activating neurotransmitter
+P929 talk covi color space
+P930 talk covi type of electrification
+P931 talk covi place served by airport
+P932 talk covi PMCID
+P933 talk covi heritagefoundation.ca ID
+P935 talk covi Commons gallery
+P937 talk covi work location
+P938 talk covi FishBase species ID
+P939 talk covi KSH code
+P940 talk covi GHS precautionary statements
+P941 talk covi inspired by
+P942 talk covi theme music
+P943 talk covi programmer
+P944 talk covi Code of nomenclature
+P945 talk covi allegiance
+P946 talk covi ISIN
+P947 talk covi RSL ID (person)
+P948 talk covi page banner
+P949 talk covi National Library of Israel ID
+P950 talk covi BNE ID
+P951 talk covi NSZL ID
+P952 talk covi ISCO occupation code
+P953 talk covi full work available at
+P954 talk covi IBNR ID
+P957 talk covi ISBN-10
+P958 talk section, verse, or paragraph
+P959 talk covi MSW ID
+P960 talk covi Tropicos ID
+P961 talk covi IPNI plant ID
+P962 talk covi MycoBank taxon name ID
+P963 talk covi streaming media URL
+P964 talk covi Austrian municipality key
+P965 talk covi burial plot reference
+P966 talk covi MusicBrainz label ID
+P967 talk guest of honor
+P968 talk covi e-mail
+P969 talk covi located at street address
+P970 talk covi neurological function
+P971 talk covi category combines topics
+P972 talk covi catalog
+P973 talk covi described at URL
+P974 talk covi tributary
+P980 talk covi code for weekend and holiday homes (Sweden)
+P981 talk covi BAG-code for Dutch locations
+P982 talk covi MusicBrainz area ID
+P984 talk covi IOC country code
+P988 talk covi Philippine Standard Geographic Code
+P989 talk covi spoken text audio
+P990 talk covi audio recording of the subject's spoken voice
+P991 talk covi successful candidate
+P993 talk covi NFPA Health
+P994 talk covi NFPA Fire
+P995 talk covi NFPA Reactivity
+P996 talk covi scanned file on Wikimedia Commons
+P998 talk covi DMOZ ID
+P999 talk covi ARICNS
+P1000 talk covi record held
+P1001 talk covi applies to jurisdiction
+P1002 talk covi engine configuration
+P1003 talk covi NLR (Romania) ID
+P1004 talk covi MusicBrainz place ID
+P1005 talk covi PTBNP ID
+P1006 talk covi National Thesaurus for Author Names ID
+P1007 talk covi Lattes Platform number
+P1010 talk covi Iran statistics ID
+P1011 talk covi excluding
+P1012 talk covi including
+P1013 talk covi criterion used
+P1014 talk covi AAT ID
+P1015 talk covi BIBSYS ID
+P1016 talk covi asteroid taxonomy
+P1017 talk covi BAV ID
+P1018 talk covi language regulatory body
+P1019 talk feed URL
+P1021 talk covi KldB-2010 occupation code
+P1022 talk covi CNO-11 occupation code
+P1023 talk covi SBC-2010 occupation code
+P1024 talk covi SBFI occupation code
+P1025 talk covi SUDOC editions
+P1026 talk covi doctoral thesis
+P1027 talk covi conferred by
+P1028 talk covi donated by
+P1029 talk covi crew member
+P1030 talk covi light characteristic of a lighthouse
+P1031 talk covi legal citation of this text
+P1032 talk Digital Rights Management system
+P1033 talk covi GHS signal word
+P1034 talk covi main food source
+P1035 talk covi honorific suffix
+P1036 talk covi Dewey Decimal Classification
+P1037 talk covi manager/director
+P1038 talk covi relative
+P1039 talk covi type of kinship
+P1040 talk covi film editor
+P1041 talk covi socket supported
+P1042 talk covi ZDB ID
+P1043 talk covi IDEO Job ID
+P1044 talk covi SWB editions
+P1045 talk covi Sycomore ID
+P1046 talk covi discovery method
+P1047 talk covi Catholic Hierarchy person ID
+P1048 talk covi NCL ID
+P1049 talk covi worshipped by
+P1050 talk covi medical condition
+P1051 talk covi PSH ID
+P1052 talk covi Portuguese Job Code CPP-2010
+P1053 talk covi ResearcherID
+P1054 talk covi NDL bib ID
+P1055 talk covi NLM Unique ID
+P1056 talk covi product or material produced
+P1057 talk covi chromosome
+P1058 talk covi ERA Journal ID
+P1059 talk covi CVR number
+P1060 talk covi pathogen transmission process
+P1064 talk covi track gauge
+P1065 talk covi archive URL
+P1066 talk covi student of
+P1067 talk covi Thailand central administrative unit code
+P1068 talk covi instruction set
+P1069 talk covi Statistics Denmarks classification of occupation (DISCO-08)
+P1070 talk covi PlantList-ID
+P1071 talk covi location of final assembly
+P1072 talk covi readable file format
+P1073 talk covi writable file format
+P1074 talk covi fictional analog of
+P1075 talk covi rector
+P1076 talk covi ICTV virus ID
+P1077 talk covi KOATUU identifier
+P1078 talk covi valvetrain configuration
+P1079 talk covi launch contractor
+P1080 talk covi from fictional universe
+P1081 talk covi Human Development Index
+P1082 talk covi population
+P1083 talk covi maximum capacity
+P1084 talk covi EUL editions
+P1085 talk covi LibraryThing work ID
+P1086 talk covi atomic number
+P1087 talk covi Elo rating
+P1088 talk covi Mohs' hardness
+P1090 talk covi redshift
+P1092 talk covi total produced
+P1093 talk covi gross tonnage
+P1096 talk covi orbital eccentricity
+P1097 talk covi g-factor
+P1098 talk covi number of speakers
+P1099 talk covi number of masts
+P1100 talk covi number of cylinders
+P1101 talk covi floors above ground
+P1102 talk covi flattening
+P1103 talk covi number of platform tracks
+P1104 talk covi number of pages
+P1106 talk covi Sandbox-Quantity
+P1107 talk covi proportion
+P1108 talk covi electronegativity
+P1109 talk covi refractive index
+P1110 talk covi attendance
+P1111 talk covi votes received
+P1112 talk covi Pokédex number
+P1113 talk covi number of episodes
+P1114 talk covi quantity
+P1115 talk covi ATVK ID
+P1116 talk covi ELSTAT geographical code
+P1117 talk covi pKa
+P1120 talk covi number of deaths
+P1121 talk covi oxidation state
+P1122 talk covi spin quantum number
+P1123 talk covi parity
+P1124 talk covi TEU
+P1125 talk covi Gini coefficient
+P1126 talk covi isospin quantum number
+P1127 talk covi isospin z-component
+P1128 talk covi employees
+P1129 talk covi national team caps
+P1132 talk covi number of participants
+P1133 talk covi DGO4 identifier
+P1135 talk covi nomenclatural status
+P1136 talk covi solved by
+P1137 talk covi fossil found in this unit
+P1138 talk covi Kunstindeks Danmark Artist ID
+P1139 talk covi floors below ground
+P1140 talk covi EHAK id
+P1141 talk covi number of processor cores
+P1142 talk covi political ideology
+P1143 talk covi BN (Argentine) editions
+P1144 talk covi LCOC LCCN (bibliographic)
+P1145 talk covi Lagrangian point
+P1146 talk covi IAAF ID
+P1148 talk covi neutron number
+P1149 talk covi Library of Congress Classification
+P1150 talk Regensburg Classification
+P1151 talk covi topic's main Wikimedia portal
+P1153 talk covi Scopus Author ID
+P1154 talk covi Scopus EID
+P1155 talk covi Scopus Affiliation ID
+P1156 talk covi Scopus Source ID
+P1157 talk covi US Congress Bio ID
+P1158 talk covi location of landing
+P1159 talk covi CODEN
+P1160 talk covi ISO 4 abbreviation
+P1161 talk covi Z39.5 abbreviation
+P1162 talk covi Bluebook abbreviation
+P1163 talk covi media type
+P1164 talk covi cardinality of the group
+P1165 talk covi home world
+P1167 talk covi USB ID
+P1168 talk covi municipality code (Denmark)
+P1170 talk covi transmitted signal type
+P1171 talk covi approximation algorithm
+P1172 talk covi Geokod
+P1174 talk covi visitors per year
+P1181 talk covi numeric value
+P1182 talk covi LIBRIS editions
+P1183 talk covi Gewässerkennzahl
+P1184 talk covi handle
+P1185 talk covi Rodovid ID
+P1186 talk covi MEP directory ID
+P1187 talk covi Dharma Drum Buddhist College person ID
+P1188 talk covi Dharma Drum Buddhist College place ID
+P1189 talk covi Chinese Library Classification
+P1190 talk covi Universal Decimal Classification
+P1191 talk covi first performance
+P1192 talk covi connecting service
+P1193 talk covi prevalence
+P1194 talk covi received signal type
+P1195 talk covi file extension
+P1196 talk covi manner of death
+P1198 talk covi unemployment rate
+P1199 talk covi mode of inheritance
+P1200 talk covi bodies of water basin category
+P1201 talk covi space tug
+P1202 talk covi carries scientific instrument
+P1203 talk covi Finnish municipality number
+P1204 talk covi Wikimedia portal's main topic
+P1207 talk covi NUKAT (WarsawU) authorities
+P1208 talk covi ISMN
+P1209 talk covi CN
+P1210 talk covi supercharger
+P1211 talk covi fuel system
+P1212 talk covi Atlas ID
+P1213 talk covi NLC authorities
+P1214 talk covi Riksdagen person-id
+P1215 talk covi apparent magnitude
+P1216 talk covi National Heritage List for England number
+P1217 talk covi Internet Broadway Database venue ID
+P1218 talk covi Internet Broadway Database production ID
+P1219 talk covi Internet Broadway Database show ID
+P1220 talk covi Internet Broadway Database person ID
+P1221 talk covi compressor type
+P1222 talk covi (deprecated) NARA person ID
+P1225 talk covi National Archives Identifier
+P1227 talk covi astronomical filter
+P1229 talk covi Openpolis ID
+P1230 talk covi JSTOR journal code
+P1232 talk covi Linguist list code
+P1233 talk covi ISFDB author ID
+P1234 talk covi ISFDB publication ID
+P1235 talk covi ISFDB series ID
+P1236 talk covi Parsons code
+P1237 talk covi Box Office Mojo film ID
+P1238 talk covi Swedish Football Association ID
+P1239 talk covi ISFDB publisher ID
+P1240 talk covi Danish Bibliometric Research Indicator level
+P1241 talk covi Swiss Football Association Club Number
+P1242 talk covi Theatricalia play ID
+P1243 talk covi International Standard Recording Code
+P1245 talk covi OmegaWiki Defined Meaning
+P1246 talk covi patent number
+P1247 talk covi compression ratio
+P1248 talk covi KulturNav-id
+P1249 talk covi time of earliest written record
+P1250 talk covi Danish Bibliometric Research Indicator (BFI) SNO/CNO
+P1251 talk covi ABS ASCL code
+P1252 talk covi AUSTLANG code
+P1253 talk covi BCU Ecrivainsvd
+P1254 talk covi Slovenska biografija ID
+P1255 talk covi Helveticarchives ID
+P1256 talk covi Iconclass notation
+P1257 talk covi depicts Iconclass notation
+P1258 talk covi Rotten Tomatoes ID
+P1259 talk covi coordinates of the point of view
+P1260 talk covi Cultural heritage database in Sweden ID
+P1261 talk covi Rundata
+P1262 talk covi RAÄ number
+P1263 talk covi NNDB people ID
+P1264 talk covi valid in period
+P1265 talk covi AlloCiné film ID
+P1266 talk covi AlloCiné person ID
+P1267 talk covi AlloCiné series ID
+P1268 talk covi represents organisation
+P1269 talk covi facet of
+P1270 talk covi Norwegian Register journal ID
+P1271 talk covi Norway Database for Statistics on Higher education publisher ID
+P1272 talk covi Norway Import Service and Registration Authority periodical code
+P1273 talk covi CANTIC-ID
+P1274 talk covi ISFDB title ID
+P1275 talk covi Norway Import Service and Registration Authority publisher code
+P1276 talk covi Dictionnaire du Jura ID
+P1277 talk covi Jufo ID
+P1278 talk covi Legal Entity ID
+P1279 talk covi inflation rate
+P1280 talk covi CONOR ID
+P1281 talk covi WOEID
+P1282 talk covi OpenStreetMap tag or key
+P1283 talk covi filmography
+P1284 talk covi Munzinger IBA
+P1285 talk covi Munzinger Sport number
+P1286 talk covi Munzinger Pop ID
+P1287 talk covi KDG Komponisten der Gegenwart
+P1288 talk covi KLG Kritisches Lexikon der Gegenwartsliteratur
+P1289 talk covi KLfG Critical Dictionary of foreign contemporary literature
+P1290 talk covi godparent
+P1291 talk covi Association Authors of Switzerland ID
+P1292 talk covi DNB editions
+P1293 talk covi Royal Aero Club Aviator's Certificate ID
+P1294 talk covi WWF ecoregion code
+P1295 talk covi emissivity
+P1296 talk covi Gran Enciclopèdia Catalana ID
+P1297 talk covi IRS Employer Identification Number
+P1299 talk depicted by
+P1300 talk covi bibcode
+P1301 talk covi number of elevators
+P1302 talk primary destinations
+P1303 talk covi instrument
+P1304 talk covi central bank
+P1305 talk covi Skyscraper Center ID
+P1307 talk covi Swiss parliament ID
+P1308 talk covi officeholder
+P1309 talk covi EGAXA ID
+P1310 talk covi statement disputed by
+P1311 talk covi lostbridges.org ID
+P1312 talk covi has facet polytope
+P1313 talk covi office held by head of government
+P1314 talk covi number of spans
+P1315 talk covi People Australia ID
+P1316 talk covi SMDB ID
+P1317 talk covi floruit
+P1318 talk proved by
+P1319 talk covi earliest date
+P1320 talk covi OpenCorporates ID
+P1321 talk covi place of origin (Switzerland)
+P1322 talk covi dual to
+P1323 talk covi Terminologia Anatomica 98 ID
+P1324 talk covi source code repository
+P1325 talk external data available at
+P1326 talk covi latest date
+P1327 talk professional or sports partner
+P1329 talk covi phone number
+P1330 talk covi MusicBrainz instrument ID
+P1331 talk covi PACE member ID
+P1332 talk covi coordinate of northernmost point
+P1333 talk covi coordinate of southernmost point
+P1334 talk covi coordinate of easternmost point
+P1335 talk covi coordinate of westernmost point
+P1336 talk covi territory claimed by
+P1338 talk covi EPSG ID
+P1339 talk covi number of injured
+P1340 talk covi eye color
+P1341 talk covi Italian Chamber of Deputies dati ID
+P1342 talk covi number of seats
+P1343 talk covi described by source
+P1344 talk covi participant of
+P1345 talk covi number of victims made by killer
+P1346 talk covi winner
+P1347 talk covi military casualty classification
+P1348 talk covi AlgaeBase URL
+P1349 talk covi ploidy
+P1350 talk covi number of matches played
+P1351 talk covi number of points/goals/set scored
+P1352 talk covi ranking
+P1353 talk covi original spelling
+P1354 talk covi shown with features
+P1355 talk covi number of wins
+P1356 talk losses
+P1357 talk matches/games drawn/tied
+P1358 talk covi points for
+P1359 talk number of points/goals conceded
+P1360 talk covi Monte Carlo Particle Number
+P1362 talk covi Theaterlexikon der Schweiz online ID
+P1363 talk covi points/goal scored by
+P1364 talk covi ITTF table tennis player ID
+P1365 talk covi replaces
+P1366 talk covi replaced by
+P1367 talk covi Art UK artist ID
+P1368 talk covi LNB ID
+P1369 talk covi Iranian National Heritage registration number
+P1370 talk covi IHSI ID
+P1371 talk covi ASI Monument ID
+P1372 talk binding of software library
+P1373 talk covi daily patronage
+P1375 talk covi NSK ID
+P1376 talk covi capital of
+P1377 talk covi MTR station code
+P1378 talk covi China railway TMIS station code
+P1380 talk covi UglyBridges.com ID
+P1381 talk covi bridgehunter.com ID
+P1382 talk covi partially coincident with
+P1383 talk covi contains settlement
+P1385 talk covi Enciclopédia Açoriana ID
+P1386 talk covi Japanese High School Code
+P1387 talk covi political alignment
+P1388 talk covi German regional key
+P1389 talk covi product certification
+P1390 talk match time of event
+P1391 talk covi Index Fungorum ID
+P1392 talk covi ComicBookDB ID
+P1393 talk covi proxy
+P1394 talk covi Glottolog code
+P1395 talk covi National Cancer Institute ID
+P1396 talk covi Linguasphere code
+P1397 talk covi State Catalogue of Geographical Names (Russia) ID
+P1398 talk covi structure replaces
+P1399 talk covi convicted of
+P1400 talk covi FCC Facility ID
+P1401 talk covi bug tracking system
+P1402 talk covi Foundational Model of Anatomy ID
+P1403 talk covi original combination
+P1404 talk covi World Glacier Inventory ID
+P1406 talk covi script directionality
+P1407 talk covi MusicBrainz series ID
+P1408 talk covi licensed to broadcast to
+P1409 talk covi Cycling Archives cyclist ID
+P1410 talk covi number of representatives in an organization/legislature
+P1411 talk covi nominated for
+P1412 talk covi languages spoken, written or signed
+P1414 talk covi GUI toolkit or framework
+P1415 talk covi Oxford Biography Index Number
+P1416 talk covi affiliation
+P1417 talk covi Encyclopædia Britannica Online ID
+P1418 talk covi orbits completed
+P1419 talk covi shape
+P1420 talk covi taxon synonym
+P1421 talk covi GRIN URL
+P1422 talk covi Sandrart.net person ID
+P1423 talk covi template's main topic
+P1424 talk covi topic's main template
+P1425 talk ecoregion (WWF)
+P1427 talk covi start point
+P1428 talk covi Lost Art-ID
+P1429 talk covi has pet
+P1430 talk covi OpenPlaques subject ID
+P1431 talk covi executive producer
+P1432 talk covi B-side
+P1433 talk covi published in
+P1434 talk covi takes place in fictional universe
+P1435 talk covi heritage designation
+P1436 talk covi collection or exhibition size
+P1437 talk covi plea
+P1438 talk covi Jewish Encyclopedia ID (Russian)
+P1439 talk covi Norsk filmografi ID
+P1440 talk covi FIDE ID
+P1441 talk covi present in work
+P1442 talk covi image of grave
+P1443 talk score method
+P1444 talk covi destination point
+P1445 talk covi fictional universe described in
+P1446 talk covi number of missing
+P1447 talk covi Sports-Reference.com Olympic athlete ID
+P1448 talk official name
+P1449 talk nickname
+P1450 talk covi Sandbox Monolingual text
+P1451 talk covi motto text
+P1453 talk covi catholic.ru ID
+P1454 talk covi legal form
+P1455 talk covi list of works
+P1456 talk covi list of monuments
+P1457 talk covi absolute magnitude
+P1458 talk covi color index
+P1459 talk covi Cadw Building ID
+P1460 talk covi NIEA building ID
+P1461 talk covi Patientplus ID
+P1462 talk covi standards body
+P1463 talk covi PRDL Author ID
+P1464 talk covi category for people born here
+P1465 talk covi category for people who died here
+P1466 talk covi WALS lect code
+P1467 talk covi WALS genus code
+P1468 talk covi WALS family code
+P1469 talk covi FIFA player ID
+P1470 talk covi maximum glide ratio
+P1471 talk covi reporting mark
+P1472 talk covi Commons Creator page
+P1473 talk covi Nupill Literatura Digital - Author
+P1474 talk covi Nupill Literatura Digital - Document
+P1476 talk covi title
+P1477 talk covi birth name
+P1478 talk covi has immediate cause
+P1479 talk covi has contributing factor
+P1480 talk covi sourcing circumstances
+P1481 talk covi vici.org ID
+P1482 talk covi Stack Exchange tag
+P1483 talk covi kulturnoe-nasledie.ru ID
+P1529 talk covi Gertrude identifier
+P1531 talk parent(s) of this hybrid
+P1532 talk covi country for sport
+P1533 talk covi family name identical to this given name
+P1534 talk covi end cause
+P1535 talk covi used by
+P1536 talk covi immediate cause of
+P1537 talk covi contributing factor of
+P1538 talk covi number of households
+P1539 talk covi female population
+P1540 talk covi male population
+P1541 talk covi Cycling Quotient male cyclist ID
+P1542 talk covi cause of
+P1543 talk covi monogram
+P1544 talk covi Federal Register Document Number
+P1545 talk covi series ordinal
+P1546 talk covi motto
+P1547 talk covi depends on software
+P1548 talk covi maximum Strahler number
+P1549 talk covi demonym
+P1550 talk covi Orphanet ID
+P1551 talk covi Exceptional heritage of Wallonia ID
+P1552 talk covi has quality
+P1553 talk covi Yandex.Music artist ID
+P1554 talk covi UBERON ID
+P1555 talk covi Executive Order number
+P1556 talk covi zbMATH author ID
+P1557 talk manifestation of
+P1558 talk covi tempo marking
+P1559 talk covi name in native language
+P1560 talk covi given name version for other gender
+P1561 talk covi number of survivors
+P1562 talk covi AllMovie movie ID
+P1563 talk covi MacTutor id (biographies)
+P1564 talk covi At the Circulating Library ID
+P1565 talk covi Enciclopedia de la Literatura en México ID
+P1566 talk covi GeoNames ID
+P1567 talk covi NIS/INS code
+P1568 talk covi domain
+P1571 talk covi codomain
+P1573 talk covi BBC Genome ID
+P1574 talk covi exemplar of
+P1575 talk covi RISS catalog
+P1576 talk covi lifestyle
+P1577 talk covi Gregory-Aland-Number
+P1578 talk covi Gmelin number
+P1579 talk covi Beilstein Registry Number
+P1580 talk covi University of Barcelona authority ID
+P1581 talk covi official blog
+P1582 talk covi natural product of taxon
+P1583 talk covi MalaCards ID
+P1584 talk covi Pleiades ID
+P1585 talk covi Brazilian municipality code
+P1586 talk covi Catalan object of cultural interest ID
+P1587 talk covi Slovene Cultural Heritage Register ID
+P1588 talk covi desa code of Indonesia
+P1589 talk covi deepest point
+P1590 talk covi number of casualties
+P1591 talk defendant
+P1592 talk prosecutor
+P1593 talk defender
+P1594 talk judge
+P1595 talk charge
+P1596 talk penalty
+P1598 talk covi consecrator
+P1599 talk covi Cambridge Alumni Database ID
+P1600 talk covi code Inventari del Patrimoni Arquitectònic de Catalunya
+P1601 talk covi Esperantist ID
+P1602 talk covi Art UK venue ID
+P1603 talk covi number of cases
+P1604 talk biosafety level
+P1605 talk covi has natural reservoir
+P1606 talk covi natural reservoir of
+P1607 talk covi Dialnet author ID
+P1608 talk covi Dialnet book ID
+P1609 talk covi Dialnet journal
+P1610 talk covi Dialnet article
+P1611 talk covi NATO code for grade
+P1612 talk covi Commons Institution page
+P1613 talk covi IRC channel
+P1614 talk covi History of Parliament ID
+P1615 talk covi CLARA-ID
+P1616 talk covi SIREN number
+P1617 talk covi BBC Things ID
+P1618 talk covi sport number
+P1619 talk covi date of official opening
+P1620 talk covi plaintiff
+P1621 talk covi detail map
+P1622 talk covi driving side
+P1624 talk covi MarineTraffic Port ID
+P1625 talk has melody
+P1626 talk covi Thai cultural heritage ID
+P1627 talk covi Ethnologue.com code
+P1628 talk covi equivalent property
+P1629 talk covi subject item of this property
+P1630 talk covi formatter URL
+P1631 talk covi China Vitae ID
+P1632 talk covi Hermann-Mauguin notation
+P1635 talk covi religious name
+P1636 talk covi date of baptism in early childhood
+P1637 talk covi undercarriage
+P1638 talk covi codename
+P1639 talk covi pendant of
+P1640 talk curator
+P1641 talk covi port
+P1642 talk covi acquisition transaction
+P1643 talk covi departure transaction
+P1644 talk covi EgliseInfo ID
+P1645 talk covi NIST/CODATA ID
+P1647 talk covi subproperty of
+P1648 talk covi Dictionary of Welsh Biography ID
+P1649 talk covi KMDb person ID
+P1650 talk covi BBF ID
+P1651 talk covi YouTube video ID
+P1652 talk covi referee
+P1653 talk covi TERYT municipality code
+P1654 talk covi wing configuration
+P1656 talk unveiled by
+P1657 talk covi MPAA film rating
+P1659 talk covi see also
+P1660 talk covi has index case
+P1661 talk covi Alexa rank
+P1662 talk covi DOI Prefix
+P1663 talk covi ProCyclingStats cyclist ID
+P1664 talk covi Cycling Database ID
+P1665 talk covi Chess Games ID
+P1666 talk covi Chess Club ID
+P1667 talk covi TGN ID
+P1668 talk covi ATCvet
+P1669 talk covi CONA ID
+P1670 talk covi LAC ID
+P1671 talk covi route number
+P1672 talk covi this taxon is source of
+P1673 talk covi general formula
+P1674 talk covi number confirmed
+P1675 talk covi number probable
+P1676 talk covi number suspected
+P1677 talk covi index case of
+P1678 talk covi has vertex figure
+P1679 talk covi Art UK artwork ID
+P1680 talk covi subtitle
+P1683 talk covi quote
+P1684 talk covi inscription
+P1685 talk covi Pokémon browser number
+P1686 talk covi for work
+P1687 talk covi Wikidata property
+P1688 talk covi AniDB ID
+P1689 talk central government debt as a percent of GDP
+P1690 talk covi ICD-10-PCS
+P1691 talk covi operations and procedures key (OPS)
+P1692 talk covi ICD-9-CM
+P1693 talk covi Terminologia Embryologica
+P1694 talk covi Terminologia Histologica
+P1695 talk covi NLP ID
+P1696 talk covi inverse of
+P1697 talk covi total valid votes
+P1699 talk covi SkyscraperPage building id
+P1700 talk covi SIPA ID
+P1702 talk covi IGESPAR ID
+P1703 talk is pollinated by
+P1704 talk is pollinator of
+P1705 talk covi native label
+P1706 talk covi together with
+P1707 talk covi DAAO ID
+P1708 talk covi LfDS object ID
+P1709 talk equivalent class
+P1710 talk covi Sächsische Biografie
+P1711 talk covi British Museum person-institution
+P1712 talk covi Metacritic ID
+P1713 talk covi biography at the Bundestag of Germany
+P1714 talk covi Journalisted ID
+P1715 talk covi RKD/ESD (Slovenia) ID
+P1716 talk covi brand
+P1717 talk covi SANDRE ID
+P1721 talk covi pinyin transliteration
+P1725 talk covi beats per minute
+P1726 talk covi Florentine musea Inventario 1890 ID
+P1727 talk covi Flora of North America taxon ID
+P1728 talk covi AllMusic artist ID
+P1729 talk covi AllMusic album ID
+P1730 talk covi AllMusic song ID
+P1731 talk covi Fach
+P1732 talk covi Naturbase ID
+P1733 talk covi Steam Application ID
+P1734 talk oath of office date
+P1735 talk covi Comedien.ch ID
+P1736 talk covi Information Center for Israeli Art artist ID
+P1738 talk covi Merck Index monograph
+P1739 talk covi CiNii book ID
+P1740 talk covi category for films shot at this location
+P1741 talk covi GTAA ID
+P1743 talk covi Bradley and Fletcher checklist number
+P1744 talk covi Agassiz checklist number
+P1745 talk covi VASCAN ID
+P1746 talk covi ZooBank nomenclatural act
+P1747 talk covi Flora of China ID
+P1748 talk covi NCI Thesaurus ID
+P1749 talk covi Parlement & Politiek ID
+P1750 talk covi name day
+P1751 talk covi Art UK collection ID
+P1752 talk scale
+P1753 talk covi list related to category
+P1754 talk covi category related to list
+P1755 talk covi Aviation Safety Network accident ID
+P1760 talk covi Aviation Safety Network Wikibase Occurrence
+P1761 talk covi Watson & Dallwitz family ID
+P1762 talk covi Hornbostel-Sachs classification
+P1763 talk covi National Pipe Organ Register ID
+P1764 talk covi FOIH relict ID
+P1766 talk covi place name sign
+P1769 talk covi denkXweb identifier
+P1770 talk covi Romania LMI code
+P1771 talk covi Integrated Postsecondary Education Data System ID
+P1772 talk covi USDA PLANTS ID
+P1773 talk covi attributed to
+P1774 talk covi workshop of
+P1775 talk covi follower of
+P1776 talk covi circle of
+P1777 talk covi manner of
+P1778 talk covi forgery after
+P1779 talk covi possible creator
+P1780 talk covi school of
+P1782 talk covi courtesy name
+P1785 talk covi temple name
+P1786 talk covi posthumous name
+P1787 talk covi art-name
+P1788 talk covi DVN ID
+P1789 talk covi chief operating officer
+P1791 talk covi category of people buried here
+P1792 talk covi category of associated people
+P1793 talk covi format as a regular expression
+P1794 talk covi bureau du patrimoine de Seine-Saint-Denis ID
+P1795 talk covi Smithsonian American Art Museum: person/institution thesaurus ID
+P1796 talk covi International Standard Industrial Classification code Rev.4
+P1798 talk covi ISO 639-5 code
+P1799 talk covi Maltese Islands National Inventory of Cultural Property ID
+P1800 talk covi Wikimedia database name
+P1801 talk covi commemorative plaque image
+P1802 talk covi EMLO person ID
+P1803 talk covi Masaryk University person ID
+P1804 talk covi DNF film ID
+P1806 talk covi ABoK number
+P1807 talk covi Great Aragonese Encyclopedia ID
+P1808 talk covi senat.fr ID
+P1809 talk covi choreographer
+P1810 talk covi named as
+P1811 talk covi list of episodes
+P1813 talk short name
+P1814 talk covi name in kana
+P1815 talk covi RSL scanned book's identifier
+P1816 talk covi National Portrait Gallery (London) person ID
+P1817 talk covi addressee
+P1818 talk covi Kaiserhof ID
+P1819 talk covi genealogics.org person ID
+P1820 talk covi Open Food Facts food additive id
+P1821 talk covi Open Food Facts food category ID
+P1822 talk covi DSH object ID
+P1823 talk covi BAnQ work ID
+P1824 talk covi road number
+P1825 talk covi Baseball-Reference.com major league player ID
+P1826 talk covi Baseball-Reference.com minor league player ID
+P1827 talk covi ISWC
+P1828 talk covi IPI name number
+P1829 talk covi Roud Folk Song Index number
+P1830 talk covi owner of
+P1831 talk covi electorate
+P1832 talk covi GrassBase ID
+P1833 talk covi number of registered users/contributors
+P1836 talk covi draft pick number
+P1837 talk covi Gaoloumi ID
+P1838 talk covi PSS-archi ID
+P1839 talk covi US Federal Election Commission ID
+P1840 talk covi investigated by
+P1841 talk covi Swedish district code
+P1842 talk covi Global Anabaptist Mennonite Encyclopedia Online ID
+P1843 talk covi taxon common name
+P1844 talk covi HathiTrust ID
+P1845 talk anti-virus alias
+P1846 talk covi distribution map
+P1847 talk covi Nasjonalbiblioteket photographer ID
+P1848 talk covi protected areas INPN Code
+P1849 talk covi SSR WrittenForm ID
+P1850 talk covi SSR place name number
+P1851 talk covi input set
+P1852 talk covi Perry Index
+P1853 talk covi blood type
+P1854 talk covi Kiev street code
+P1855 talk covi Wikidata property example
+P1866 talk covi Catholic Hierarchy diocese ID
+P1867 talk covi eligible voters
+P1868 talk ballots cast
+P1869 talk covi Hall of Valor ID
+P1870 talk covi Name Assigning Authority Number
+P1871 talk covi CERL ID
+P1872 talk covi minimum number of players
+P1873 talk covi maximum number of players
+P1874 talk covi Netflix ID
+P1875 talk covi represented by
+P1876 talk covi vessel
+P1877 talk covi after a work by
+P1878 talk covi Vox-ATypI classification
+P1879 talk covi income classification (Philippines)
+P1880 talk measured by
+P1881 talk covi list of characters
+P1882 talk covi Web Gallery of Art ID
+P1883 talk covi Declarator.org ID
+P1884 talk covi hair color
+P1885 talk covi cathedral
+P1886 talk covi Smithsonian volcano ID
+P1887 talk covi vice-county
+P1888 talk covi Dictionary of Medieval Names from European Sources entry
+P1889 talk covi different from
+P1890 talk covi BNC ID
+P1891 talk signatory
+P1893 talk covi OpenPlaques plaque ID
+P1894 talk covi Danish urban area code
+P1895 talk covi Fauna Europaea ID
+P1896 talk covi source website for the property
+P1897 talk covi highest note
+P1898 talk covi lowest note
+P1899 talk covi LibriVox author ID
+P1900 talk covi EAGLE id
+P1901 talk covi BALaT person/organisation id
+P1902 talk covi Spotify artist ID
+P1903 talk covi volcanic explosivity index
+P1905 talk FundRef registry name
+P1906 talk covi office held by head of state
+P1907 talk covi Australian Dictionary of Biography ID
+P1908 talk covi CWGC person ID
+P1909 talk side effect
+P1910 talk covi decreased expression in
+P1911 talk covi increased expression in
+P1912 talk covi deletion association with
+P1913 talk covi gene duplication association with
+P1914 talk covi gene insertion association with
+P1915 talk covi gene inversion association with
+P1916 talk covi gene substitution association with
+P1917 talk covi posttranslational modification association with
+P1918 talk covi altered regulation leads to
+P1919 talk covi Ministry of Education of Chile school ID
+P1920 talk covi CWGC burial ground ID
+P1921 talk covi URI used in RDF
+P1922 talk covi first line
+P1923 talk covi participating teams
+P1924 talk vaccine for
+P1925 talk covi VIOLIN ID
+P1928 talk covi Vaccine Ontology ID
+P1929 talk covi ClinVar accession
+P1930 talk covi DSM-5
+P1931 talk covi NIOSH Pocket Guide ID
+P1932 talk covi stated as
+P1933 talk covi MobyGames ID
+P1934 talk covi Animator.ru film ID
+P1935 talk covi Database of Classical Scholars ID
+P1936 talk covi Digital Atlas of the Roman Empire ID
+P1937 talk covi UN/LOCODE
+P1938 talk covi Project Gutenberg author ID
+P1939 talk covi Dyntaxa ID
+P1940 talk covi conifers.org ID
+P1942 talk covi McCune-Reischauer romanization
+P1943 talk covi location map
+P1944 talk covi relief location map
+P1945 talk covi street key
+P1946 talk covi National Library of Ireland authority
+P1947 talk covi Mapillary ID
+P1948 talk covi BerlPap identifier
+P1949 talk covi CulturaItalia ID
+P1950 talk covi second family name in Spanish name
+P1951 talk investor
+P1952 talk covi Encyclopaedia Metallum band ID
+P1953 talk covi Discogs artist ID
+P1954 talk covi Discogs master ID
+P1955 talk covi Discogs label ID
+P1956 talk covi takeoff and landing capability
+P1957 talk covi Wikisource index page
+P1958 talk covi Trismegistos Geo ID
+P1959 talk covi Dutch Senate person ID
+P1960 talk covi Google Scholar author ID
+P1961 talk covi CTHS society ID
+P1962 talk patron
+P1963 talk covi properties for this type
+P1966 talk covi Biblioteca Nacional de Chile catalogue number
+P1967 talk covi BoxRec ID
+P1968 talk covi Foursquare venue ID
+P1969 talk covi MovieMeter director ID
+P1970 talk covi MovieMeter Movie ID
+P1971 talk covi number of children
+P1972 talk covi Open Hub ID
+P1973 talk covi RSL editions
+P1976 talk covi INEGI locality ID
+P1977 talk covi Les Archives du Spectacle ID
+P1978 talk covi USDA NDB number
+P1979 talk covi Righteous Among The Nations ID
+P1980 talk covi PolSys ID
+P1981 talk covi FSK film rating
+P1982 talk covi Anime News Network person ID
+P1983 talk covi Anime News Network company ID
+P1984 talk covi Anime News Network manga ID
+P1985 talk covi Anime News Network anime ID
+P1986 talk covi Dizionario Biografico degli Italiani
+P1987 talk covi MCN code
+P1988 talk covi Delarge ID
+P1989 talk covi Encyclopaedia Metallum artist ID
+P1990 talk covi species kept
+P1991 talk covi LPSN URL
+P1992 talk covi Plazi ID
+P1993 talk covi TeX string
+P1994 talk covi AllMusic composition ID
+P1995 talk covi medical specialty
+P1996 talk covi parliament.uk ID
+P1997 talk covi Facebook Places ID
+P1998 talk covi UCI code
+P1999 talk covi UNESCO language status
+P2000 talk covi CPDL ID
+P2001 talk covi Revised Romanization
+P2002 talk covi Twitter username
+P2003 talk covi Instagram username
+P2004 talk covi NALT ID
+P2005 talk covi Catalogus Professorum Halensis
+P2006 talk covi ZooBank author ID
+P2007 talk covi ZooBank publication ID
+P2008 talk covi IPNI publication ID
+P2009 talk covi Exif model
+P2010 talk covi Exif make
+P2011 talk covi Cooper-Hewitt Person ID
+P2012 talk covi cuisine
+P2013 talk covi Facebook profile ID
+P2014 talk covi MoMA artwork id
+P2015 talk covi Hansard (1803–2005) ID
+P2016 talk covi Catalogus Professorum Academiae Groninganae id
+P2017 talk covi isomeric SMILES
+P2018 talk covi Teuchos ID
+P2019 talk covi AllMovie artist ID
+P2020 talk covi WorldFootball.net ID
+P2021 talk covi Erdős number
+P2024 talk covi German cattle breed ID
+P2025 talk covi Find A Grave cemetery ID
+P2026 talk covi Avibase ID
+P2027 talk covi Colour Index International constitution ID
+P2028 talk covi United States Armed Forces service number
+P2029 talk covi Dictionary of Ulster Biography ID
+P2030 talk covi NASA biographical ID
+P2031 talk work period (start)
+P2032 talk work period (end)
+P2033 talk covi Category for pictures taken with camera
+P2034 talk covi Project Gutenberg ebook ID
+P2035 talk covi LinkedIn personal profile URL
+P2036 talk covi African Plant Database ID
+P2037 talk covi GitHub username
+P2038 talk covi ResearchGate person ID
+P2040 talk covi CITES Species+ ID
+P2041 talk covi National Gallery of Victoria artist ID
+P2042 talk covi Artsy artist ID
+P2043 talk covi length
+P2044 talk covi elevation above sea level
+P2045 talk covi orbital inclination
+P2046 talk covi area
+P2047 talk covi duration
+P2048 talk covi height
+P2049 talk covi width
+P2050 talk covi wingspan
+P2051 talk covi M sin i
+P2052 talk covi speed
+P2053 talk covi watershed area
+P2054 talk covi density
+P2055 talk covi electrical conductivity
+P2056 talk covi heat capacity
+P2057 talk covi HMDB ID
+P2058 talk covi depositor
+P2060 talk luminosity
+P2061 talk covi aspect ratio
+P2062 talk covi HSDB ID
+P2063 talk covi LIPID MAPS ID
+P2064 talk covi KNApSAcK ID
+P2065 talk covi NIAID ChemDB ID
+P2066 talk covi fusion enthalpy
+P2067 talk covi mass
+P2068 talk covi thermal conductivity
+P2069 talk covi magnetic moment
+P2070 talk covi Fellow of the Royal Society ID
+P2071 talk covi Mémoire des hommes ID
+P2072 talk covi CDB Chemical ID
+P2073 talk covi vehicle range
+P2074 talk covi internetmedicin.se ID
+P2075 talk covi speed of sound
+P2076 talk covi temperature
+P2077 talk covi pressure
+P2078 talk user manual link
+P2079 talk covi fabrication method
+P2080 talk covi AcademiaNet ID
+P2081 talk covi BLDAM object ID
+P2082 talk covi M.49 code
+P2083 talk covi Leadscope ID
+P2084 talk covi ZINC ID
+P2085 talk covi Nikkaji
+P2086 talk covi CDD Public ID
+P2087 talk covi CrunchBase person ID
+P2088 talk covi CrunchBase organisation ID
+P2089 talk covi Library of Congress JukeBox ID
+P2090 talk covi Power of 10 athlete ID
+P2091 talk covi FISA rower ID
+P2092 talk covi Bildindex der Kunst und Architektur ID
+P2093 talk covi author name string
+P2094 talk competition class
+P2095 talk covi co-driver
+P2096 talk covi media legend
+P2097 talk covi term length of office
+P2098 talk covi substitute/deputy/replacement of office/officeholder
+P2099 talk covi BC Geographical Names ID
+P2100 talk covi Banque de noms de lieux du Québec ID
+P2101 talk covi melting point
+P2102 talk covi boiling point
+P2103 talk size of team at start
+P2105 talk size of team at finish
+P2106 talk covi RXNO Ontology
+P2107 talk covi decomposition point
+P2108 talk covi Kunstindeks Danmark artwork ID
+P2109 talk covi installed capacity
+P2112 talk wing area
+P2113 talk covi sublimation temperature
+P2114 talk covi half-life
+P2115 talk covi NDF-RT ID
+P2116 talk covi enthalpy of vaporization
+P2117 talk covi combustion enthalpy
+P2118 talk covi kinematic viscosity
+P2119 talk covi vapor pressure
+P2120 talk radius
+P2121 talk covi prize money
+P2123 talk covi YerelNet village ID
+P2124 talk covi member count
+P2125 talk covi Revised Hepburn romanization
+P2126 talk covi Georgian national system of romanization
+P2127 talk covi International Nuclear Event Scale
+P2128 talk covi flash point
+P2129 talk covi IDLH
+P2130 talk covi cost
+P2131 talk covi nominal GDP
+P2132 talk covi nominal GDP per capita
+P2133 talk covi total debt
+P2134 talk covi total reserves
+P2135 talk covi total exports
+P2136 talk covi total imports
+P2137 talk covi total equity
+P2138 talk total liabilities
+P2139 talk covi total revenue
+P2140 talk foreign direct investment net outflow
+P2141 talk foreign direct investment net inflow
+P2142 talk covi box office
+P2143 talk covi genome size
+P2144 talk covi frequency
+P2145 talk explosive energy equivalent
+P2146 talk covi orbital period
+P2147 talk rotation period
+P2148 talk distance from river mouth
+P2149 talk covi clock speed
+P2150 talk FSB speed
+P2151 talk covi focal length
+P2152 talk covi antiparticle
+P2153 talk covi PubChem Substance ID (SID)
+P2154 talk binding energy
+P2155 talk solid solution series with
+P2156 talk covi pseudo crystal habit
+P2157 talk lithography
+P2158 talk covi Cell line ontology ID
+P2159 talk solves
+P2160 talk mass excess
+P2161 talk covi Guthrie code
+P2162 talk covi Deutsche Ultramarathon-Vereinigung ID
+P2163 talk covi FAST ID
+P2164 talk covi SIGIC author ID
+P2165 talk covi SIGIC group ID
+P2166 talk covi SIGIC institution ID
+P2167 talk covi UNSPSC Code
+P2168 talk covi SFDb person ID
+P2169 talk covi PublicWhip ID
+P2170 talk covi Hansard (2006–March 2016) ID
+P2171 talk covi They Work for You ID
+P2172 talk covi Parliamentary record identifier
+P2173 talk covi BBC News Democracy Live ID
+P2174 talk covi MoMA artist id
+P2175 talk covi medical condition treated
+P2176 talk covi drug used for treatment
+P2177 talk covi solubility
+P2178 talk solvent
+P2179 talk ACM Classification Code (2012)
+P2180 talk covi Kansallisbiografia ID
+P2181 talk covi Finnish MP ID
+P2182 talk covi Finnish Ministers database ID
+P2183 talk covi ISO 9:1995
+P2184 talk covi history of topic
+P2185 talk covi DLI ID
+P2186 talk covi Wiki Loves Monuments ID
+P2187 talk covi BiblioNet publication ID
+P2188 talk covi BiblioNet author ID
+P2189 talk covi BiblioNet publisher ID
+P2190 talk covi C-SPAN person ID
+P2191 talk covi NILF author id
+P2192 talk covi endangeredlanguages.com ID
+P2193 talk covi Soccerbase player ID
+P2194 talk covi PSS-Archi architect id
+P2195 talk covi Soccerbase manager ID
+P2196 talk covi students count
+P2197 talk production rate
+P2198 talk covi average gradient
+P2199 talk covi autoignition temperature
+P2200 talk covi electric charge
+P2201 talk electric dipole moment
+P2202 talk covi lower flammable limit
+P2203 talk covi upper flammable limit
+P2204 talk minimum explosive concentration
+P2205 talk covi Spotify album ID
+P2206 talk covi Discogs release ID
+P2207 talk covi Spotify track ID
+P2208 talk covi average shot length
+P2209 talk covi SourceForge project
+P2210 talk covi relative to
+P2211 talk covi position angle
+P2212 talk angular distance
+P2213 talk longitude of ascending node
+P2214 talk covi parallax
+P2215 talk covi proper motion
+P2216 talk radial velocity
+P2217 talk cruise speed
+P2218 talk covi net worth estimate
+P2219 talk real gross domestic product growth rate
+P2220 talk covi household wealth
+P2221 talk flux
+P2222 talk gyromagnetic ratio
+P2223 talk decay width
+P2224 talk spectral line
+P2225 talk covi discharge
+P2226 talk covi market capitalization
+P2227 talk covi metallicity
+P2228 talk covi maximum thrust
+P2229 talk covi thermal design power
+P2230 talk torque
+P2231 talk explosive velocity
+P2232 talk cash
+P2233 talk covi semi-major axis
+P2234 talk covi volume as quantity
+P2235 talk external superproperty
+P2236 talk external subproperty
+P2237 talk covi units used for this property
+P2238 talk covi official symbol
+P2239 talk covi first aid measures
+P2240 talk covi median lethal dose
+P2241 talk covi reason for deprecation
+P2242 talk covi Florentine musea catalogue ID
+P2243 talk covi apoapsis
+P2244 talk covi periapsis
+P2248 talk covi argument of periapsis
+P2249 talk covi Refseq Genome ID
+P2250 talk covi life expectancy
+P2252 talk covi National Gallery of Art artist ID
+P2253 talk covi DfE URN
+P2254 talk maximum operating altitude
+P2255 talk covi Debrett's People of Today ID
+P2257 talk covi frequency of event
+P2258 talk covi mobile country code
+P2259 talk covi mobile network code
+P2260 talk covi ionization energy
+P2261 talk covi beam
+P2262 talk covi draft
+P2263 talk covi ISOCAT id
+P2264 talk covi mix'n'match catalogue ID
+P2266 talk covi Fashion Model Directory model ID
+P2267 talk covi Politifact Personality ID
+P2268 talk covi Musée d'Orsay artist ID
+P2270 talk covi Emporis building complex ID
+P2271 talk covi Wikidata property example for properties
+P2272 talk covi Hederich encyclopedia article ID
+P2273 talk covi Heidelberg Academy for Sciences and Humanities member ID
+P2275 talk covi World Health Organisation International Nonproprietary Name
+P2276 talk covi UEFA player ID
+P2277 talk covi Magdeburger Biographisches Lexikon
+P2278 talk covi Member of the Hellenic Parliament ID
+P2279 talk covi ambitus
+P2280 talk covi Austrian Parliament ID
+P2281 talk covi iTunes album ID
+P2282 talk covi Groeningemuseum work PID
+P2283 talk covi uses
+P2284 talk covi price
+P2285 talk covi periapsis date
+P2286 talk covi arterial supply
+P2287 talk covi CRIStin ID
+P2288 talk covi lymphatic drainage
+P2289 talk covi venous drainage
+P2290 talk covi Danish parish code
+P2291 talk covi charted in
+P2292 talk covi consumption rate
+P2293 talk covi genetic association
+P2294 talk covi balance of trade
+P2295 talk covi net profit
+P2296 talk covi money supply
+P2297 talk covi employment by economic sector
+P2298 talk covi NSDAP membership number (1925–1945)
+P2299 talk covi PPP GDP per capita
+P2300 talk covi minimal lethal dose
+P2302 talk covi property constraint
+P2303 talk covi exception to constraint
+P2304 talk covi group by
+P2305 talk covi item of property constraint
+P2306 talk covi property
+P2307 talk covi namespace
+P2308 talk covi class
+P2309 talk covi relation
+P2310 talk covi minimum date (property constraint)
+P2311 talk covi maximum date (property constraint)
+P2312 talk covi maximum quantity (property constraint)
+P2313 talk covi minimum quantity (property constraint)
+P2315 talk covi comment (DEPRECATED)
+P2316 talk covi constraint status
+P2317 talk call sign
+P2318 talk covi debut participant
+P2319 talk covi elector
+P2320 talk covi aftershocks
+P2321 talk covi general classification of race participants
+P2322 talk covi article ID
+P2323 talk covi Swedish Olympic Committee athlete ID
+P2324 talk covi quantity buried
+P2325 talk covi mean anomaly
+P2326 talk covi GNS Unique Feature ID
+P2327 talk covi ProCyclingStats race ID
+P2328 talk covi ProCyclingStats team ID
+P2329 talk covi antagonist muscle
+P2330 talk covi Cycling Archives race ID
+P2331 talk covi Cycling Archives team ID
+P2332 talk covi Dictionary of Art Historians ID
+P2333 talk covi Norwegian organisation number
+P2334 talk covi Swedish Film Database film ID
+P2335 talk covi SFDb company ID
+P2336 talk covi SFDb soundtrack ID
+P2337 talk covi SFDb group ID
+P2338 talk covi Musopen composer ID
+P2339 talk covi BoardGameGeek ID
+P2340 talk covi CESAR person ID
+P2341 talk covi indigenous to
+P2342 talk covi AGORHA person/institution ID
+P2343 talk covi playing range image
+P2344 talk covi AGORHA work ID
+P2345 talk covi AGORHA event identifier
+P2346 talk covi Elonet movie ID
+P2347 talk covi YSO ID
+P2348 talk covi period
+P2349 talk covi Stuttgart Database of Scientific Illustrators ID
+P2350 talk covi SpeedSkatingBase.eu ID
+P2351 talk covi number of graves
+P2352 talk covi applies to taxon
+P2353 talk statistical unit
+P2354 talk covi has list
+P2355 talk covi UNESCO Atlas of the World's Languages in Danger ID
+P2357 talk covi Classification of Instructional Programs code
+P2358 talk covi Roman praenomen
+P2359 talk covi Roman nomen gentilicium
+P2360 talk covi intended public
+P2361 talk covi online service
+P2362 talk covi time to altitude
+P2363 talk covi NMHH film rating
+P2364 talk covi production code
+P2365 talk covi Roman cognomen
+P2366 talk covi Roman agnomen
+P2367 talk covi Australian Stratigraphic Units Database ID
+P2368 talk Sandbox-Property
+P2369 talk covi Soccerway player ID
+P2370 talk covi conversion to SI unit
+P2371 talk covi FAO risk status
+P2372 talk covi ODIS ID
+P2373 talk covi Genius artist ID
+P2374 talk covi natural abundance
+P2375 talk covi has superpartner
+P2376 talk covi superpartner of
+P2377 talk covi MediaWiki hooks used
+P2378 talk covi issued by
+P2379 talk deprecated in version
+P2380 talk covi French Sculpture Census artist ID
+P2381 talk covi Academic Tree ID
+P2382 talk covi Chemins de mémoire ID
+P2383 talk covi CTHS person ID
+P2384 talk covi statement describes
+P2385 talk covi French diocesan architects ID
+P2386 talk covi diameter
+P2387 talk covi Elonet person ID
+P2388 talk covi office held by head of the organisation
+P2389 talk covi organisation directed from the office
+P2390 talk covi Ballotpedia ID
+P2391 talk covi OKPO ID
+P2392 talk covi teaching method
+P2393 talk covi NCBI Locus tag
+P2394 talk covi MGI Gene Symbol
+P2396 talk covi image of function
+P2397 talk covi YouTube channel ID
+P2398 talk covi MLS player ID
+P2399 talk covi British Council artist ID
+P2400 talk covi JMDb film ID
+P2401 talk covi Six Degrees of Francis Bacon ID
+P2402 talk covi total expenditure
+P2403 talk covi total assets
+P2404 talk covi time-weighted average exposure limit
+P2405 talk covi ceiling exposure limit
+P2406 talk covi maximum peak exposure limit
+P2407 talk covi short-term exposure limit
+P2408 talk covi set in period
+P2409 talk covi CiNii article ID
+P2410 talk covi WikiPathways ID
+P2411 talk covi Artsy gene
+P2412 talk covi Fashion Model Directory designer ID
+P2413 talk covi Fashion Model Directory magazine ID
+P2414 talk covi substrate of
+P2415 talk covi personal best
+P2416 talk covi sports discipline competed in
+P2417 talk covi stage classification
+P2418 talk covi Structurae person ID
+P2421 talk covi Prosopographia Attica
+P2422 talk covi number of awards
+P2423 talk covi FIE ID
+P2424 talk covi Berlin cultural heritage ID
+P2425 talk covi service ribbon image
+P2426 talk covi Xeno-canto species ID
+P2427 talk covi GRID ID
+P2428 talk covi RePEc Short-ID
+P2429 talk covi expected completeness
+P2430 talk takeoff roll
+P2431 talk covi Thyssen-Bornemisza artist ID
+P2432 talk covi J. Paul Getty Museum artist id
+P2433 talk covi gender of a scientific name of a genus
+P2434 talk covi Panarctic Flora ID
+P2435 talk covi PORT person ID
+P2436 talk covi voltage
+P2437 talk covi number of seasons
+P2438 talk covi narrator
+P2439 talk language
+P2440 talk covi transliteration
+P2441 talk covi literal translation
+P2442 talk covi conversion to standard unit
+P2443 talk stage reached
+P2444 talk homoglyph
+P2445 talk metasubclass of
+P2446 talk covi Transfermarkt player ID
+P2447 talk covi Transfermarkt manager ID
+P2448 talk covi Turkish Football Federation player ID
+P2449 talk covi Turkish Football Federation coach ID
+P2450 talk covi Encyclopædia Britannica contributor ID
+P2451 talk covi MAME ROM
+P2452 talk covi GeoNames feature code
+P2453 talk covi nominee
+P2454 talk covi KNAW past member ID
+P2455 talk covi Species Profile and Threats Database ID
+P2456 talk covi DBLP ID
+P2457 talk covi Australian National Shipwreck ID
+P2458 talk covi Mackolik.com player ID
+P2459 talk covi IBU biathlete ID
+P2460 talk covi Persons of Ancient Athens
+P2461 talk covi ComLaw ID
+P2462 talk covi member of the deme
+P2463 talk covi elibrary.ru organisation ID
+P2464 talk covi BugGuide ID
+P2465 talk covi Allcinema film ID
+P2467 talk covi Global Geoparks Network ID
+P2468 talk covi Theatricalia theatre ID
+P2469 talk covi Theatricalia person ID
+P2470 talk covi Talouselämän vaikuttajat ID
+P2471 talk covi Models.com person ID
+P2472 talk covi ACMA Radiocommunications Licence ID
+P2473 talk covi IGCPV ID
+P2474 talk covi CDLI ID
+P2475 talk covi NAVA ID
+P2476 talk covi HNI person/institution ID
+P2477 talk covi TBRC Resource ID
+P2478 talk covi Railways Archive event ID
+P2479 talk covi SPDX ID
+P2480 talk covi IHO Hydrographic Dictionary (S-32) Number
+P2481 talk covi Elite Prospects player ID
+P2482 talk covi SABR ID
+P2483 talk covi NCES District ID
+P2484 talk covi NCES School ID
+P2485 talk covi Fashion Model Directory photographer ID
+P2486 talk covi Fashion Model Directory brand ID
+P2487 talk covi page at website of Belarus Geocenter
+P2488 talk covi page at Belarus Globe website
+P2489 talk covi page at hram.by
+P2490 talk covi page at OSTIS Belarus Wiki
+P2491 talk covi Radzima.org ID
+P2492 talk covi MTMT author ID
+P2493 talk covi OM institution ID
+P2494 talk covi Latvian cultural heritage register ID
+P2496 talk covi Latvian toponymic names database ID
+P2497 talk covi Latvian National Address Register ID
+P2498 talk covi Catalan Biographical Dictionary of Women ID
+P2499 talk league level above
+P2500 talk league level below
+P2501 talk covi results
+P2502 talk classification of cycling race
+P2503 talk covi Genealogical Gazetteer (GOV) ID
+P2504 talk covi Norwegian municipality number
+P2505 talk covi carries
+P2506 talk covi INSEE canton code
+P2507 talk corrigendum / erratum
+P2508 talk covi KINENOTE film ID
+P2509 talk covi Movie Walker ID
+P2510 talk covi National Discography of Italian Song artist/group ID
+P2511 talk covi MSK Gent work PID
+P2512 talk spin-off
+P2513 talk covi Jamendo album ID
+P2514 talk covi Jamendo artist ID
+P2515 talk covi costume designer
+P2516 talk covi Australian Ramsar site ID
+P2517 talk covi category for recipients of this award
+P2518 talk covi Scope.dk film ID
+P2519 talk covi Scope.dk person ID
+P2520 talk covi UNESCO Biosphere Reserve url
+P2521 talk covi female form of label
+P2522 talk covi victory
+P2524 talk covi SEED number
+P2525 talk covi Ramsar Sites Information Service ID
+P2526 talk covi National Historic Sites of Canada ID
+P2527 talk covi earthquake magnitude on the moment magnitude scale
+P2528 talk covi earthquake magnitude on the Richter magnitude scale
+P2529 talk covi ČSFD film ID
+P2530 talk covi Box Office Mojo franchise ID
+P2531 talk covi Box Office Mojo studio ID
+P2532 talk covi lowest atmospheric pressure
+P2533 talk covi WomenWriters ID
+P2534 talk covi defining formula
+P2535 talk Sandbox-Mathematical expression
+P2536 talk covi Sandbox-External identifier
+P2537 talk covi Free Software Directory entry
+P2538 talk covi Nationalmuseum Sweden artist ID
+P2539 talk covi Nationalmuseum Sweden artwork ID
+P2540 talk covi Aarne–Thompson–Uther Tale Type Index
+P2541 talk covi operating area
+P2542 talk covi acceptable daily intake
+P2545 talk covi bowling style
+P2546 talk covi sidekick of
+P2547 talk covi perimeter
+P2548 talk covi strand orientation
+P2549 talk covi Italian Senate of the Republic ID
+P2550 talk recording or performance of
+P2551 talk used metre
+P2552 talk covi quantitative metrical pattern
+P2553 talk in work
+P2554 talk covi production designer
+P2555 talk fee
+P2556 talk bore
+P2557 talk stroke
+P2558 talk covi autores.uy database id
+P2559 talk covi Wikidata usage instructions
+P2560 talk GPU
+P2561 talk name
+P2562 talk covi married name
+P2563 talk covi superhuman feature or ability
+P2564 talk covi Köppen climate classification
+P2565 talk covi global-warming potential
+P2566 talk covi ECHA InfoCard ID
+P2567 talk amended by
+P2568 talk repealed by
+P2571 talk uncertainty corresponds to
+P2572 talk covi Twitter hashtag
+P2573 talk covi number of out of school children
+P2574 talk covi National-Football-Teams.com player ID
+P2575 talk covi measures
+P2576 talk covi UCSC Genome Browser assembly ID
+P2577 talk admissible rule in
+P2578 talk covi studies
+P2579 talk covi studied by
+P2580 talk covi Baltisches Biographisches Lexikon digital ID
+P2581 talk covi BabelNet id
+P2582 talk covi J. Paul Getty Museum object ID
+P2583 talk covi distance from Earth
+P2584 talk covi Australian Wetlands Code
+P2585 talk covi INSEE region code
+P2586 talk covi INSEE department code
+P2587 talk covi has phoneme
+P2588 talk covi administrative code of Indonesia
+P2589 talk covi Statistics Indonesia ethnicity code
+P2590 talk covi BPS language code
+P2591 talk grammatical option indicates
+P2592 talk covi Québec cultural heritage directory people identifier
+P2593 talk covi Latvian Olympic Committee athlete ID
+P2595 talk maximum gradient
+P2596 talk culture
+P2597 talk covi Gram staining
+P2598 talk serial number
+P2599 talk block size
+P2600 talk covi Geni.com profile ID
+P2601 talk covi Eurohockey.com player ID
+P2602 talk covi HockeyDB.com player ID
+P2603 talk covi Kinopoisk film ID
+P2604 talk covi Kinopoisk person ID
+P2605 talk covi ČSFD person ID
+P2606 talk covi PlayStation ID
+P2607 talk covi BookBrainz creator ID
+P2610 talk covi thickness
+P2611 talk covi TED speaker ID
+P2612 talk covi TED topic ID
+P2613 talk covi TED talk ID
+P2614 talk covi World Heritage criteria
+P2618 talk covi SHOWA ID
+P2619 talk covi Hungarian company ID
+P2620 talk covi ISO 15924 numeric code
+P2621 talk covi Site of Special Scientific Interest (England) ID
+P2622 talk covi Companies House ID
+P2623 talk covi MEK ID
+P2624 talk covi MetroLyrics ID
+P2625 talk covi PASE ID
+P2626 talk covi DNF person ID
+P2627 talk covi ISO 9362 SWIFT/BIC code
+P2628 talk covi German tax authority ID
+P2629 talk covi BBFC rating
+P2630 talk covi cost of damage
+P2631 talk covi Turner Classic Movies film ID
+P2632 talk covi place of detention
+P2633 talk geography of topic
+P2634 talk covi model
+P2635 talk covi number of parts of a work of art
+P2636 talk covi Minkultury film ID
+P2637 talk covi RARS rating
+P2638 talk covi TV.com ID
+P2639 talk covi Filmportal ID
+P2640 talk covi Swimrankings.net swimmer ID
+P2641 talk covi Davis Cup player ID
+P2642 talk covi Fed Cup player ID
+P2643 talk covi Carnegie Classification of Institutions of Higher Education
+P2645 talk covi mean lifetime
+P2646 talk covi mirTarBase ID
+P2647 talk covi source of material
+P2648 talk covi Cycling Quotient ID men's race ID
+P2649 talk covi Cycling Quotient men's team URL
+P2650 talk covi interested in
+P2651 talk covi CRICOS Provider Code
+P2652 talk covi partnership with
+P2655 talk covi Estyn ID
+P2656 talk covi FIFA World Ranking
+P2657 talk covi EU transparency register ID
+P2658 talk Scoville grade
+P2659 talk covi topographic isolation
+P2660 talk covi topographic prominence
+P2661 talk covi target interest rate
+P2662 talk covi consumption rate per capita
+P2663 talk covi tier 1 capital ratio (CETI)
+P2664 talk covi units sold
+P2665 talk covi alcohol by volume
+P2666 talk covi Datahub page
+P2667 talk covi corresponding template
+P2668 talk covi stability of property value
+P2669 talk discontinued date
+P2670 talk covi has parts of the class
+P2671 talk covi Google Knowledge Graph identifier
+P2672 talk covi SOATO ID
+P2673 talk covi next crossing upstream
+P2674 talk covi next crossing downstream
+P2675 talk covi reply to
+P2676 talk covi rating certificate ID
+P2677 talk covi relative position within image
+P2678 talk covi Russiancinema.ru film ID
+P2679 talk covi author of foreword
+P2680 talk covi author of afterword
+P2681 talk covi is recto of
+P2682 talk covi is verso of
+P2683 talk covi Bekker Number
+P2684 talk covi Kijkwijzer rating
+P2685 talk covi Basketball-Reference.com NBA player ID
+P2686 talk covi Opensecrets Identifier
+P2687 talk covi NDL JPNO
+P2688 talk covi Box Office Mojo person ID
+P2689 talk covi BARTOC ID
+P2694 talk covi ISU figure skater ID
+P2695 talk type locality
+P2696 talk covi FIG gymnast licence number
+P2697 talk covi ESPNcricinfo.com player ID
+P2698 talk covi CricketArchive player ID
+P2699 talk URL
+P2700 talk covi protocol
+P2701 talk covi file format
+P2702 talk covi dataset distribution
+P2703 talk covi BFI work ID
+P2704 talk covi EIDR identifier
+P2705 talk covi Karate Records ID
+P2708 talk covi Cycling Quotient women's race ID
+P2709 talk covi Cycling Quotient female cyclist ID
+P2710 talk covi minimal lethal concentration
+P2712 talk covi median lethal concentration
+P2713 talk covi sectional view
+P2715 talk covi elected in
+P2716 talk covi collage image
+P2717 talk covi no-observed-adverse-effect level
+P2718 talk covi lowest-observed-adverse-effect level
+P2719 talk covi Hungarian-style transcription
+P2720 talk covi embed URL template
+P2721 talk covi Encyclopaedia Metallum release ID
+P2722 talk covi Deezer artist ID
+P2723 talk covi Deezer album ID
+P2724 talk covi Deezer track ID
+P2725 talk covi GOG application ID
+P2726 talk covi UIPM ID
+P2727 talk covi United World Wrestling ID
+P2728 talk covi CageMatch worker ID
+P2729 talk covi Badminton World Federation ID
+P2730 talk covi ISSF ID
+P2731 talk covi Projeto Excelências ID
+P2732 talk covi Persée author ID
+P2733 talk covi Persée journal ID
+P2734 talk covi UNZ author identifier
+P2735 talk covi UNZ journal identifier
+P2736 talk covi Biographical Directory of Federal Judges ID
+P2737 talk covi union of
+P2738 talk covi disjoint union of
+P2739 talk typeface/font
+P2740 talk covi ResearchGate institute ID
+P2741 talk covi Tate artist identifier
+P2742 talk covi Australian Geological Provinces ID
+P2743 talk covi this zoological name is coordinate with
+P2744 talk covi PASE name
+P2745 talk covi Dictionary of New Zealand Biography
+P2746 talk covi production statistics
+P2747 talk covi Filmiroda rating
+P2748 talk covi PRONOM file format identifier
+P2749 talk covi PRONOM software identifier
+P2750 talk covi Photographers' Identities Catalog ID
+P2751 talk covi Roller Coaster Database ID
+P2752 talk covi New Zealand Organisms Register ID
+P2753 talk covi Dictionary of Canadian Biography ID
+P2754 talk covi production date
+P2755 talk covi exploitation visa number
+P2756 talk covi EIRIN film rating
+P2758 talk covi CNC film rating (France)
+P2759 talk covi AUSNUT food ID
+P2760 talk covi NUTTAB food ID
+P2761 talk covi Research Papers in Economics Series handle
+P2762 talk covi Skyscraper Center building complex ID
+P2763 talk covi Danish protected area ID
+P2764 talk covi Wrestlingdata person ID
+P2765 talk covi blue-style.com ID
+P2766 talk covi ISO 4063 process number
+P2767 talk covi JudoInside.com ID
+P2768 talk covi BNE journal ID
+P2769 talk covi budget
+P2770 talk covi source of income
+P2771 talk covi D-U-N-S
+P2772 talk covi FIS alpine skier ID
+P2773 talk covi FIS cross-country skier ID
+P2774 talk covi FIS freestyle skier ID
+P2775 talk covi FIS ski jumper ID
+P2776 talk covi FIS Nordic combined skier ID
+P2777 talk covi FIS snowboarder ID
+P2778 talk covi IAT triathlete ID
+P2779 talk covi IAT weightlifter ID
+P2780 talk covi IAT diver ID
+P2781 talk covi race time
+P2782 talk covi Models.com client ID
+P2783 talk covi Danish listed buildings case ID
+P2784 talk covi Mercalli intensity scale
+P2786 talk covi aerodrome reference point
+P2787 talk covi longest span
+P2788 talk covi Czech neighbourhood ID code
+P2789 talk covi connects with
+P2790 talk covi net tonnage
+P2791 talk covi power consumed
+P2792 talk covi ASF KID Cave Tag Number
+P2793 talk covi clearance
+P2794 talk covi Index Hepaticarum ID
+P2795 talk directions
+P2796 talk covi 3DMet ID
+P2797 talk covi sound power level
+P2798 talk covi Loop ID
+P2799 talk covi BVMC person ID
+P2800 talk covi Beach Volleyball Database ID
+P2801 talk covi FIVB beach volleyball player ID
+P2802 talk covi fleet or registration number
+P2803 talk covi Wikidata time precision
+P2804 talk covi World Sailing member ID
+P2805 talk covi Goratings ID
+P2806 talk vibration
+P2807 talk covi molar volume
+P2808 talk wavelength
+P2809 talk covi Australasian Pollen and Spore Atlas Code
+P2810 talk covi LPGA Tour ID
+P2811 talk covi PGA Tour ID
+P2812 talk covi MathWorld identifier
+P2813 talk covi mouthpiece
+P2814 talk covi P-number
+P2815 talk covi ESR station code
+P2816 talk covi HowLongToBeat ID
+P2817 talk covi appears in the heritage monument list
+P2818 talk covi Sherdog ID
+P2819 talk covi Yandex.Music album ID
+P2820 talk covi cardinality of this set
+P2821 talk by-product
+P2822 talk by-product of
+P2823 talk covi Royal Belgian Football Association player ID
+P2824 talk covi Gazetteer of Planetary Nomenclature ID
+P2825 talk covi via
+P2826 talk covi Megogo ID
+P2827 talk covi flower color
+P2828 talk covi corporate officer
+P2829 talk covi Internet Wrestling Database ID
+P2830 talk covi Online World of Wrestling ID
+P2831 talk covi totem
+P2832 talk covi Joint Electronics Type Designation Automated System designation
+P2833 talk covi ARKive ID
+P2834 talk covi individual tax rate
+P2835 talk covi lowest income threshold
+P2836 talk covi highest income threshold
+P2837 talk covi Wikidata month number
+P2838 talk covi professional name (Japan)
+P2839 talk covi gait
+P2840 talk covi NSC number
+P2841 talk covi age of onset
+P2842 talk covi place of marriage
+P2843 talk covi Benezit ID
+P2844 talk covi incidence
+P2845 talk covi RAN ID
+P2846 talk covi wheelchair accessibility
+P2847 talk covi Google+ ID
+P2848 talk covi Wi-Fi
+P2849 talk produced by
+P2850 talk covi iTunes artist ID
+P2851 talk covi payment types accepted
+P2852 talk covi emergency phone number
+P2853 talk covi electrical plug type
+P2854 talk covi disease burden
+P2855 talk covi VAT-rate
+P2856 talk covi EU Surface Water Body Code
+P2857 talk covi WWE.com superstar ID
+P2858 talk covi KLOV ID
+P2859 talk covi X-SAMPA Code
+P2860 talk covi cites
+P2861 talk covi Leidse Hoogleraren ID
+P2862 talk covi Catalogus Professorum Academiae Rheno-Traiectinae ID
+P2863 talk covi Nederlandse Molendatabase ID
+P2864 talk covi OpenCritic ID
+P2865 talk covi band number
+P2866 talk covi Hollandsche Molen ID
+P2867 talk covi Molenecho's ID
+P2868 talk covi subject has role
+P2869 talk covi record or record progression
+P2870 talk covi miRBase pre-miRNA ID
+P2871 talk covi miRBase mature miRNA ID
+P2872 talk covi tourist office
+P2873 talk covi time in space
+P2874 talk covi PubChem BioAssay ID (AID)
+P2875 talk covi property usage tracking category
+P2876 talk covi type of unit for this property
+P2877 talk covi SureChEMBL ID
+P2878 talk covi Minitel code
+P2879 talk covi Library of the National Congress of Argentina ID
+P2880 talk covi NIOSHTIC-2 ID
+P2881 talk covi promoted
+P2882 talk covi relegated
+P2883 talk covi HKMDb film ID
+P2884 talk covi mains voltage
+P2886 talk covi Shakeosphere person ID
+P2887 talk covi reserve number (Canada)
+P2888 talk exact match
+P2889 talk covi FamilySearch person ID
+P2892 talk covi UMLS CUI
+P2893 talk covi Skype username
+P2894 talk covi day of week
+P2895 talk maximum sustained winds
+P2896 talk covi publication interval
+P2897 talk covi Eldoblaje Movie ID
+P2898 talk covi Swedish county letter
+P2899 talk covi minimum age
+P2900 talk covi fax number
+P2903 talk covi Molendatabase verdwenen molens ID
+P2904 talk covi Beer Advocate brewery ID
+P2905 talk covi RateBeer brewery ID
+P2907 talk covi timezone offset
+P2908 talk covi SecondHandSongs song ID
+P2909 talk covi SecondHandSongs artist ID
+P2910 talk covi icon
+P2911 talk covi time gap
+P2912 talk covi distinctive jersey
+P2913 talk covi date depicted
+P2914 talk covi MSBI person ID
+P2915 talk covi ECARTICO person ID
+P2916 talk covi syntax clarification
+P2917 talk covi COAM ID
+P2918 talk covi PO Box
+P2919 talk covi label in sign language
+P2922 talk covi month of the year
+P2923 talk covi focal height
+P2924 talk covi Great Russian Encyclopedia Online ID
+P2925 talk covi domain of saint or deity
+P2926 talk covi InterPro ID
+P2927 talk covi water as percent of area
+P2928 talk memory capacity
+P2929 talk covi lighthouse range
+P2930 talk covi INSPIRE-HEP author ID
+P2931 talk covi Encyclopedia of Triangle Centers identifier
+P2935 talk covi connector
+P2936 talk covi language used
+P2937 talk covi parliamentary term
+P2938 talk covi Pleiades place type identifier
+P2939 talk covi CageMatch tag team ID
+P2940 talk covi Catalogus Professorum Rostochiensium ID
+P2941 talk covi Munk's Roll ID
+P2942 talk covi Dailymotion channel ID
+P2943 talk covi warheroes.ru ID
+P2944 talk covi Plarr ID
+P2945 talk covi British Book Trade Index ID
+P2946 talk covi BacDive ID
+P2948 talk covi Estonian cultural monument ID
+P2949 talk covi WikiTree ID
+P2950 talk covi Nomisma ID
+P2951 talk covi Cultural heritage database in Austria ObjektID
+P2952 talk covi bateau d'intérêt patrimonial
+P2953 talk covi Estonian Research Portal person ID
+P2954 talk covi Transferred Account Data Interchange Group Code
+P2955 talk point of penalty
+P2956 talk covi NAIF ID
+P2957 talk throughput
+P2959 talk covi permanent duplicated item
+P2960 talk covi archive date
+P2961 talk covi BVPH ID
+P2962 talk covi title of chess player
+P2963 talk covi Goodreads author ID
+P2964 talk covi right to vote
+P2965 talk covi EU River Basin District code
+P2966 talk covi National Library of Wales ID
+P2967 talk covi Queensland Heritage Register ID
+P2968 talk covi QUDT unit ID
+P2969 talk covi Goodreads book ID
+P2970 talk covi Kinopolis film ID
+P2971 talk covi GCatholic church ID
+P2972 talk covi SNAP ID
+P2973 talk covi Spenserians person ID
+P2974 talk covi habitat
+P2975 talk covi host
+P2976 talk covi patronym or matronym
+P2977 talk covi LBT person ID
+P2978 talk covi wheel arrangement
+P2979 talk covi maritime identification digits
+P2980 talk covi ARLHS Lighthouse ID
+P2981 talk covi UIC alphabetical country code
+P2982 talk covi UIC numerical country code
+P2983 talk covi UNDP country code
+P2984 talk covi Snapchat username
+P2985 talk covi DSBE ID
+P2986 talk covi aircraft registration prefix
+P2987 talk covi Taekwondo Data ID
+P2988 talk covi GOST 7.67 cyrillic
+P2989 talk covi has grammatical case
+P2990 talk covi FIL ID
+P2991 talk covi IBSF ID
+P2992 talk covi software quality assurance
+P2993 talk covi partition coefficient water/octanol
+P2997 talk covi age of majority
+P2998 talk covi age of candidacy
+P2999 talk covi age of consent
+P3000 talk covi marriageable age
+P3001 talk covi retirement age
+P3002 talk covi Untappd brewery ID
+P3003 talk covi zanikleobce.cz abandoned objects ID
+P3004 talk covi Galiciana work ID
+P3005 talk valid in place
+P3006 talk covi Marine Regions Geographic ID
+P3007 talk covi Cadw Monument ID
+P3008 talk covi Australian Heritage Database Place ID
+P3009 talk covi Conservatoire du littoral ID
+P3010 talk covi World Archery athlete ID
+P3012 talk covi Standard Geographical Classification code
+P3013 talk covi surface tension
+P3014 talk covi laws applied
+P3015 talk covi backup or reserve team or crew
+P3016 talk covi French national research structure identifier
+P3017 talk covi Rolling Stone artist ID
+P3018 talk covi located in protected area
+P3019 talk covi railway signalling system
+P3020 talk covi residence time of water
+P3021 talk covi Iranica ID
+P3022 talk covi flag bearer
+P3023 talk covi Legacies of British Slave-ownership person ID
+P3024 talk covi ITU letter code
+P3025 talk covi open days
+P3026 talk covi closed on
+P3027 talk covi open period from
+P3028 talk covi open period to
+P3029 talk covi UK National Archives ID
+P3030 talk covi sheet music
+P3031 talk covi EPPO Code
+P3032 talk covi adjacent building
+P3033 talk covi package management system
+P3034 talk covi Indonesian ethnicity code
+P3035 talk covi ISBN publisher prefix
+P3036 talk covi precipitation height
+P3037 talk covi spatial reference system
+P3038 talk covi IWM memorial ID
+P3039 talk covi wheelbase
+P3040 talk covi SoundCloud ID
+P3041 talk covi luminous intensity
+P3042 talk covi CageMatch wrestling stable id
+P3043 talk covi Scoresway soccer person ID
+P3044 talk covi College Football HoF ID
+P3045 talk covi HanCinema person ID
+P3046 talk covi ForaDeJogo player ID
+P3047 talk covi TheFinalBall player ID
+P3048 talk covi racing-reference driver ID
+P3049 talk covi Scottish Football Association player ID
+P3050 talk covi FACR player ID
+P3051 talk covi Kindred Britain ID
+P3052 talk covi Bloomberg person ID
+P3053 talk covi K League player ID
+P3054 talk covi Ontario MPP ID
+P3055 talk covi NAQ elected person ID
+P3056 talk covi Turner Classic Movies person ID
+P3057 talk covi Charity Commission no.
+P3058 talk covi Architectuurgids architect ID
+P3059 talk covi Architectuurgids building ID
+P3060 talk covi ButMoth ID
+P3061 talk covi Basisregistratie Instellingen number
+P3063 talk gestation period
+P3064 talk covi LepIndex ID
+P3065 talk covi RERO ID
+P3066 talk covi GLAM Identifier
+P3067 talk covi GS1 country code
+P3068 talk covi WIPO ST.3
+P3069 talk covi UN document symbol
+P3070 talk covi dynamic viscosity
+P3071 talk covi standard molar entropy
+P3072 talk covi Storting person ID
+P3073 talk covi CosIng number
+P3074 talk covi Grace's Guide ID
+P3075 talk official religion
+P3076 talk covi Open Beauty Facts category ID
+P3077 talk covi Cineplex film ID
+P3078 talk covi standard enthalpy of formation
+P3080 talk covi game artist
+P3081 talk covi damaged
+P3082 talk covi destroyed
+P3083 talk covi SIMBAD ID
+P3084 talk covi freedom of panorama
+P3085 talk covi qualifies for event
+P3086 talk covi speed limit
+P3087 talk covi fiscal/tax revenue
+P3088 talk covi Catalogue of Life in Taiwan ID
+P3089 talk covi Flags of the World ID
+P3090 talk covi flight number
+P3091 talk covi mount
+P3092 talk covi film crew member
+P3093 talk recovered by
+P3094 talk develops from
+P3095 talk practiced by
+P3096 talk covi KML file
+P3097 talk covi ISBN identifier group
+P3098 talk covi ClinicalTrials.gov Identifier
+P3099 talk covi Internet Bird Collection species ID
+P3100 talk covi Flora of Australia ID
+P3101 talk covi FloraBase ID
+P3102 talk covi Plantarium ID
+P3103 talk covi has tense
+P3104 talk covi Gares & Connexions ID
+P3105 talk covi Tela Botanica ID
+P3106 talk covi Guardian topic ID
+P3107 talk covi LdiF ID
+P3108 talk covi Yelp ID
+P3109 talk covi Peakbagger mountain ID
+P3110 talk covi ISzDb film ID
+P3111 talk covi FEI ID
+P3112 talk covi DistroWatch ID
+P3113 talk does not have part
+P3114 talk covi ISzDb person ID
+P3115 talk covi ISzDb company ID
+P3116 talk covi ISzDb dub ID
+P3117 talk covi DSSTOX substance identifier
+P3118 talk covi OpenDomesday settlement ID
+P3119 talk covi Code for China Reservoir Name
+P3120 talk TOID
+P3121 talk covi Epguides ID
+P3122 talk covi OpenDomesday person ID
+P3123 talk covi Stanford Encyclopedia of Philosophy ID
+P3124 talk covi Polish scientist ID
+P3125 talk EDRPOU code
+P3126 talk ALCUIN ID
+P3127 talk covi Latindex ID
+P3128 talk covi CiNetMag film ID
+P3129 talk covi cine.gr film ID
+P3130 talk covi NSW Flora ID
+P3131 talk covi Redalyc journal ID
+P3132 talk last line
+P3133 talk covi NSZL name authority ID
+P3134 talk covi TripAdvisor ID
+P3135 talk covi elCinema film ID
+P3136 talk covi elCinema person ID
+P3137 talk covi parent peak
+P3138 talk covi OFDb ID
+P3139 talk covi SourehCinema film ID
+P3140 talk covi SourehCinema person ID
+P3141 talk covi EDb film ID
+P3142 talk covi EDb person ID
+P3143 talk covi elFilm film ID
+P3144 talk covi elFilm person ID
+P3145 talk covi Sratim ID
+P3146 talk covi CiNetMag person ID
+P3147 talk covi United States Reports ID
+P3148 talk covi repeals
+P3149 talk covi molecule conformation
+P3150 talk covi birthday
+P3151 talk covi iNaturalist taxon ID
+P3152 talk covi Findsmiley ID
+P3153 talk covi Crossref funder ID
+P3154 talk covi Runeberg author ID
+P3155 talk covi Runeberg book ID
+P3156 talk covi Australian Classification
+P3157 talk covi event distance
+P3158 talk enclosure
+P3159 talk covi UGentMemorialis ID
+P3160 talk covi Minnesota legislator ID
+P3161 talk covi has grammatical mood
+P3162 talk covi Rock Hall of Fame ID
+P3163 talk covi Scottish Charity number
+P3165 talk covi Horsetelex ID
+P3166 talk covi Webpedigrees ID
+P3167 talk covi Allbreedpedigree ID
+P3168 talk covi Sporthorse data ID
+P3169 talk covi Harasire ID
+P3170 talk covi Cultural Heritage Armenia ID
+P3171 talk covi International Olympic Committee athlete ID
+P3172 talk covi World Bridge Federation ID
+P3173 talk offers view on
+P3174 talk covi art director
+P3175 talk covi Statoids ID
+P3176 talk uses property
+P3177 talk covi Patrimonio Web JCyL ID
+P3178 talk covi Zaragoza monument ID
+P3179 talk covi territory overlaps
+P3180 talk covi Visual Novel Database ID
+P3181 talk covi OpenCitations bibliographic resource ID
+P3182 talk covi FANTOIR code
+P3183 talk covi WSJ topic ID
+P3184 talk covi Czech National Bibliography book ID
+P3185 talk covi VKontakte username
+P3186 talk covi TAXREF ID
+P3187 talk covi Marburger Professorenkatalog ID
+P3188 talk covi Nobel prize ID
+P3189 talk covi innervated by
+P3190 talk covi innervates
+P3191 talk covi IMIS person ID
+P3192 talk covi Last.fm music ID
+P3193 talk GS1 Manufacturer code
+P3194 talk covi INA video ID
+P3195 talk league points system
+P3196 talk covi USGS earthquake id
+P3197 talk covi Federal Heritage Buildings ID (Canada)
+P3198 talk covi JewishGen Locality ID
+P3199 talk covi charity number (Isle of Man)
+P3200 talk covi Northern Ireland charity number
+P3201 talk Medical Dictionary for Regulatory Activities ID
+P3202 talk covi UAI code
+P3203 talk covi Ciné-Ressources film ID
+P3204 talk covi Ciné-Ressources person ID
+P3205 talk patient of
+P3206 talk covi data.gouv.fr ID
+P3207 talk covi Vine user ID
+P3208 talk covi New General Catalogue ID
+P3209 talk covi Heritage Railway Station of Canada ID
+P3211 talk covi Heritage Lighthouse of Canada ID
+P3212 talk covi ISAN
+P3213 talk covi Indian census area code
+P3215 talk covi SIRET number
+P3216 talk covi ClassInd rating
+P3217 talk covi Dictionary of Swedish National Biography
+P3218 talk covi Auñamendi ID
+P3219 talk Encyclopædia Universalis Online ID
+P3220 talk covi KvK company ID
+P3221 talk covi NYT topic ID
+P3222 talk covi NE.se ID
+P3223 talk covi Online List of Lights id
+P3224 talk NAICS code
+P3225 talk covi Corporate Number (Japan)
+P3226 talk covi HAS member ID
+P3227 talk covi Cultural Heritage Kosovo ID
+P3228 talk covi Schläfli symbol
+P3229 talk covi South Dakota legislator ID
+P3230 talk covi SCAR Composite Gazetteer place ID
+P3231 talk Mediaarts-DB ID
+P3232 talk PhilPapers author ID
+P3233 talk PhilPapers profile
+P3234 talk Library of Congress Cultural Heritage Organizations
+P3235 talk PhilPapers topic
+P3236 talk PhilPapers publication ID
+P3237 talk covi KU Leuven person ID
+P3238 talk trunk prefix
+P3240 talk covi NBN System Key
+P3241 talk covi Catholic Encyclopedia ID
+P3242 talk covi SIC code
+P3243 talk covi OKVED 1.1 code of the economic activity
+P3245 talk covi OKPD code of the good or service
+P3246 talk covi OKVED 2 code of the economic activity
+P3248 talk covi OKP ID of the good or service
+P3250 talk covi OKPD2 code of the good or service
+P3251 talk covi minimum viable temperature
+P3252 talk covi maximum viable temperature
+P3253 talk covi optimum viable temperature
+P3254 talk covi property proposal discussion
+P3256 talk covi Cave E-Cadastre ID
+P3257 talk covi Queensland place ID
+P3258 talk covi LiveJournal ID
+P3259 talk covi intangible cultural heritage status
+P3260 talk covi points awarded
+P3261 talk covi anatomical branch of
+P3262 talk covi has anatomical branch
+P3263 talk covi base
+P3264 talk covi radix
+P3265 talk covi Myspace ID
+P3266 talk covi LocFDD ID
+P3267 talk covi Flickr user ID
+P3268 talk covi PORT organization URL
+P3269 talk covi Fotografen.nl ID
+P3270 talk covi compulsory education (minimum age)
+P3271 talk covi compulsory education (maximum age)
+P3272 talk covi Zeri image ID
+P3273 talk covi Actorenregister ID
+P3274 talk covi content deliverer
+P3275 talk storyboard artist
+P3276 talk covi Angel List ID
+P3277 talk covi KANTL member ID
+P3279 talk covi statistical leader
+P3280 talk BanQ author ID
+P3281 talk French National Assembly Lobbyist ID
+P3283 talk covi Bandcamp artist ID
+P3284 talk covi Yahoo! Japan Talent Database ID
+P3285 talk Mathematics Subject Classification ID
+P3286 talk covi Squash Info ID
+P3288 talk covi World Spider Catalog ID
+P3289 talk Cellosaurus ID
+P3290 talk covi biography at the Landtag of Mecklenburg-Vorpommern
+P3291 talk covi DocCheck Flexikon En ID
+P3292 talk covi DocCheck Flexikon De ID
+P3293 talk covi BALaT image ID
+P3294 talk covi encoding
+P3295 talk code
+P3296 talk covi DRÚSOP ID
+P3297 talk covi Flemish Parliament person ID
+P3298 talk covi Belgian Senate person ID
+P3299 talk student register of the University of Helsinki ID (1640–1852)
+P3300 talk covi musical conductor
+P3301 talk broadcast by
+P3302 talk covi Open Media Database film ID
+P3303 talk covi third-party formatter URL
+P3304 talk covi NGS pumping station ID
+P3305 talk covi KINENOTE person ID
+P3306 talk covi ICAA rating
+P3307 talk covi Galiciana Author ID
+P3308 talk lib.reviews ID
+P3309 talk covi SummitPost mountain ID
+P3310 talk covi muscle action
+P3311 talk covi plan image
+P3314 talk covi 365chess player ID
+P3315 talk covi chesstempo ID
+P3316 talk covi ICCF player ID
+P3318 talk covi Patrimonio Inmueble de Andalucía ID
+P3320 talk covi board member
+P3321 talk covi male form of label
+P3322 talk covi Vlinderstichting-ID
+P3323 talk covi opponent during disputation
+P3324 talk covi petit-patrimoine.com ID
+P3325 talk covi student register of the University of Helsinki ID (1853–1899)
+P3326 talk covi World Waterfall Database ID
+P3327 talk covi Réserves naturelles de France ID
+P3328 talk covi wurvoc.org measure ID
+P3329 talk CIViC variant ID
+P3330 talk covi Supermodels.nl ID
+P3331 talk HGVS nomenclature
+P3332 talk ACM Digital Library citation ID
+P3333 talk ACM Digital Library event ID
+P3335 talk covi hazard on site
+P3337 talk covi generation time
+P3338 talk covi Encyclopedia of Surfing ID
+P3339 talk covi World Surf League ID
+P3340 talk covi Kvikmyndir film ID
+P3341 talk Kvikmyndir person ID
+P3342 talk covi significant person
+P3343 talk covi legislation.gov.uk ID
+P3344 talk covi Vote Smart ID
+P3345 talk RxNorm CUI
+P3346 talk covi HKMDb person ID
+P3347 talk covi PermID
+P3348 talk National Library of Greece ID
+P3349 talk covi designed to carry
+P3350 talk covi WHO international non-proprietary names ID
+P3351 talk covi Adult Film Database person ID
+P3352 talk musipedia tune ID
+P3353 talk covi National Recreation Trails Database ID
+P3354 talk positive therapeutic predictor
+P3355 talk negative therapeutic predictor
+P3356 talk positive diagnostic predictor
+P3357 talk negative diagnostic predictor
+P3358 talk positive prognostic predictor
+P3359 talk negative prognostic predictor
+P3360 talk covi Nobel Prize People Nomination ID
+P3361 talk covi PictoRight ID code
+P3362 talk covi operating income
+P3363 talk covi Tennis HoF player ID
+P3364 talk stereoisomer of
+P3365 talk covi Treccani ID
+P3366 talk covi GECD person ID
+P3367 talk covi GECD film ID
+P3368 talk covi Prabook ID
+P3370 talk covi Géopatronyme ID
+P3371 talk covi Observatoire du Patrimoine Religieux ID
+P3372 talk covi Auckland Art Gallery artist ID
+P3373 talk covi sibling
+P3374 talk endianness
+P3375 talk GECD Firmen-ID
+P3376 talk Enterprise number (Belgium)
+P3377 talk Bloomberg private company ID
+P3378 talk covi Merck Index reaction ID
+P3379 talk covi Model Manual ID
+P3380 talk FAO 2007 genetic resource ID
+P3381 talk covi File Format Wiki page ID
+P3382 talk covi GeneDB ID
+P3383 talk covi film poster
+P3385 talk covi Japan Sumo Association ID
+P3386 talk covi French Sculpture Census work ID
+P3387 talk covi minimum frequency of audible sound
+P3388 talk covi LittleSis people ID
+P3389 talk covi Royal Swedish Academy of Letters member ID
+P3390 talk Consolidated code of the electronic catalog of libraries of Belarus
+P3391 talk covi Verkhovna Rada MP ID
+P3392 talk covi Surman ID
+P3393 talk covi LittleSis organisation ID
+P3394 talk covi Finnish Lake ID
+P3395 talk heart rate
+P3396 talk covi French Catholic Church structure ID
+P3397 talk Guide of the French Church person ID
+P3398 talk covi Butterflies and Moths of North America ID
+P3399 talk JTWC tropical cyclone ID
+P3400 talk covi CORDIS Project ID
+P3401 talk covi Wilderness.net ID
+P3402 talk covi CNC film rating (Romania)
+P3403 talk covi coextensive with
+P3404 talk covi The Vogue List ID
+P3405 talk covi Nederlands Soortenregister ID
+P3406 talk covi Saccharomyces Genome Database ID
+P3407 talk covi Klosterdatenbank ID
+P3408 talk covi FINA athlete ID
+P3409 talk covi Catalogus Professorum Lipsiensis ID
+P3410 talk Clergy of the Church of England database ID
+P3411 talk covi Saxon Academy of Sciences member ID
+P3412 talk covi Canadian Environmental Sustainability Indicators ID (Protected areas)
+P3413 talk covi Leopoldina member ID
+P3414 talk Yle Areena ID
+P3415 talk covi start period
+P3416 talk covi end period
+P3417 talk covi Quora topic ID
+P3418 talk covi Google Play Store ID
+P3419 talk covi Basic Unit of Settlement code (Czech/Slovak)
+P3420 talk covi Calflora ID
+P3421 talk covi Belvedere artist ID
+P3422 talk covi INSEE countries and foreign territories code
+P3423 talk covi INSEE arrondissement code
+P3424 talk covi Polish cultural heritage register number
+P3425 talk covi Natura 2000 site ID
+P3426 talk ArbetSam ID
+P3427 talk covi as.com athlete ID
+P3428 talk covi INCAA film rating
+P3429 talk Electronic Enlightenment ID
+P3430 talk covi SNAC Ark ID
+P3431 talk Publons Publication ID
+P3432 talk parent cell line
+P3433 talk biological variant of
+P3434 talk covi ERIH PLUS ID
+P3435 talk covi VGMdb artist ID
+P3436 talk covi AELG ID
+P3437 talk people or cargo transported
+P3438 talk vehicle normally used
+P3439 talk angular resolution
+P3440 talk covi time signature
+P3441 talk FIFA country code
+P3442 talk Debian stable package
+P3443 talk covi Victorian Heritage Database ID
+P3444 talk covi eBird ID
+P3445 talk covi Cinema of Israel ID
+P3446 talk covi FIDAL ID
+P3447 talk mirrors data from
+P3448 talk covi stepparent
+P3449 talk covi NSW Heritage database ID
+P3450 talk covi sports season of
+P3451 talk covi nighttime view
+P3452 talk covi inferred from
+P3453 talk covi IPI base code
+P3454 talk Arch package
+P3455 talk CircleID
+P3456 talk ATP tennis tournament ID
+P3457 talk case fatality rate
+P3458 talk CNC authorization number
+P3459 talk covi Euring number
+P3460 talk colonel-in-chief
+P3461 talk designated as terrorist by
+P3462 talk FAMA work ID
+P3463 talk Fedora package
+P3464 talk covi medicine marketing authorization
+P3465 talk maximum frequency of audible sound
+P3466 talk covi Israeli CBS municipal ID
+P3467 talk Inventario Sculture - Polo Museale Fiorentino
+P3468 talk covi National Inventors Hall of Fame ID
+P3469 talk WTA tennis tournament ID
+P3470 talk covi Woodland Trust wood ID
+P3471 talk covi WikiSkripta ID
+P3472 talk covi VICNAMES Place ID
+P3473 talk Ubuntu 16.10 package
+P3475 talk SANU member ID
+P3476 talk covi PSA World Tour ID
+P3477 talk covi Nihon Tarento Meikan ID
+P3478 talk covi Songkick artist ID
+P3479 talk covi Omni topic ID
+P3480 talk base Mémoire reference
+P3481 talk covi Parks & Gardens UK Record ID
+P3482 talk covi Europeana Fashion creator ID
+P3483 talk covi VGMdb album ID
+P3484 talk covi name shares origin with
+P3485 talk bite force quotient
+P3486 talk normal respiratory rate
+P3487 talk covi maximal incubation period in humans
+P3488 talk covi minimal incubation period in humans
+P3489 talk covi pregnancy category
+P3490 talk covi muscle origin
+P3491 talk covi muscle insertion
+P3492 talk basic reproduction number
+P3493 talk legal status (medicine)
+P3494 talk covi points classification
+P3495 talk covi FilmPolski.pl ID
+P3496 talk covi teams classification by points
+P3497 talk covi teams classification by time
+P3498 talk covi ZNIEFF ID
+P3499 talk Gentoo package
+P3500 talk covi Ringgold ID
+P3501 talk Catholic rite
+P3502 talk covi Ameblo username
+P3503 talk covi LombardiaBeniCulturali building ID
+P3504 talk covi Florentine Inventario Palatina art ID
+P3505 talk covi BoardGameGeek designer ID
+P3506 talk covi Luding designer ID
+P3507 talk covi Bivouac.com mountain ID
+P3509 talk covi Dagens Nyheter topic ID
+P3511 talk VGMDb organization ID
+P3512 talk covi means of locomotion
+P3513 talk covi peakware mountain ID
+P3514 talk covi U.S. National Geodetic Survey ID
+P3515 talk covi NPCA ID
+P3516 talk covi National Park Foundation ID
+P3517 talk covi Geographical Names Board of New South Wales ID
+P3518 talk covi Smithsonian trinomial
+P3519 talk covi Pfam ID
+P3520 talk covi databaseOlympics.com athlete ID
+P3521 talk covi EuroTour golf player ID
+P3522 talk covi NHL.com player ID
+P3523 talk covi Rfam ID
+P3524 talk covi Simple Modular Architecture Research Tool ID
+P3525 talk covi acb.com ID
+P3526 talk covi wisdenindia.com ID
+P3527 talk covi eurobasket.com ID
+P3528 talk covi Luding game ID
+P3529 talk median income
+P3530 talk covi par
+P3531 talk covi AZBilliards ID
+P3532 talk covi databaseFootball.com ID
+P3533 talk covi draftexpress.com ID
+P3534 talk covi Australian Government Organisations Register ID
+P3535 talk covi JapanTour golf player ID
+P3536 talk covi euroleague.net ID
+P3537 talk covi FootballDatabase.eu ID
+P3538 talk covi Fussballdaten.de ID
+P3539 talk covi NFL.com ID
+P3541 talk covi MLB ID
+P3542 talk covi FIBA player ID
+P3544 talk covi Te Papa artist ID
+P3545 talk covi Theoi Project ID
+P3546 talk covi AustralianFootball.com ID
+P3547 talk covi AFL Tables ID
+P3548 talk Australian Business Number
+P3549 talk covi Australian Company Number
+P3550 talk covi Australian Register of Therapeutic Goods ID
+P3551 talk Australian Registered Body Number
+P3552 talk Australian Registered Scheme Number
+P3553 talk covi Zhihu topic ID
+P3554 talk covi World Series of Poker ID
+P3555 talk covi World Guide to Covered Bridges ID
+P3556 talk covi World Curling Tour ID
+P3557 talk covi World Curling Federation ID
+P3558 talk covi USCF ID
+P3559 talk maximum size or capacity
+P3560 talk covi College Football Data Warehouse ID
+P3561 talk covi pro-football-reference ID
+P3562 talk covi Admiralty number
+P3563 talk covi NGA Lighthouse ID
+P3564 talk covi Global Poker Index ID
+P3565 talk covi J.League player ID
+P3566 talk covi Just Sports Stats ID
+P3567 talk covi HHOF.com NHL player ID
+P3568 talk covi OWGR ID
+P3569 talk covi Cultureel Woordenboek identifier
+P3570 talk covi European Case Law id
+P3571 talk covi ESPN.com MLB player ID
+P3572 talk covi ESPNcricinfo playing ground ID
+P3573 talk covi European Handball Federation ID
+P3574 talk covi Fangraphs ID
+P3575 talk data size
+P3576 talk covi TLG author ID
+P3577 talk covi Croatian Football Federation player ID
+P3578 talk autologous cell line
+P3579 talk covi Sina Weibo ID
+P3580 talk covi SIPCA code
+P3581 talk covi Pro Football Hall of Fame ID
+P3582 talk covi SunshineTour ID
+P3583 talk covi Surfline ID
+P3584 talk covi ITRA runner ID
+P3585 talk covi UltraSignup runner ID
+P3586 talk covi CricketArchive playing ground ID
+P3587 talk Common Vulnerabilities and Exposures ID
+P3588 talk covi WNBA player ID
+P3589 talk covi GCD series ID
+P3590 talk covi Relations Ontology ID
+P3591 talk covi World Checklist of Selected Plant Families ID
+P3592 talk covi Saros cycle of eclipse
+P3593 talk covi AFI Catalog of Feature Films ID
+P3594 talk covi Araneae Spider ID
+P3595 talk covi BLF article ID
+P3596 talk covi Danish ancient monument ID
+P3597 talk covi F-Droid package
+P3598 talk covi Hockey-reference player ID
+P3599 talk covi archival creator authority record at the Archives nationales
+P3600 talk covi protected heritage site in Brussels ID
+P3601 talk covi MarineTraffic Lighthouse ID
+P3602 talk covi candidacy in election
+P3603 talk Minneapolis Institute of Art Constituent ID
+P3604 talk covi ITU triathlete ID
+P3605 talk covi 90minut player ID
+P3606 talk BOLD Systems taxon ID
+P3607 talk covi Booking.com hotel ID
+P3608 talk EU VAT number
+P3609 talk covi Recreation.gov area ID
+P3610 talk covi fare zone
+P3611 talk covi Borden Code
+P3612 talk covi Le Monde diplomatique subject ID
+P3613 talk covi Naturvårdsregistret ID
+P3614 talk covi DigDag ID
+P3615 talk covi Vision of Britain unit ID
+P3616 talk covi Vision of Britain place ID
+P3618 talk base salary
+P3619 talk covi ski-db.com skier ID
+P3620 talk covi BWFbadminton.com player ID
+P3621 talk covi Darts Database player ID
+P3622 talk covi rusbandy player ID
+P3623 talk covi BadmintonLink player ID
+P3624 talk CWE ID
+P3625 talk Kirshenbaum code
+P3626 talk covi Australian Antarctic Gazetteer ID
+P3627 talk Historical Gazetteer of England's Place Names ID
+P3628 talk British History Online VCH ID
+P3629 talk covi stated age at event
+P3630 talk covi Babelio author ID
+P3631 talk covi Babelio work ID
+P3632 talk covi British Museum thesaurus ID
+P3633 talk covi British Museum place ID
+P3634 talk covi The Met object ID
+P3635 talk covi Peakbagger area ID
+P3636 talk covi PDB ligand ID
+P3637 talk European Medicines Agency product number
+P3638 talk covi Oorlogsmonument ID
+P3639 talk covi KEPN ID
+P3640 talk National Drug Code
+P3641 talk Uniform Type Identifier
+P3642 talk covi ARCHON code
+P3643 talk covi significant environmental impact
+P3644 talk covi FFR player ID
+P3645 talk covi All Blacks player ID
+P3646 talk covi Basketball Hall of Fame ID
+P3647 talk covi NBA player ID
+P3648 talk covi NatureServe conservation status
+P3650 talk covi JMK film rating
+P3651 talk covi American Hockey League player ID
+P3652 talk covi Kontinental Hockey League player ID
+P3653 talk covi ARRS runner ID
+P3654 talk covi Chess.com player ID
+P3655 talk covi BDFutbol player ID
+P3656 talk covi Cross-tables.com Scrabble player ID
+P3657 talk covi Croatian Football Statistics ID
+P3658 talk covi DZFoot.com player ID
+P3659 talk covi Estonian Football Association player ID
+P3660 talk covi FootballFacts.ru player ID
+P3661 talk covi ForaDeJogo manager ID
+P3662 talk covi Football Federation of Ukraine player ID
+P3663 talk covi Fotbal DNES player ID
+P3664 talk covi Futsal Planet player ID
+P3665 talk covi L'Équipe football player ID
+P3666 talk covi EPCR player ID
+P3667 talk covi International Weightlifting Federation ID
+P3668 talk covi Sambafoot player ID
+P3669 talk covi Swimming Australia swimmer ID
+P3670 talk covi Tennis Archives player ID
+P3671 talk covi USA Gymnastics athlete ID
+P3672 talk covi International Orienteering Federation athlete ID
+P3673 talk covi film-documentaire.fr film ID
+P3674 talk covi Mutopia composer ID
+P3675 talk covi Hans Christian Andersen Centre work ID
+P3676 talk covi National Bridge Inventory Number
+P3677 talk covi Wereld van Oranje player ID
+P3678 talk covi SA Rugby player ID
+P3679 talk covi stock market index
+P3680 talk statement supported by
+P3681 talk covi ESPNFC.com player ID
+P3682 talk covi Australian Olympic Committee athlete ID
+P3683 talk covi LFP player ID
+P3684 talk covi DriverDB driver ID
+P3685 talk covi ESPN.com NBA player ID
+P3686 talk covi ESPN.com NFL player ID
+P3687 talk covi ESPN.com NHL player ID
+P3689 talk covi ICF canoer ID
+P3690 talk covi IFSC climber ID
+P3691 talk covi ISHOF swimmer ID
+P3692 talk covi NCAA sports team ID
+P3693 talk covi ShorttrackOnLine speed skater ID
+P3694 talk covi SpeedSkatingNews.info speed skater ID
+P3695 talk covi SpeedSkatingStats speed skater ID
+P3696 talk covi SRCBB player ID
+P3697 talk covi SRCFB player ID
+P3698 talk covi Tennis Australia player ID
+P3699 talk covi Transfermarkt referee ID
+P3700 talk covi NHF player ID
+P3701 talk covi incarnation of
+P3702 talk covi Catalogue of Illuminated Manuscripts ID
+P3703 talk covi JMDb person or company ID
+P3704 talk covi KMDb film ID
+P3705 talk covi RITVA Program ID
+P3706 talk covi RITVA Person ID
+P3707 talk covi Gridabase glacier ID
+P3708 talk covi PhDTree person ID
+P3709 talk covi category for value different from Wikidata
+P3710 talk covi Jewish Encyclopedia Daat ID
+P3711 talk covi Vanderkrogt.net Statues ID
+P3712 talk covi objective of project or mission
+P3713 talk covi category for value not in Wikidata
+P3714 talk covi Recreation.gov facility ID
+P3715 talk covi NISH Hall of Fame ID
+P3716 talk covi social classification
+P3717 talk MEROPS enzyme ID
+P3718 talk covi NCMEC person ID
+P3719 talk covi regulated by
+P3720 talk covi GPnotebook ID
+P3721 talk covi public key fingerprint
+P3722 talk covi Commons maps category
+P3723 talk covi USCG Lighthouse ID
+P3724 talk covi USHMM Holocaust Encyclopedia ID
+P3725 talk covi CEV player ID
+P3726 talk covi Eu-football.info player ID
+P3727 talk covi Serbia municipality ID
+P3728 talk covi New Zealand Heritage List number
+P3729 talk next lower rank
+P3730 talk next higher rank
+P3731 talk covi Serbia cadastral municipality ID
+P3732 talk covi PhilPapers record
+P3733 talk covi MOOMA artist ID
+P3734 talk covi category for value same as Wikidata
+P3735 talk covi Yad Vashem Encyclopedia of the Ghettos ID
+P3736 talk covi Eurovision Song Contest song ID
+P3737 talk maximum wavelength of sensitivity
+P3738 talk minimum wavelength of sensitivity
+P3739 talk inflorescence
+P3740 talk covi number of works
+P3741 talk seed dispersal
+P3742 talk covi FIH player ID
+P3743 talk covi ITU/ISO/IEC object identifier
+P3744 talk covi number of subscribers
+P3745 talk covi World Rugby Sevens Series ID
+P3746 talk covi Wildflowers of Israel ID
+P3747 talk covi SSRN author ID
+P3748 talk covi Israel Football Association player ID
+P3749 talk covi Google Maps CID
+P3750 talk covi KMDb documentary ID
+P3751 talk covi Shoftim BeIsrael judge ID
+P3752 talk worst-case performance
+P3753 talk best-case performance
+P3754 talk average performance
+P3755 talk worst-case space complexity
+P3756 talk best-case space complexity
+P3757 talk average space complexity
+P3758 talk covi DOCOMOMO Ibérico ID
+P3759 talk covi SAHRA heritage site ID
+P3760 talk covi Iditarod musher ID
+P3761 talk covi IPv4 routing prefix
+P3762 talk covi openMLOL author ID
+P3763 talk covi MIMO instrument ID
+P3764 talk covi pole position
+P3765 talk covi All-Athletics.com ID
+P3766 talk covi European Athletics ID
+P3767 talk covi FFA ID
+P3768 talk covi Medieval Libraries of Great Britain ID
+P3769 talk covi It's Rugby ID
+P3770 talk covi PeakFinder ID
+P3771 talk activator of
+P3772 talk agonist of
+P3773 talk antagonist of
+P3774 talk blocker of
+P3775 talk disrupting agent for
+P3776 talk inhibitor of
+P3777 talk antisense inhibitor of
+P3778 talk positive allosteric modulator of
+P3779 talk negative allosteric modulator of
+P3780 talk active ingredient in
+P3781 talk has active ingredient
+P3782 talk covi Artnet artist ID
+P3783 talk covi Christie's work ID
+P3784 talk covi CiteSeerX article ID
+P3785 talk covi danskefilm film ID
+P3786 talk covi danskefilm person ID
+P3787 talk covi danskefilm silent film ID
+P3788 talk covi BNA authority ID
+P3789 talk covi Telegram username
+P3790 talk covi AnimeCons.com ID
+P3791 talk covi Art Renewal Center ID
+P3792 talk rate of fire
+P3793 talk covi IPv6 routing prefix
+P3794 talk covi Dictionary of Sydney ID
+P3795 talk Flora of Israel plant ID
+P3796 talk covi Bureau of Meteorology station ID
+P3797 talk covi autonomous system number
+P3798 talk covi Star Wars Databank ID
+P3799 talk covi Safsal player ID
+P3800 talk covi Safsal coach ID
+P3801 talk INEGI municipality ID
+P3802 talk covi Launchpad.net project ID
+P3803 talk covi original film format
+P3804 talk covi TV Guide show ID
+P3805 talk covi Tax-exempt heritage asset ID
+P3806 talk covi Mapa place ID
+P3807 talk covi S2A3 Biographical Database ID
+P3808 talk covi The Numbers movie ID
+P3809 talk YerelNET district ID
+P3810 talk covi Parks.it ID
+P3811 talk covi Evidence & Conclusion Ontology ID
+P3812 talk covi Elle.fr person ID
+P3813 talk covi Bivouac.com pass ID
+P3814 talk covi BoF person ID
+P3815 talk covi volcano observatory
+P3816 talk covi film script
+P3817 talk FI WarSampo person ID
+P3818 talk covi KMRB film rating
+P3819 talk FI WarSampo army unit ID
+P3820 talk Flanders Arts Institute venue ID
+P3821 talk covi Bangla Movie Database ID
+P3822 talk rules for classification
+P3823 talk covi Ethnologue language status
+P3824 talk covi VTJ-PRT building ID
+P3825 talk covi United States Statutes at Large citation
+P3826 talk covi Welsh Rugby Union player ID
+P3827 talk covi JSTOR topic ID
+P3828 talk wears
+P3829 talk covi Publons author ID
+P3830 talk covi CueTracker player ID
+P3831 talk covi object has role
+P3832 talk covi Europeana Fashion Vocabulary ID
+P3833 talk diaspora
+P3834 talk covi RTC film rating
+P3835 talk covi Mendeley person ID
+P3836 talk covi Pinterest username
+P3837 talk covi United States Public Law
+P3838 talk covi Tab4u song ID
+P3839 talk covi Tab4u artist ID
+P3840 talk slope rating
+P3841 talk Human Phenotype Ontology ID
+P3842 talk covi located in present-day administrative territorial entity
+P3843 talk covi DLV athlete ID
+P3844 talk covi Deutsche Synchronkartei film ID
+P3845 talk TV Guide person ID
+P3846 talk covi DBC author ID
+P3847 talk covi Open Library subject ID
+P3848 talk covi Irish Rugby Football Union ID
+P3849 talk covi LombardiaBeniCulturali institution ID
+P3850 talk covi LombardiaBeniCulturali toponym ID
+P3851 talk covi cinenacional.com movie ID
+P3852 talk FlyBase Gene ID
+P3853 talk Rat Genome Database ID
+P3854 talk covi Soundtrack Collector ID
+P3855 talk covi LombardiaBeniCulturali artwork ID
+P3856 talk covi Quebec municipalities geographical code
+P3857 talk covi cinenacional.com person ID
+P3858 talk covi route diagram
+P3859 talk Environment Ontology ID
+P3860 talk Wormbase Gene ID
+P3861 talk covi iTunes app ID
+P3862 talk covi MyDramaList name ID
+P3863 talk covi Italian Navy Lighthouses and Beacons ID
+P3864 talk suicide rate
+P3865 talk type of reference
+P3866 talk covi LAWA waterbody ID
+P3867 talk covi Israel Chess Federation player ID
+P3868 talk covi MyDramaList title ID
+P3869 talk covi IAFD female performer ID
+P3870 talk ZFIN Gene ID
+P3871 talk covi tributary orientation
+P3872 talk patronage
+P3874 talk covi Justia Patents inventor ID
+P3875 talk covi Justia Patents company ID
+P3876 talk covi category for alumni of educational institution
+P3877 talk covi HappyCow restaurant ID
+P3878 talk covi Soundex
+P3879 talk covi Cologne phonetics
+P3880 talk covi Caverphone
+P3881 talk covi National Track & Field Hall of Fame athlete ID
+P3882 talk covi Tilastopaja female athlete ID
+P3883 talk covi Red Bull athlete ID
+P3884 talk covi Tilastopaja male athlete ID
+P3885 talk covi History of Modern Biomedicine ID
+P3886 talk number of perpetrators
+P3887 talk covi KVAB member ID
+P3888 talk covi Boijmans artist ID
+P3889 talk Swiss Federal Archives ID
+P3890 talk covi MetaboLights Compound ID
+P3891 talk observing time available
+P3892 talk covi PictoRight ID-Droit de suite
+P3893 talk covi public domain date
+P3894 talk covi OSTI article ID
+P3895 talk covi INAO product ID
+P3896 talk geoshape
+P3897 talk covi Ladies European Tour ID
+P3898 talk covi Hotels.com hotel ID
+P3899 talk covi Medium username
+P3900 talk covi CONICET person ID
+P3901 talk covi ADAGP artist ID
+P3902 talk covi had as last meal
+P3903 talk column
+P3904 talk covi VIVC grape variety ID
+P3905 talk covi GINCO ID
+P3906 talk covi Ishim ID
+P3907 talk covi LoJ peak ID
+P3908 talk covi Reprezentacija ID
+P3909 talk covi last words
+P3910 talk covi Bollywood Hungama person ID
+P3911 talk covi STW Thesaurus for Economics ID
+P3912 talk covi newspaper format
+P3913 talk covi MobyGames developer ID
+P3914 talk covi GuideStar Israel organization ID
+P3915 talk covi Athletics Australia athlete ID
+P3916 talk covi UNESCO Thesaurus ID
+P3917 talk covi IPA number order
+P3918 talk Répertoire national des associations identifier
+P3919 talk covi contributed to published work
+P3920 talk covi Canadian Coastguard Lighthouse ID
+P3921 talk covi Wikidata SPARQL query equivalent
+P3922 talk covi light sector
+P3923 talk covi Diamond League athlete ID
+P3924 talk covi Track and Field Statistics female athlete ID
+P3925 talk covi Track and Field Statistics male athlete ID
+P3926 talk covi USATF athlete ID
+P3927 talk covi eWRC-results.com racer ID
+P3928 talk covi MotoGP racer ID
+P3929 talk covi V&A art work ID
+P3930 talk covi Rallye-info.com driver or co-driver ID
+P3931 talk copyright owner
+P3932 talk covi Digital Valencian Library author ID
+P3933 talk covi Cinema ID
+P3934 talk covi face value
+P3935 talk covi Chamber of Deputies of Italy storia ID
+P3936 talk covi NFF person profile ID
+P3937 talk Reactome ID
+P3938 talk named by
+P3939 talk covi ESTC citation number
+P3940 talk covi OlimpBase Chess Olympiad player ID
+P3941 talk Israel Antiquities Authority ID
+P3942 talk covi Bmx-results.com rider ID
+P3943 talk covi Tumblr ID
+P3944 talk covi Old Bailey Proceedings ID
+P3945 talk covi RANM member ID
+P3946 talk covi Directorio Grierson ID
+P3948 talk covi MLL player ID
+P3949 talk covi Juwra.com ID
+P3950 talk narrower external class
+P3951 talk covi BioRxiv ID
+P3952 talk covi Stereo Ve Mono artist ID
+P3953 talk covi ALPG golfer ID
+P3954 talk covi Italian Senate ID
+P3955 talk covi NLL player ID
+P3956 talk covi National Academy of Medicine (France) MemberID
+P3957 talk covi RealGM basketball player ID
+P3958 talk covi ENARD athlete ID
+P3959 talk covi NNL work ID
+P3960 talk covi Base biographique AUTOR ID
+P3961 talk covi Unifrance film ID
+P3962 talk covi Global Trade Item Number
+P3963 talk covi Clochers de France ID
+P3964 talk covi BDCYL authority ID
+P3965 talk covi Bridgeman artist ID
+P3966 talk covi programming paradigm
+P3967 talk final event
+P3968 talk CETS number
+P3969 talk signed form
+P3970 talk covi channel number
+P3971 talk PASE Domesday person ID
+P3972 talk PASE Domesday place
+P3973 talk covi PIM authority ID
+P3974 talk covi nature preserve in North Rhine-Westphalia ID
+P3975 talk covi secretary general
+P3976 talk covi BVMC work ID
+P3977 talk covi Songkick venue ID
+P3978 talk covi IECIC 2015 ID
+P3979 talk covi Unifrance company ID
+P3980 talk covi Unifrance person ID
+P3981 talk covi Misjonsarkiv person ID
+P3982 talk covi TA98 Latin term
+P3983 talk covi sports league level
+P3984 talk covi subreddit
+P3985 talk supports programming language
+P3986 talk Sequence Ontology ID
+P3987 talk covi SHARE Catalogue author ID
+P3988 talk covi National Library Board Singapore ID
+P3989 talk covi members have occupation
+P3990 talk covi BG EKATTE place ID
+P3991 talk covi Austrian Textbook ID
+P3992 talk covi SSB urban settlement number
+P3993 talk covi Vitaskrá ID
+P3994 talk covi racon signal
+P3995 talk covi Filmweb.pl ID
+P3996 talk covi Bait La Zemer Ha-Ivri song ID
+P3997 talk covi Bait La Zemer Ha-Ivri artist ID
+P3998 talk covi Censo-Guía archive ID
+P3999 talk covi date of official closure
+P4000 talk covi has fruit type
+P4001 talk covi Latvian Protected Nature Territory URL
+P4002 talk covi WFD Ecological status
+P4003 talk covi official Facebook page
+P4004 talk shield image
+P4005 talk covi Bavarikon ID
+P4006 talk covi overrules
+P4007 talk covi DBS ID
+P4008 talk covi Early Aviators people ID
+P4009 talk RKY national built heritage environment ID
+P4010 talk covi GDP (PPP)
+P4011 talk covi Semantic Scholar paper ID
+P4012 talk covi Semantic Scholar author ID
+P4013 talk covi Giphy username
+P4014 talk covi Australian Statistical Geography 2011 ID
+P4015 talk covi Vimeo username
+P4016 talk covi SlideShare username
+P4017 talk covi Ustream username
+P4018 talk The Arabidopsis Information Resource Accession
+P4019 talk covi USL player ID
+P4020 talk covi dimension
+P4021 talk covi danskefilm animated film ID
+P4022 talk covi danskefilm TV series ID
+P4023 talk covi DFB datacenter player ID
+P4024 talk covi ADW taxon ID
+P4025 talk covi Pinakothek artist ID
+P4026 talk covi Cullum number
+P4027 talk DNCI work ID
+P4028 talk covi Google Scholar paper ID
+P4029 talk covi Latvian Protected Nature Territory ID
+P4030 talk PLU Code
+P4031 talk Hungarian NGO ID
+P4032 talk reviewed by
+P4033 talk covi Mastodon address
+P4034 talk covi Shironet artist ID
+P4035 talk covi Shironet song ID
+P4036 talk field of view
+P4037 talk covi South Australian Heritage Register Database ID
+P4038 talk covi Danish List of Lights and Fog signals ID
+P4039 talk covi Rock.com.ar biography ID
+P4040 talk covi Rock.com.ar artist ID
+P4041 talk covi Rock.com.ar album ID
+P4042 talk covi ESBL athlete ID
+P4043 talk emulates
+P4044 talk therapeutic area
+P4045 talk covi Sandbox-Tabular data
+P4046 talk covi SIMC place ID
+P4047 talk covi Sandbox-Geographic shape
+P4048 talk covi J.League manager ID
+P4050 talk covi EspritBleu athlete ID
+P4051 talk covi Ukrainian regulations base ID
+P4052 talk covi Academia.edu institutional ID
+P4053 talk covi Deutsche Olympiamannschaft athlete ID
+P4054 talk covi Canadian Olympic Committee athlete ID
+P4055 talk covi Norwegian List of Lights ID
+P4056 talk covi New Zealand Olympic Committee athlete ID
+P4057 talk covi Irish Sites and Monuments Record ID
+P4058 talk FINESS medical facility ID
+P4059 talk covi Irish National Monument ID
+P4060 talk covi Brazilian Olympic Committee athlete ID
+P4061 talk covi LTOK athlete ID
+P4062 talk covi ČOV athlete ID
+P4063 talk covi United States Olympic Committee athlete ID
+P4065 talk covi COA athlete ID
+P4066 talk covi MOB athlete ID
+P4067 talk covi COSR athlete ID
+P4068 talk covi CIS Chinese Athletes Database ID
+P4069 talk covi CONI athlete ID
+P4070 talk covi identifier shared with
+P4071 talk covi Zemereshet artist ID
+P4072 talk covi Zemereshet song ID
+P4073 talk covi Wikia wiki ID
+P4074 talk covi FFN swimmer ID
+P4075 talk covi Czech Monument Catalogue Number
+P4076 talk covi WorldSBK.com racer identifier
+P4077 talk covi Pizmonet ID
+P4078 talk SKIP code
+P4079 talk covi Theatres Trust Database ID
+P4080 talk number of houses
+P4081 talk covi BHL creator ID
+P4082 talk covi image captured with
+P4083 talk covi NPS unit ID
+P4084 talk MyAnimeList people ID
+P4085 talk MyAnimeList character ID
+P4086 talk covi MyAnimeList anime ID
+P4087 talk MyAnimeList manga ID
+P4088 talk covi Irish National Inventory of Architectural Heritage ID
+P4089 talk covi Global Terrorism Database ID
+P4090 talk covi Biodiversity Repository ID
+P4091 talk covi Irish Grid Reference
+P4092 talk covi checksum
+P4093 talk covi Australian Statistical Geography 2016 ID
+P4094 talk covi Australian Standard Geographic Classification 2006 ID
+P4095 talk Principal Galaxies Catalogue ID
+P4096 talk covi RePEc institute ID
+P4097 talk covi MuseScore ID
+P4098 talk covi BVMC place id
+P4099 talk metrically compatible typeface
+P4100 talk covi parliamentary group
+P4101 talk dissertation submitted to
+P4102 talk covi Atlas of Hillforts ID
+P4103 talk assets under management
+P4104 talk Carnegie Hall agent ID
+P4105 talk EGF rating
+P4106 talk Finnish archaeological heritage ID
+P4107 talk Framalibre ID
+P4108 talk Gedbas genealogy person ID
+P4109 talk covi URN-NBN
+P4110 talk covi Crunchyroll ID
+P4111 talk covi danskefilm TV Christmas calendar
+P4112 talk covi danskfilmogtv person
+P4113 talk covi FRED time-series ID
+P4114 talk covi ADK member ID
+P4115 talk covi INSPIRE ID
+P4116 talk covi JewAge person ID
+P4117 talk covi National Record of the Historic Environment ID
+P4118 talk covi NLS-FI Geographic Name ID
+P4119 talk covi NLS Geographic Names Place ID
+P4120 talk covi Ontario Heritage Act Register ID
+P4121 talk covi openAIP ID
+P4122 talk covi PalDat plant ID
+P4123 talk covi French National Assembly ID
+P4124 talk covi Who's Who in France biography ID
+P4125 talk Titan ID
+P4126 talk ESEC person ID
+P4127 talk EmbassyPages.com ID
+P4128 talk covi NPSN Indonesian school ID
+P4129 talk covi Cinema Treasures ID
+P4130 talk USHMM person ID
+P4131 talk covi annual energy output
+P4132 talk covi linguistic typology
+P4133 talk covi Patrimonioculturale-ER ID
+P4135 talk maximum age
+P4136 talk covi WIGOS station ID
+P4137 talk covi muzzle velocity
+P4138 talk Treasury of Lives ID
+P4139 talk covi National Assembly of Nigeria ID
+P4140 talk covi energy storage capacity
+P4141 talk covi Gatehouse Gazetteer place ID
+P4142 talk RIWAQ Registry of Historic Buildings in Palestine ID
+P4143 talk covi Finnish List of Lights ID
+P4144 talk Atheneum artwork ID
+P4145 talk Atheneum person ID
+P4146 talk Atheneum museum ID
+P4147 talk covi conjugate acid
+P4149 talk covi conjugate base
+P4150 talk covi weather history
+P4151 talk game mechanics
+P4152 talk covi file format identification pattern
+P4153 talk covi offset
+P4154 talk covi National Forest Foundation ID
+P4155 talk covi separator
+P4156 talk covi Czech Registration ID
+P4157 talk MEG ID
+P4158 talk autores.ar id
+P4159 talk covi WeRelate person ID
+P4160 talk covi Michelin Restaurants ID
+P4161 talk Michelin Voyages ID
+P4162 talk AUR package
+P4163 talk magnification
+P4164 talk covi National Baseball Hall of Fame and Museum ID
+P4165 talk CODECS ID
+P4166 talk Georgian National Register of Monuments ID
+P4167 talk Dagens Næringsliv topic ID
+P4168 talk IEDB Epitope ID
+P4169 talk YCBA agent ID
+P4170 talk covi eParks unit ID
+P4171 talk covi World Heritage Tentative List ID
+P4172 talk covi America's Byways road ID
+P4173 talk covi Instagram location ID
+P4174 talk covi Wikimedia username
+P4175 talk covi Patreon person ID
+P4176 talk effective firing range
+P4177 talk covi Finnish National Gallery artist ID
+P4178 talk Beazley Archive Pottery Database ID
+P4179 talk tabular population
+P4180 talk GujLit Person ID
+P4181 talk GujLit Book ID
+P4182 talk covi National Natural Landmarks site ID
+P4183 talk covi angle from vertical
+P4184 talk slope
+P4185 talk iconographic symbol
+P4186 talk covi Australian Women's Register ID
+P4187 talk covi Wylie transliteration
+P4188 talk covi Tibetan pinyin
+P4189 talk covi THL Simplified Phonetic Transcription
+P4190 talk covi Rivers.gov protected area ID
+P4191 talk covi Alljudo athlete ID
+P4192 talk covi LNH player ID
+P4193 talk covi Familypedia person ID
+P4194 talk covi CNPS ID
+P4195 talk covi category for employees of the organization
+P4196 talk covi cytogenetic location
+P4197 talk covi Graphic character set global ID
+P4198 talk covi Google Play Music artist ID
+P4199 talk covi Google Play Music album ID
+P4200 talk covi Christie's creator id
+P4201 talk covi PagesJaunes ID
+P4202 talk covi WFD Chemical status
+P4203 talk covi ROARMAP ID
+P4204 talk covi The Times of India topic ID
+P4205 talk covi Foursquare username
+P4206 talk covi FOIH person ID
+P4207 talk covi Italian National Earthquake Center ID
+P4208 talk covi Billboard artist ID
+P4209 talk covi danskfilmogtv title ID
+P4210 talk covi Bashkir encyclopedia (Bashkir version) ID
+P4211 talk covi Bashkir encyclopedia (Russian version) ID
+P4212 talk covi PACTOLS thesaurus ID
+P4213 talk covi Unicode hex codepoint
+P4214 talk covi highest observed lifespan
+P4215 talk covi nLab ID
+P4216 talk covi LNB Pro A player ID
+P4217 talk covi UK Electoral Commission ID
+P4218 talk covi shelf life
+P4219 talk covi Tyrolean Art Cadastre inventory ID
+P4220 talk covi order of battle
+P4221 talk covi National Criminal Justice ID
+P4222 talk covi United Nations Treaty Series Volume Number
+P4223 talk Enciclopedia Italiana ID
+P4224 talk covi category contains
+P4225 talk IPA Braille
+P4226 talk covi Cyworld ID
+P4227 talk covi Indonesian Small Islands Directory ID
+P4228 talk covi Encyclopedia of Australian Science ID
+P4229 talk ICD-10-CM
+P4230 talk covi Sefaria ID
+P4231 talk covi United Nations Treaty Series Registration Number
+P4232 talk covi Figshare author ID
+P4233 talk covi PatientLikeMe condition ID
+P4235 talk covi PatientLikeMe treatment ID
+P4236 talk covi PatientLikeMe symptom ID
+P4237 talk covi Heritage Building in Finland ID
+P4238 talk covi webcam page URL
+P4239 talk vocalized name
+P4240 talk regular expression syntax
+P4241 talk covi refine date
+P4242 talk maximal rate of climb
+P4243 talk candidate number
+P4244 talk covi Bavarian monument authority ID
+P4245 talk covi cultural heritage monument in Serbia ID
+P4246 talk covi LfD-HB object ID
+P4247 talk covi Tagesschau election ID
+P4248 talk covi The Black Book ID
+P4249 talk Vincoli in Rete ID
+P4250 talk covi defined daily dose
+P4251 talk covi TSE number
+P4252 talk All-Russian Mathematical Portal ID
+P4253 talk covi number of constituencies
+P4254 talk Banglapedia (Bengali version) ID
+P4255 talk Banglapedia (English version) ID
+P4256 talk Spanish "Boletín Oficial del Estado" ID
+P4257 talk National Museums of Japan e-museum ID
+P4258 talk Gallica ID
+P4259 talk covi Lega Pallavolo Serie A Femminile player ID
+P4260 talk covi NPB player ID
+P4261 talk covi FFVoile sailor ID
+P4262 talk covi Footoféminin.fr player ID
+P4263 talk covi THW Kiel player ID
+P4264 talk covi LinkedIn company ID
+P4265 talk covi Reddit user name
+P4266 talk covi Bavarian geotope ID
+P4267 talk covi Landtag of Liechtenstein ID
+P4268 talk half maximal inhibitory concentration (IC50)
+P4269 talk half maximal effective concentration
+P4270 talk Daum TV series ID
+P4271 talk rating
+P4272 talk DPLA subject ID
+P4273 talk covi New York City Landmarks Preservation Commission ID
+P4274 talk covi Tunisian geographic code
+P4275 talk covi Japanese Database of National important cultural properties
+P4276 talk covi Cinémathèque québécoise work identifier
+P4277 talk covi Daum movie ID
+P4278 talk covi FCI rider ID
+P4279 talk covi hydrological order number
+P4280 talk covi International Standard Text Code
+P4281 talk covi LNV player ID
+P4282 talk covi LUMIERE film ID
+P4283 talk covi LUMIERE director ID
+P4284 talk covi Nominis given name ID
+P4285 talk covi Theses.fr person ID
+P4286 talk covi Nominis saint ID
+P4287 talk covi Riigikogu ID
+P4288 talk covi UK National Fruit Collection ID
+P4289 talk covi LFH player ID
+P4290 talk covi official app
+P4291 talk covi panorama view
+P4292 talk covi possessed by spirit
+P4293 talk covi PM20 folder ID
+P4294 talk covi PROSPERO ID
+P4295 talk covi readership
+P4296 talk covi stellar rotational velocity
+P4297 talk covi MIL-STD-2525 Symbol Identification Code
+P4298 talk covi VBL player ID
+P4299 talk covi Wheelchair ITF player ID
+P4300 talk covi YouTube Playlist ID
+P4301 talk covi PfaF id
+P4302 talk covi KNAU ID
+P4303 talk covi Lega Pallavolo Serie A player ID
+P4304 talk covi FOIH materials ID
+P4305 talk covi FOIH styles and cultures ID
+P4306 talk covi FOIH periods ID
+P4307 talk covi FOIH heritage types ID
+P4308 talk covi FOIH value types ID
+P4309 talk covi FOIH event types ID
+P4310 talk covi FOIH decree types ID
+P4311 talk covi FOIH taxon ID
+P4312 talk covi camera setup
+P4313 talk covi musée de Bretagne identifiant collections ID
+P4314 talk covi SpeedskatingResults.com speed skater ID
+P4315 talk covi SwimSwam ID
+P4316 talk covi kinship equivalent in SPARQL at Wikidata
+P4317 talk covi GARD rare disease ID
+P4318 talk covi Scottish Sports HoF athlete ID
+P4319 talk covi Elite Prospects staff ID
+P4320 talk mountains classification
+P4321 talk best combative classification
+P4322 talk best sprinter classification
+P4323 talk young rider classification
+P4324 talk combination classification
+P4325 talk APA phoneme code
+P4326 talk BFI-Filmography person ID
+P4327 talk BHL bibliography ID
+P4328 talk covi Brueckenweb ID
+P4329 talk Wikimedia template
+P4330 talk contains
+P4331 talk covi Department of Education and Skills roll number
+P4332 talk covi Deutsche Synchronkartei actor-ID
+P4333 talk GenBank Assembly accession
+P4334 talk covi Heritage Conservation District of Ontario ID
+P4335 talk IDESCAT territorial code in Catalonia
+P4336 talk Lloyd's Register Ship ID
+P4337 talk digitised page from Lloyd's Register of Ships from 1930 to 1945
+P4338 talk LOINC ID
+P4339 talk Organization ID on Radio Radicale
+P4340 talk PubsHistory pub ID
+P4341 talk synodic period
+P4342 talk covi Store norske leksikon ID
+P4343 talk WBPLN author ID
+P4344 talk QEdu ID
+P4345 talk excavation director
+P4346 talk T4T35 megalith ID
+P4347 talk covi Florida Sports Hall of Fame athlete ID
+P4348 talk Lotsawa House Tibetan author ID
+P4349 talk Lotsawa House Indian author ID
+P4350 talk salinity
+P4351 talk Cravo Albin artist ID
+P4352 talk covi BillionGraves cemetery ID
+P4353 talk covi nominated by
+P4354 talk search formatter URL
+P4355 talk PROSITE documentation ID
+P4356 talk Megalithic Portal ID
+P4357 talk Musikverket person ID
+P4358 talk covi Dutch lost building register ID
+P4359 talk covi gravsted.dk ID
+P4360 talk Monumentos de São Paulo ID
+P4361 talk covi ExecutedToday ID
+P4362 talk covi ASHOF athlete ID
+P4363 talk covi DSMHOF athlete ID
+P4364 talk covi Georgia Sports Hall of Fame ID
+P4365 talk covi Hawai‘i Sports Hall of Fame ID
+P4366 talk covi Kansas Sports Hall of Fame ID
+P4367 talk covi Louisiana Sports Hall of Fame ID
+P4368 talk covi Mississippi Sports Hall of Fame ID
+P4369 talk covi Cairn author ID
+P4370 talk covi KBO hitter ID
+P4371 talk covi KBO pitcher ID
+P4372 talk Infopatrimônio ID
+P4373 talk National Trust Collections ID
+P4374 talk covi New Mexico Sports Hall of Fame ID
+P4375 talk covi North Carolina Sports Hall of Fame ID
+P4376 talk covi Oklahoma Sports Hall of Fame ID
+P4377 talk covi Women's Sports Foundation ID
+P4379 talk covi youth wing
+P4380 talk covi Sandrart.net artwork ID
+P4381 talk covi Soccerdonna player ID
+P4382 talk covi LFB player ID
+P4383 talk covi Tennessee Sports Hall of Fame athlete ID
+P4384 talk DAMIT asteroid ID
+P4385 talk covi Missouri Sports Hall of Fame ID
+P4386 talk covi Virginia Sports Hall of Fame ID
+P4387 talk covi update method
+P4388 talk Mappy place ID
+P4389 talk covi Science Museum people ID
+P4390 talk covi mapping relation type
+P4391 talk covi TheSports.org athlete ID
+P4392 talk covi BC Sports Hall of Fame athlete ID
+P4393 talk Anvisa drug ID
+P4394 talk NeuroNames ID (plain mode)
+P4395 talk BrainInfo ID (hierarchical)
+P4396 talk covi Alberta Sports Hall of Fame and Museum athlete ID
+P4397 talk covi International Paralympic Committee athlete ID
+P4398 talk covi Canada's Sports Hall of Fame athlete ID
+P4399 talk covi Enciclopédia Itaú Cultural ID
+P4400 talk Memória Globo
+P4401 talk covi Museus.br ID
+P4402 talk covi Women's Collegiate Tennis Hall of Fame ID
+P4403 talk caliber
+P4404 talk MusicBrainz recording ID
+P4405 talk covi NLBPA ID
+P4406 talk covi Nova Scotia Sport Hall of Fame ID
+P4407 talk covi Opera Vivra singer ID
+P4408 talk covi sports.ru player ID
+P4409 talk covi Baseball Almanac ID
+P4410 talk covi Women's Basketball Hall of Fame ID
+P4411 talk Quora username
+P4412 talk covi Ontario Sports Hall of Fame athlete ID
