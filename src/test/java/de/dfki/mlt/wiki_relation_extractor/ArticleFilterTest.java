@@ -6,9 +6,6 @@ package de.dfki.mlt.wiki_relation_extractor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import org.junit.Test;
 
@@ -44,22 +41,22 @@ public class ArticleFilterTest {
 						"[[abc[[File:x[[x]]x]]123]]", "[[File:", '[', ']'))
 				.isEqualTo("[[abc123]]");
 
-		String testInput = new String(Files.readAllBytes(Paths
-				.get("wiki-test.txt")), StandardCharsets.UTF_8);
-
-		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-				testInput, "{{", '{', '}');
-		// System.out.println(testInput);
-		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-				testInput, "(", '(', ')');
-		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-				testInput, "[[File:", '[', ']');
-		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-				testInput, "[[Image:", '[', ']');
-		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-				testInput, "[[Category:", '[', ']');
-
-		System.out.println(testInput);
+//		String testInput = new String(Files.readAllBytes(Paths
+//				.get("wiki-test.txt")), StandardCharsets.UTF_8);
+//
+//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
+//				testInput, "{{", '{', '}');
+//		// System.out.println(testInput);
+//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
+//				testInput, "(", '(', ')');
+//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
+//				testInput, "[[File:", '[', ']');
+//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
+//				testInput, "[[Image:", '[', ']');
+//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
+//				testInput, "[[Category:", '[', ']');
+//
+//		System.out.println(testInput);
 
 	}
 

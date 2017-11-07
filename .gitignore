@@ -7,3 +7,5 @@
 /dumpfiles/
 .log
 .txt
+/related-properties-result.txt
+/wd-kb-extractor.log
