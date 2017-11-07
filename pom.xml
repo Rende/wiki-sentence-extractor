@@ -76,7 +76,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifestEntries>
-							<Main-Class>de.dfki.mlt.wiki_relation_extractor.WikiRelationExtractionApp</Main-Class>
+							<Main-Class>de.dfki.mlt.wre.WikiRelationExtractionApp</Main-Class>
 						</manifestEntries>
 					</archive>
 				</configuration>

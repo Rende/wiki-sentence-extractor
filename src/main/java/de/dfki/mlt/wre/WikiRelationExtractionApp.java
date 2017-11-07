@@ -38,7 +38,7 @@ public class WikiRelationExtractionApp {
 
 	public static void main(String[] args) throws IOException, SAXException {
 		long start = System.currentTimeMillis();
-		LOG.debug("Wikidata knowledgebase extraction started.");
+		LOG.debug("Wikipedia relation extraction started.");
 		// readAndCompareProperties();
 		// esService.checkProperties();
 		// esService.findNonItemizedProperties();
