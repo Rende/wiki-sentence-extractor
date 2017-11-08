@@ -36,7 +36,7 @@ public class WikiRelationExtractionApp {
 	public static final Logger LOG = LoggerFactory
 			.getLogger(WikiRelationExtractionApp.class);
 
-	public static void main(String[] args) throws IOException, SAXException {
+	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
 		LOG.info("Wikipedia relation extraction started.");
 		// readAndCompareProperties();
@@ -45,15 +45,20 @@ public class WikiRelationExtractionApp {
 		boolean isIndexCreated = false;
 		try {
 			isIndexCreated = esService.checkAndCreateIndex("wikipedia-index");
-		} catch (InterruptedException e) {
+		} catch (InterruptedException | IOException e) {
 			e.printStackTrace();
 		}
 		if (isIndexCreated) {
 			String dumpfile = Config.getInstance().getString(
 					Config.DIRECTORY_PATH);
 			IArticleFilter handler = new ArticleFilter();
-			WikiXMLParser wxp = new WikiXMLParser(dumpfile, handler);
-			wxp.parse();
+			WikiXMLParser wxp;
+			try {
+				wxp = new WikiXMLParser(dumpfile, handler);
+				wxp.parse();
+			} catch (SAXException | IOException e) {
+				e.printStackTrace();
+			}
 
 		}
 		long elapsedTimeMillis = System.currentTimeMillis() - start;
