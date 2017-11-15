@@ -7,6 +7,7 @@ import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +30,7 @@ public class ArticleFilter implements IArticleFilter {
 	private static final String PAGE_REDIRECT = "#REDIRECT ";
 
 	private List<String> extensionList = new ArrayList<String>();
-	private RelationExtractor relationExtractor = new RelationExtractor();
+	private String sentence = new String();
 
 	public ArticleFilter() {
 		String[] extensions = Config.getInstance().getStringArray(
@@ -45,7 +46,7 @@ public class ArticleFilter implements IArticleFilter {
 					.fromStringToWikilabel(page.getTitle());
 			String subjectId = WikiRelationExtractionApp.esService
 					.getItemId(wikipediaTitle);
-			if (!subjectId.equals("") && !wikipediaTitle.startsWith("List_of")) {
+			if (isValidPage(subjectId, wikipediaTitle)) {
 				String text = page.getText();
 				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
 				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
@@ -56,12 +57,26 @@ public class ArticleFilter implements IArticleFilter {
 				String firstSentence = getFirstSentence(text.trim());
 				firstSentence = removeGapsBetweenBrackets(firstSentence, '[',
 						']');
-				// System.out.println(count + " " + firstSentence);
-				relationExtractor.relationProcess(firstSentence, subjectId,
-						wikipediaTitle);
-
+				try {
+					WikiRelationExtractionApp.esService.insertSentence(
+							firstSentence, subjectId, wikipediaTitle);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+	}
+
+	public boolean isValidPage(String subjectId, String wikipediaTitle) {
+		return !subjectId.equals("") && !wikipediaTitle.startsWith("List_of")
+				&& !wikipediaTitle.contains("Template:")
+				&& !wikipediaTitle.contains("Wikipedia:")
+				&& !wikipediaTitle.contains("Help:")
+				&& !wikipediaTitle.contains("Portal:");
+	}
+
+	public String getFirstSentence() {
+		return this.sentence;
 	}
 
 	private String removeGapsBetweenBrackets(String text, char open, char close) {

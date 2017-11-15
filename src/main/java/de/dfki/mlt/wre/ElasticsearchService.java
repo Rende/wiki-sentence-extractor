@@ -7,19 +7,16 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
@@ -27,7 +24,6 @@ import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.IndicesAdminClient;
 import org.elasticsearch.client.Requests;
@@ -124,7 +120,7 @@ public class ElasticsearchService {
 		String itemId = "";
 		if (isResponseValid(response)) {
 			for (SearchHit hit : response.getHits()) {
-				itemId = hit.field("id").getValue().toString();
+				itemId = hit.getId();
 				return itemId;
 			}
 		}
@@ -151,18 +147,17 @@ public class ElasticsearchService {
 				.must(QueryBuilders
 						.termQuery("wikipedia_title", wikipediaTitle));
 
-		// System.out.println(query);
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(
-							Config.getInstance().getString(Config.INDEX_NAME))
+							Config.getInstance().getString(
+									Config.WIKIDATA_INDEX))
 					.setTypes(
 							Config.getInstance().getString(
-									Config.ENTITY_TYPE_NAME))
+									Config.WIKIDATA_ENTITY))
 					.addFields("id", "type", "org_label", "label",
 							"wikipedia_title").setQuery(query).setSize(1);
 			SearchResponse response = requestBuilder.execute().actionGet();
-			// System.out.println(response);
 			return response;
 
 		} catch (Throwable e) {
@@ -176,18 +171,17 @@ public class ElasticsearchService {
 				.must(QueryBuilders.termQuery("type", "property"))
 				.must(QueryBuilders.termQuery("id", propertyId));
 
-		// System.out.println(query);
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(
-							Config.getInstance().getString(Config.INDEX_NAME))
+							Config.getInstance().getString(
+									Config.WIKIDATA_INDEX))
 					.setTypes(
 							Config.getInstance().getString(
-									Config.ENTITY_TYPE_NAME))
+									Config.WIKIDATA_ENTITY))
 					.addFields("id", "type", "org_label", "label",
 							"wikipedia_title").setQuery(query).setSize(1000);
 			SearchResponse response = requestBuilder.execute().actionGet();
-			// System.out.println(response);
 			return response;
 
 		} catch (Throwable e) {
@@ -249,10 +243,11 @@ public class ElasticsearchService {
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(
-							Config.getInstance().getString(Config.INDEX_NAME))
+							Config.getInstance().getString(
+									Config.WIKIDATA_INDEX))
 					.setTypes(
 							Config.getInstance().getString(
-									Config.RELATION_TYPE_NAME))
+									Config.WIKIDATA_CLAIM))
 					.addFields("property_id").setQuery(query).setSize(1000);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			// System.out.println(response);
@@ -264,63 +259,6 @@ public class ElasticsearchService {
 		return null;
 	}
 
-	@SuppressWarnings("deprecation")
-	public void findNonItemizedProperties() {
-		Set<String> propertySet = new HashSet<String>();
-		QueryBuilder query = QueryBuilders.boolQuery().must(
-				QueryBuilders.termQuery("data_type", "wikibase-entityid"));
-		SearchResponse scrollResp = new SearchResponse();
-		int count = 0;
-		try {
-			SearchRequestBuilder requestBuilder = getClient()
-					.prepareSearch(
-							Config.getInstance().getString(Config.INDEX_NAME))
-					.setTypes(
-							Config.getInstance().getString(
-									Config.RELATION_TYPE_NAME))
-					.addFields("property_id").setSearchType(SearchType.SCAN)
-					.setScroll(new TimeValue(60000)).setQuery(query)
-					.setSize(1000000);
-			scrollResp = requestBuilder.execute().actionGet();
-			while (true) {
-				for (SearchHit hit : scrollResp.getHits().getHits()) {
-					propertySet.add(hit.field("property_id").getValue()
-							.toString());
-				}
-				count++;
-				WikiRelationExtractionApp.LOG.info(count + " part processed:");
-				scrollResp = getClient()
-						.prepareSearchScroll(scrollResp.getScrollId())
-						.setScroll(new TimeValue(60000)).execute().actionGet();
-				if (scrollResp.getHits().getHits().length == 0) {
-					break;
-				}
-			}
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		writePropertiesToFile(propertySet);
-
-	}
-
-	public void writePropertiesToFile(Set<String> propertySet) {
-		StringBuilder builder = new StringBuilder();
-		for (String propertyId : propertySet) {
-			builder.append(propertyId);
-			if (!checkPropertyAvailability(propertyId)) {
-				builder.append(" not available in ES");
-			}
-			builder.append("\n");
-		}
-		try {
-			Files.write(Paths.get("related-properties-result.txt"), builder
-					.toString().getBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	private BulkProcessor getBulkProcessor() {
 		if (bulkProcessor == null) {
 			bulkProcessor = BulkProcessor
@@ -328,9 +266,9 @@ public class ElasticsearchService {
 						@Override
 						public void beforeBulk(long executionId,
 								BulkRequest request) {
-							WikiRelationExtractionApp.LOG
-									.info("Number of request processed: "
-											+ request.numberOfActions());
+							// WikiRelationExtractionApp.LOG
+							// .info("Number of request processed: "
+							// + request.numberOfActions());
 						}
 
 						@Override
@@ -386,8 +324,27 @@ public class ElasticsearchService {
 		builder.endArray().endObject();
 		String json = builder.string();
 		// System.out.println(json);
-		IndexRequest indexRequest = Requests.indexRequest()
-				.index("wikipedia-index").type("wikipedia-entity").source(json);
+		IndexRequest indexRequest = Requests
+				.indexRequest()
+				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
+				.type(Config.getInstance().getString(Config.WIKIPEDIA_RELATION))
+				.source(json);
+		getBulkProcessor().add(indexRequest);
+
+	}
+
+	public void insertSentence(String sentence, String subjectId,
+			String wikipediaTitle) throws IOException {
+		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
+				.field("title", wikipediaTitle).field("sentence", sentence)
+				.endObject();
+		String json = builder.string();
+		// System.out.println(json);
+		IndexRequest indexRequest = Requests
+				.indexRequest()
+				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
+				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
+				.id(subjectId).source(json);
 		getBulkProcessor().add(indexRequest);
 
 	}
@@ -401,7 +358,9 @@ public class ElasticsearchService {
 		if (indexExistReponse.isExists()) {
 			deleteIndex(indicesAdminClient, indexName);
 		}
-		result = createIndex(indicesAdminClient, indexName);
+		if (createIndex(indicesAdminClient, indexName)) {
+			result = putMappingForSentence(indicesAdminClient);
+		}
 		return result;
 	}
 
@@ -429,4 +388,30 @@ public class ElasticsearchService {
 				&& createIndexResponse.isAcknowledged();
 	}
 
+	private boolean putMappingForSentence(IndicesAdminClient indicesAdminClient)
+			throws IOException {
+		XContentBuilder mappingBuilder = XContentFactory
+				.jsonBuilder()
+				.startObject()
+				.startObject(
+						Config.getInstance().getString(
+								Config.WIKIPEDIA_SENTENCE))
+				.startObject("properties").startObject("title")
+				.field("type", "string").field("index", "not_analyzed")
+				.endObject().startObject("sentence").field("type", "string")
+				.endObject().endObject() // properties
+				.endObject()// documentType
+				.endObject();
+
+		WikiRelationExtractionApp.LOG.debug("Mapping for wikipedia sentence: "
+				+ mappingBuilder.string());
+		PutMappingResponse putMappingResponse = indicesAdminClient
+				.preparePutMapping(
+						Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
+				.setType(
+						Config.getInstance().getString(
+								Config.WIKIPEDIA_SENTENCE))
+				.setSource(mappingBuilder).execute().actionGet();
+		return putMappingResponse.isAcknowledged();
+	}
 }

@@ -57,8 +57,8 @@ public class RelationExtractor {
 	}
 
 	public List<String> getObjectList(String sentence) {
+		System.out.println(sentence);
 		sentence = sentence.replaceAll("'' '.*?'' '", "").replaceAll("' '", "");
-		// System.out.println(sentence);
 		List<String> objectList = new ArrayList<String>();
 		Matcher matcher = Pattern.compile("\\[\\[(.*?)\\]\\]")
 				.matcher(sentence);
@@ -84,10 +84,10 @@ public class RelationExtractor {
 				int beginIndex = matcher.start();
 				int endIndex = matcher.end();
 				sentence = sentence.substring(0, beginIndex)
-						+ found.split("\\|")[1].replaceAll("\\[\\[", "")
-								.replaceAll("\\]\\]", "")
+						+ found.split("\\|")[1].replaceAll("\\[\\[ ", "")
+								.replaceAll(" \\]\\]", "")
 						+ sentence.substring(endIndex);
-				matcher = Pattern.compile("\\[\\[(.*?)\\]\\]")
+				matcher = Pattern.compile("\\[\\[ (.*?) \\]\\]")
 						.matcher(sentence);
 			}
 		}
