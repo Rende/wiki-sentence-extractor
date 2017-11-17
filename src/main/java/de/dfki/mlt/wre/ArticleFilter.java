@@ -62,6 +62,7 @@ public class ArticleFilter implements IArticleFilter {
 					.getItemId(wikipediaTitle);
 			if (isValidPage(subjectId, wikipediaTitle)) {
 				String text = page.getText();
+
 				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
 				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
 				for (String extension : extensionList)
@@ -77,6 +78,7 @@ public class ArticleFilter implements IArticleFilter {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+
 			}
 		}
 	}
@@ -142,32 +144,36 @@ public class ArticleFilter implements IArticleFilter {
 	public static String removeContentBetweenMatchingBracket(String input,
 			String pattern, char open, char close) {
 		String result = "";
-		int openCloseCount = 0;
-		int start = input.indexOf(pattern);
+		try {
+			int openCloseCount = 0;
+			int start = input.indexOf(pattern);
 
-		if (start == -1) {
-			return input;
-		}
-		int end = -1;
-		for (int i = start; i < input.length(); i++) {
-			char currentChar = input.charAt(i);
-			if (currentChar == open) {
-				openCloseCount++;
-			} else if (currentChar == close) {
-				openCloseCount--;
+			if (start == -1) {
+				return input;
 			}
-			if (openCloseCount == 0) {
-				end = i + 1;
-				break;
+			int end = -1;
+			for (int i = start; i < input.length(); i++) {
+				char currentChar = input.charAt(i);
+				if (currentChar == open) {
+					openCloseCount++;
+				} else if (currentChar == close) {
+					openCloseCount--;
+				}
+				if (openCloseCount == 0) {
+					end = i + 1;
+					break;
+				}
 			}
-		}
-		if (end == -1) {
-			result = input.substring(0, start);
-		} else {
-			result = input.substring(0, start)
-					+ removeContentBetweenMatchingBracket(
-							input.substring(end, input.length()), pattern,
-							open, close);
+			if (end == -1) {
+				result = input.substring(0, start);
+			} else {
+				result = input.substring(0, start)
+						+ removeContentBetweenMatchingBracket(
+								input.substring(end, input.length()), pattern,
+								open, close);
+			}
+		} catch (StackOverflowError e) {
+
 		}
 		return result;
 	}
