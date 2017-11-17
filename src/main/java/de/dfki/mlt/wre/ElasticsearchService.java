@@ -342,8 +342,7 @@ public class ElasticsearchService {
 		IndexRequest indexRequest = Requests
 				.indexRequest()
 				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
-				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
-				.id(subjectId).source(json);
+				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).source(json);
 		getBulkProcessor().add(indexRequest);
 
 	}
