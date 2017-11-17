@@ -335,14 +335,15 @@ public class ElasticsearchService {
 	public void insertSentence(String sentence, String subjectId,
 			String wikipediaTitle) throws IOException {
 		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("title", wikipediaTitle).field("sentence", sentence)
-				.endObject();
+				.field("title", wikipediaTitle).field("subject-id", subjectId)
+				.field("sentence", sentence).endObject();
 		String json = builder.string();
 		// System.out.println(json);
 		IndexRequest indexRequest = Requests
 				.indexRequest()
 				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
-				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).source(json);
+				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
+				.source(json);
 		getBulkProcessor().add(indexRequest);
 
 	}
@@ -396,8 +397,10 @@ public class ElasticsearchService {
 								Config.WIKIPEDIA_SENTENCE))
 				.startObject("properties").startObject("title")
 				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("sentence").field("type", "string")
-				.endObject().endObject() // properties
+				.endObject().startObject("subject-id").field("type", "string")
+				.field("index", "not_analyzed").endObject()
+				.startObject("sentence").field("type", "string").endObject()
+				.endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
