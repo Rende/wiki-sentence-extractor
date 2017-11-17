@@ -312,7 +312,7 @@ public class ElasticsearchService {
 				.field("subject-label", wikipediaTitle).startArray("objects");
 		for (Map.Entry<String, HashMap<String, String>> objectRelation : objectRelationMap
 				.entrySet()) {
-			builder.startObject().field("object-id", objectRelation.getKey())//object-label
+			builder.startObject().field("object-id", objectRelation.getKey())// object-label
 					.startArray("relations");
 			for (Map.Entry<String, String> relation : objectRelation.getValue()
 					.entrySet()) {
@@ -358,8 +358,7 @@ public class ElasticsearchService {
 			deleteIndex(indicesAdminClient, indexName);
 		}
 		if (createIndex(indicesAdminClient, indexName)) {
-			result = putMappingForSentence(indicesAdminClient)
-					&& putMappingForRelations(indicesAdminClient);
+			result = putMappingForSentence(indicesAdminClient);
 		}
 		return result;
 	}
@@ -429,15 +428,15 @@ public class ElasticsearchService {
 				.field("type", "string").field("index", "not_analyzed")
 				.endObject().startObject("sentence").field("type", "string")
 				.endObject().startObject("objects").field("type", "nested")
-				.startObject("properties")
-				.startObject("object-id").field("type", "string").field("index", "not_analyzed").endObject()
-				.startObject("object-label").field("type", "string").endObject()
-				.startObject("relations").field("type", "nested")
-				.startObject("properties").startObject("property-id")
+				.startObject("properties").startObject("object-id")
 				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("surface").field("type", "string")
-				.endObject().endObject().endObject().endObject().endObject()
-				.endObject() // properties
+				.endObject().startObject("object-label")
+				.field("type", "string").endObject().startObject("relations")
+				.field("type", "nested").startObject("properties")
+				.startObject("property-id").field("type", "string")
+				.field("index", "not_analyzed").endObject()
+				.startObject("surface").field("type", "string").endObject()
+				.endObject().endObject().endObject().endObject().endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
