@@ -31,6 +31,9 @@ public class ArticleFilter implements IArticleFilter {
 
 	private List<String> extensionList = new ArrayList<String>();
 	private String sentence = new String();
+	public int noEntryCount = 0;
+	public int invalidCount = 0;
+	public int count = 0;
 
 	public ArticleFilter() {
 		String[] extensions = Config.getInstance().getStringArray(
@@ -42,6 +45,17 @@ public class ArticleFilter implements IArticleFilter {
 			throws SAXException {
 		if (page != null && page.getText() != null
 				&& !page.getText().startsWith(PAGE_REDIRECT)) {
+			count++;
+			if (count % 10000 == 0)
+				WikiRelationExtractionApp.LOG
+						.info("The number of wikipedia pages processed: "
+								+ count);
+			if (noEntryCount % 100 == 0)
+				WikiRelationExtractionApp.LOG.info(noEntryCount
+						+ " pages has no entry in wikidata");
+			if (invalidCount % 100 == 0)
+				WikiRelationExtractionApp.LOG.info(invalidCount
+						+ " pages are invalid");
 			String wikipediaTitle = Utils
 					.fromStringToWikilabel(page.getTitle());
 			String subjectId = WikiRelationExtractionApp.esService
@@ -68,11 +82,19 @@ public class ArticleFilter implements IArticleFilter {
 	}
 
 	public boolean isValidPage(String subjectId, String wikipediaTitle) {
-		return !subjectId.equals("") && !wikipediaTitle.startsWith("List_of")
+		boolean hasEntry = !subjectId.equals("");
+		boolean isValid = !wikipediaTitle.startsWith("List_of")
 				&& !wikipediaTitle.contains("Template:")
 				&& !wikipediaTitle.contains("Wikipedia:")
 				&& !wikipediaTitle.contains("Help:")
 				&& !wikipediaTitle.contains("Portal:");
+
+		if (!hasEntry)
+			noEntryCount++;
+		if (!isValid)
+			invalidCount++;
+
+		return hasEntry && isValid;
 	}
 
 	public String getFirstSentence() {
