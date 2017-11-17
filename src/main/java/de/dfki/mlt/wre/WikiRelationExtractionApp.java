@@ -21,6 +21,7 @@ public class WikiRelationExtractionApp {
 			.getLogger(WikiRelationExtractionApp.class);
 
 	public static void main(String[] args) {
+		System.setProperty("jdk.xml.totalEntitySizeLimit", "0");
 		long start = System.currentTimeMillis();
 		boolean isIndexCreated = false;
 
@@ -40,11 +41,13 @@ public class WikiRelationExtractionApp {
 			try {
 				wxp = new WikiXMLParser(dumpfile, handler);
 				wxp.parse();
-
+				LOG.info("Overall the number of wikipedia pages: " + handler.count);
+				LOG.info(handler.noEntryCount
+						+ " pages has no entry in wikidata");
+				LOG.info(handler.invalidCount + " pages are invalid");
 			} catch (SAXException | IOException e) {
 				e.printStackTrace();
 			}
-
 		}
 
 		long elapsedTimeMillis = System.currentTimeMillis() - start;
