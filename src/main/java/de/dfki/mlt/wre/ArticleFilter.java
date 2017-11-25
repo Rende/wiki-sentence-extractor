@@ -48,17 +48,17 @@ public class ArticleFilter implements IArticleFilter {
 				&& !page.getText().startsWith(PAGE_REDIRECT)) {
 			count++;
 			if (count % 10000 == 0)
-				WikiRelationExtractionApp.LOG
+				SentenceExtractionApp.LOG
 						.info("The number of wikipedia pages processed: "
 								+ count);
 			if (noEntryCount % 100 == 0)
-				WikiRelationExtractionApp.LOG.info(noEntryCount
+				SentenceExtractionApp.LOG.info(noEntryCount
 						+ " pages has no entry in wikidata");
 			if (invalidCount % 100 == 0)
-				WikiRelationExtractionApp.LOG.info(invalidCount
+				SentenceExtractionApp.LOG.info(invalidCount
 						+ " pages are invalid");
 			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
-			String subjectId = WikiRelationExtractionApp.esService
+			String subjectId = SentenceExtractionApp.esService
 					.getItemId(wikipediaTitle);
 			if (isValidPage(subjectId, wikipediaTitle)) {
 				String text = page.getText();
@@ -73,7 +73,7 @@ public class ArticleFilter implements IArticleFilter {
 				firstSentence = removeGapsBetweenBrackets(firstSentence, '[',
 						']');
 				try {
-					WikiRelationExtractionApp.esService.insertSentence(
+					SentenceExtractionApp.esService.insertSentence(
 							firstSentence, subjectId, wikipediaTitle);
 				} catch (IOException e) {
 					e.printStackTrace();

@@ -22,7 +22,6 @@ public final class Config {
 	public static final String WIKIDATA_CLAIM = "wikidata.claim.type";
 	public static final String WIKIPEDIA_INDEX = "wikipedia.index";
 	public static final String WIKIPEDIA_SENTENCE = "wikipedia.sentence.type";
-	public static final String WIKIPEDIA_RELATION = "wikipedia.relation.type";
 	public static final String WIKIPEDIA_EXTENSION = "wikipedia.extension";
 	public static final String NUMBER_OF_SHARDS = "number_of_shards";
 	public static final String NUMBER_OF_REPLICAS = "number_of_replicas";

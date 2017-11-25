@@ -14,11 +14,11 @@ import de.dfki.mlt.wre.preferences.Config;
  * @author Aydan Rende, DFKI
  *
  */
-public class WikiRelationExtractionApp {
+public class SentenceExtractionApp {
 
 	public static ElasticsearchService esService = new ElasticsearchService();
 	public static final Logger LOG = LoggerFactory
-			.getLogger(WikiRelationExtractionApp.class);
+			.getLogger(SentenceExtractionApp.class);
 
 	public static void main(String[] args) {
 		System.setProperty("jdk.xml.totalEntitySizeLimit", "0");

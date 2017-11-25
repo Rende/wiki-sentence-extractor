@@ -127,15 +127,6 @@ public class ElasticsearchService {
 		return itemId;
 	}
 
-	public boolean checkItemAvailability(String wikipediaTitle) {
-		SearchResponse response = searchItemByWikipediaTitle(wikipediaTitle);
-		if (isResponseValid(response)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	public boolean isResponseValid(SearchResponse response) {
 		return response != null && response.getHits().totalHits() > 0;
 	}
@@ -166,99 +157,6 @@ public class ElasticsearchService {
 		return null;
 	}
 
-	private SearchResponse searchPropertyById(String propertyId) {
-		QueryBuilder query = QueryBuilders.boolQuery()
-				.must(QueryBuilders.termQuery("type", "property"))
-				.must(QueryBuilders.termQuery("id", propertyId));
-
-		try {
-			SearchRequestBuilder requestBuilder = getClient()
-					.prepareSearch(
-							Config.getInstance().getString(
-									Config.WIKIDATA_INDEX))
-					.setTypes(
-							Config.getInstance().getString(
-									Config.WIKIDATA_ENTITY))
-					.addFields("id", "type", "org_label", "label",
-							"wikipedia_title").setQuery(query).setSize(1000);
-			SearchResponse response = requestBuilder.execute().actionGet();
-			return response;
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public boolean checkPropertyAvailability(String propertyId) {
-		SearchResponse response = searchPropertyById(propertyId);
-		if (isResponseValid(response)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public Property getProperty(String propertyId) {
-		boolean isFirst = false;
-		SearchResponse response = searchPropertyById(propertyId);
-		Property property = new Property();
-		if (isResponseValid(response)) {
-			for (SearchHit hit : response.getHits()) {
-				if (!isFirst) {
-					property.setId(propertyId);
-					property.setLabel(hit.field("org_label").getValue()
-							.toString());
-					isFirst = true;
-				}
-				property.getAliases().add(
-						hit.field("label").getValue().toString());
-			}
-		}
-
-		return property;
-	}
-
-	public List<String> getRelationsOfTwoItems(String entityId, String objectId) {
-		SearchResponse response = searchRelationsOfTwoItems(entityId, objectId);
-		List<String> propertyIdList = new ArrayList<String>();
-		if (isResponseValid(response)) {
-			for (SearchHit hit : response.getHits()) {
-				propertyIdList.add(hit.field("property_id").getValue()
-						.toString());
-			}
-		}
-		return propertyIdList;
-
-	}
-
-	private SearchResponse searchRelationsOfTwoItems(String entityId,
-			String objectId) {
-		QueryBuilder query = QueryBuilders
-				.boolQuery()
-				.must(QueryBuilders.termQuery("entity_id", entityId))
-				.must(QueryBuilders.termQuery("data_type", "wikibase-entityid"))
-				.must(QueryBuilders.termQuery("data_value", objectId));
-		// System.out.println(query);
-		try {
-			SearchRequestBuilder requestBuilder = getClient()
-					.prepareSearch(
-							Config.getInstance().getString(
-									Config.WIKIDATA_INDEX))
-					.setTypes(
-							Config.getInstance().getString(
-									Config.WIKIDATA_CLAIM))
-					.addFields("property_id").setQuery(query).setSize(1000);
-			SearchResponse response = requestBuilder.execute().actionGet();
-			// System.out.println(response);
-			return response;
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
 	private BulkProcessor getBulkProcessor() {
 		if (bulkProcessor == null) {
 			bulkProcessor = BulkProcessor
@@ -275,7 +173,7 @@ public class ElasticsearchService {
 						public void afterBulk(long executionId,
 								BulkRequest request, BulkResponse response) {
 							if (response.hasFailures()) {
-								WikiRelationExtractionApp.LOG
+								SentenceExtractionApp.LOG
 										.error("Elasticsearch Service getBulkProcessor() "
 												+ response
 														.buildFailureMessage());
@@ -285,7 +183,7 @@ public class ElasticsearchService {
 						@Override
 						public void afterBulk(long executionId,
 								BulkRequest request, Throwable failure) {
-							WikiRelationExtractionApp.LOG
+							SentenceExtractionApp.LOG
 									.error("Elasticsearch Service getBulkProcessor() "
 											+ failure.getMessage());
 
@@ -301,35 +199,6 @@ public class ElasticsearchService {
 		}
 
 		return bulkProcessor;
-	}
-
-	public void insertRelation(String sentence, String subjectId,
-			String wikipediaTitle,
-			HashMap<String, HashMap<String, String>> objectRelationMap)
-			throws IOException {
-		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("sentence", sentence).field("subject-id", subjectId)
-				.field("subject-label", wikipediaTitle).startArray("objects");
-		for (Map.Entry<String, HashMap<String, String>> objectRelation : objectRelationMap
-				.entrySet()) {
-			builder.startObject().field("object-id", objectRelation.getKey())// object-label
-					.startArray("relations");
-			for (Map.Entry<String, String> relation : objectRelation.getValue()
-					.entrySet()) {
-				builder.startObject().field("property-id", relation.getKey())
-						.field("surface", relation.getValue()).endObject();
-			}
-			builder.endArray().endObject();
-		}
-		builder.endArray().endObject();
-		String json = builder.string();
-		IndexRequest indexRequest = Requests
-				.indexRequest()
-				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
-				.type(Config.getInstance().getString(Config.WIKIPEDIA_RELATION))
-				.source(json);
-		getBulkProcessor().add(indexRequest);
-
 	}
 
 	public void insertSentence(String sentence, String subjectId,
@@ -404,7 +273,7 @@ public class ElasticsearchService {
 				.endObject()// documentType
 				.endObject();
 
-		WikiRelationExtractionApp.LOG.debug("Mapping for wikipedia sentence: "
+		SentenceExtractionApp.LOG.debug("Mapping for wikipedia sentence: "
 				+ mappingBuilder.string());
 		PutMappingResponse putMappingResponse = indicesAdminClient
 				.preparePutMapping(
@@ -415,6 +284,5 @@ public class ElasticsearchService {
 				.setSource(mappingBuilder).execute().actionGet();
 		return putMappingResponse.isAcknowledged();
 	}
-
 
 }
