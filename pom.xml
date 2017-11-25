@@ -77,7 +77,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifestEntries>
-							<Main-Class>de.dfki.mlt.wre.WikiRelationExtractionApp</Main-Class>
+							<Main-Class>de.dfki.mlt.wre.SentenceExtractionApp</Main-Class>
 						</manifestEntries>
 					</archive>
 				</configuration>
