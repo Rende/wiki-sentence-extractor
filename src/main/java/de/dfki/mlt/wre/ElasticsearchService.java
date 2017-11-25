@@ -57,7 +57,7 @@ public class ElasticsearchService {
 		getClient();
 	}
 
-	public Client getClient() {
+	private Client getClient() {
 		if (client == null) {
 			Map<String, String> userConfig = getUserConfig();
 			List<InetSocketAddress> transportAddresses = getTransportAddresses();
@@ -416,41 +416,5 @@ public class ElasticsearchService {
 		return putMappingResponse.isAcknowledged();
 	}
 
-	private boolean putMappingForRelations(IndicesAdminClient indicesAdminClient)
-			throws IOException {
-		XContentBuilder mappingBuilder = XContentFactory
-				.jsonBuilder()
-				.startObject()
-				.startObject(
-						Config.getInstance().getString(
-								Config.WIKIPEDIA_RELATION))
-				.startObject("properties").startObject("subject-id")
-				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("subject-label")
-				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("sentence").field("type", "string")
-				.endObject().startObject("objects").field("type", "nested")
-				.startObject("properties").startObject("object-id")
-				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("object-label")
-				.field("type", "string").endObject().startObject("relations")
-				.field("type", "nested").startObject("properties")
-				.startObject("property-id").field("type", "string")
-				.field("index", "not_analyzed").endObject()
-				.startObject("surface").field("type", "string").endObject()
-				.endObject().endObject().endObject().endObject().endObject() // properties
-				.endObject()// documentType
-				.endObject();
 
-		WikiRelationExtractionApp.LOG.debug("Mapping for wikipedia sentence: "
-				+ mappingBuilder.string());
-		PutMappingResponse putMappingResponse = indicesAdminClient
-				.preparePutMapping(
-						Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
-				.setType(
-						Config.getInstance().getString(
-								Config.WIKIPEDIA_SENTENCE))
-				.setSource(mappingBuilder).execute().actionGet();
-		return putMappingResponse.isAcknowledged();
-	}
 }

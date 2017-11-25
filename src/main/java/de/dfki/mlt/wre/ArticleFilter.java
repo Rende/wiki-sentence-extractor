@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.xml.sax.SAXException;
 
 import de.dfki.lt.tools.tokenizer.annotate.AnnotatedString;
@@ -56,8 +57,7 @@ public class ArticleFilter implements IArticleFilter {
 			if (invalidCount % 100 == 0)
 				WikiRelationExtractionApp.LOG.info(invalidCount
 						+ " pages are invalid");
-			String wikipediaTitle = Utils
-					.fromStringToWikilabel(page.getTitle());
+			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
 			String subjectId = WikiRelationExtractionApp.esService
 					.getItemId(wikipediaTitle);
 			if (isValidPage(subjectId, wikipediaTitle)) {
@@ -176,5 +176,17 @@ public class ArticleFilter implements IArticleFilter {
 
 		}
 		return result;
+	}
+
+	public String fromStringToWikilabel(String image) {
+		String label = "";
+		if (image.contains("|")) {
+			String[] images = image.split("\\|");
+			label = images[0];
+		} else {
+			label = image;
+		}
+		label = StringUtils.capitalize(label.trim().replaceAll(" ", "_"));
+		return label;
 	}
 }
