@@ -201,11 +201,12 @@ public class ElasticsearchService {
 		return bulkProcessor;
 	}
 
-	public void insertSentence(String sentence, String subjectId,
-			String wikipediaTitle) throws IOException {
+	public void insertSentence(String pageId, String sentence,
+			String subjectId, String wikipediaTitle) throws IOException {
 		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("title", wikipediaTitle).field("subject-id", subjectId)
-				.field("sentence", sentence).endObject();
+				.field("page-id", pageId).field("title", wikipediaTitle)
+				.field("subject-id", subjectId).field("sentence", sentence)
+				.endObject();
 		String json = builder.string();
 		// System.out.println(json);
 		IndexRequest indexRequest = Requests
@@ -264,9 +265,10 @@ public class ElasticsearchService {
 				.startObject(
 						Config.getInstance().getString(
 								Config.WIKIPEDIA_SENTENCE))
-				.startObject("properties").startObject("title")
-				.field("type", "string").field("index", "not_analyzed")
-				.endObject().startObject("subject-id").field("type", "string")
+				.startObject("properties")
+				.startObject("page-id").field("type", "integer").field("index", "not_analyzed").endObject()
+				.startObject("title").field("type", "string").field("index", "not_analyzed").endObject()
+				.startObject("subject-id").field("type", "string")
 				.field("index", "not_analyzed").endObject()
 				.startObject("sentence").field("type", "string").endObject()
 				.endObject() // properties
