@@ -31,15 +31,17 @@ public class ArticleFilter implements IArticleFilter {
 	private static final String PAGE_REDIRECT = "#REDIRECT ";
 
 	private List<String> extensionList = new ArrayList<String>();
+	private List<String> invalidPageTitles = new ArrayList<String>();
 	private String sentence = new String();
 	public int noEntryCount = 0;
 	public int invalidCount = 0;
 	public int count = 0;
 
 	public ArticleFilter() {
-		String[] extensions = Config.getInstance().getStringArray(
-				Config.WIKIPEDIA_EXTENSION);
-		extensionList = Arrays.asList(extensions);
+		extensionList = Arrays.asList(Config.getInstance().getStringArray(
+				Config.WIKIPEDIA_EXTENSION));
+		invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(
+				Config.WIKIPEDIA_INVALID_PAGES));
 	}
 
 	public void process(WikiArticle page, Siteinfo siteinfo)
@@ -58,11 +60,11 @@ public class ArticleFilter implements IArticleFilter {
 				SentenceExtractionApp.LOG.info(invalidCount
 						+ " pages are invalid");
 			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
+			String pageId = page.getId();
 			String subjectId = SentenceExtractionApp.esService
 					.getItemId(wikipediaTitle);
 			if (isValidPage(subjectId, wikipediaTitle)) {
 				String text = page.getText();
-
 				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
 				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
 				for (String extension : extensionList)
@@ -73,24 +75,24 @@ public class ArticleFilter implements IArticleFilter {
 				firstSentence = removeGapsBetweenBrackets(firstSentence, '[',
 						']');
 				try {
-					SentenceExtractionApp.esService.insertSentence(
+					SentenceExtractionApp.esService.insertSentence(pageId,
 							firstSentence, subjectId, wikipediaTitle);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-
 			}
 		}
 	}
 
 	public boolean isValidPage(String subjectId, String wikipediaTitle) {
 		boolean hasEntry = !subjectId.equals("");
-		boolean isValid = !wikipediaTitle.startsWith("List_of")
-				&& !wikipediaTitle.contains("Template:")
-				&& !wikipediaTitle.contains("Wikipedia:")
-				&& !wikipediaTitle.contains("Help:")
-				&& !wikipediaTitle.contains("Portal:");
-
+		boolean isValid = true;
+		for (String invalid : invalidPageTitles) {
+			if (wikipediaTitle.contains(invalid)) {
+				isValid = false;
+				break;
+			}
+		}
 		if (!hasEntry)
 			noEntryCount++;
 		if (!isValid)
