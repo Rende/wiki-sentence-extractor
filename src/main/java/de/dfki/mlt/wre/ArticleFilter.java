@@ -72,8 +72,6 @@ public class ArticleFilter implements IArticleFilter {
 							'[', ']');
 				text = cleanUpText(text);
 				String firstSentence = getFirstSentence(text.trim());
-				firstSentence = removeGapsBetweenBrackets(firstSentence, '[',
-						']');
 				try {
 					SentenceExtractionApp.esService.insertSentence(pageId,
 							firstSentence, subjectId, wikipediaTitle);
@@ -105,20 +103,11 @@ public class ArticleFilter implements IArticleFilter {
 		return this.sentence;
 	}
 
-	private String removeGapsBetweenBrackets(String text, char open, char close) {
-		text = text.replaceAll("\\" + open + " " + "\\" + open, "\\" + open
-				+ "\\" + open);
-		text = text.replaceAll("\\" + close + " " + "\\" + close, "\\" + close
-				+ "\\" + close);
-		return text;
-	}
-
 	private String cleanUpText(String text) {
 		String cleanText = text
 				// to remove xml comments
 				.replaceAll("(?m)<!--[\\s\\S]*?-->", "")
 				.replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "");
-		// .replaceAll("(?s)<ref.+?</ref>", "").replaceAll("<.+?>", "");
 		return cleanText;
 	}
 
