@@ -41,10 +41,7 @@ public class SentenceExtractionApp {
 			try {
 				wxp = new WikiXMLParser(dumpfile, handler);
 				wxp.parse();
-				LOG.info("Overall the number of wikipedia pages: " + handler.count);
-				LOG.info(handler.noEntryCount
-						+ " pages has no entry in wikidata");
-				LOG.info(handler.invalidCount + " pages are invalid");
+				logCounts(handler);
 			} catch (SAXException | IOException e) {
 				e.printStackTrace();
 			}
@@ -53,5 +50,11 @@ public class SentenceExtractionApp {
 		long elapsedTimeMillis = System.currentTimeMillis() - start;
 		float elapsedTimeHour = elapsedTimeMillis / (60 * 60 * 1000F);
 		LOG.info("Time spent in hours: " + elapsedTimeHour);
+	}
+
+	private static void logCounts(ArticleFilter handler) {
+		LOG.info("Overall the number of wikipedia pages: " + handler.count);
+		LOG.info(handler.noEntryCount + " pages has no entry in wikidata");
+		LOG.info(handler.invalidCount + " pages are invalid");
 	}
 }
