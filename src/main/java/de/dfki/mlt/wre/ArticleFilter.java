@@ -28,11 +28,8 @@ import de.dfki.mlt.wre.preferences.Config;
  */
 public class ArticleFilter implements IArticleFilter {
 
-	private static final String PAGE_REDIRECT = "#REDIRECT ";
-
 	private List<String> extensionList = new ArrayList<String>();
 	private List<String> invalidPageTitles = new ArrayList<String>();
-	private String sentence = new String();
 	public int noEntryCount = 0;
 	public int invalidCount = 0;
 	public int count = 0;
@@ -46,24 +43,13 @@ public class ArticleFilter implements IArticleFilter {
 
 	public void process(WikiArticle page, Siteinfo siteinfo)
 			throws SAXException {
-		if (page != null && page.getText() != null
-				&& !page.getText().startsWith(PAGE_REDIRECT)) {
-			count++;
-			if (count % 10000 == 0)
-				SentenceExtractionApp.LOG
-						.info("The number of wikipedia pages processed: "
-								+ count);
-			if (noEntryCount % 100 == 0)
-				SentenceExtractionApp.LOG.info(noEntryCount
-						+ " pages has no entry in wikidata");
-			if (invalidCount % 100 == 0)
-				SentenceExtractionApp.LOG.info(invalidCount
-						+ " pages are invalid");
+		if (isPageValid(page)) {
+			logCounts();
 			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
 			String pageId = page.getId();
 			String subjectId = SentenceExtractionApp.esService
 					.getItemId(wikipediaTitle);
-			if (isValidPage(subjectId, wikipediaTitle)) {
+			if (isSubjectValid(subjectId, wikipediaTitle)) {
 				String text = page.getText();
 				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
 				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
@@ -72,6 +58,7 @@ public class ArticleFilter implements IArticleFilter {
 							'[', ']');
 				text = cleanUpText(text);
 				String firstSentence = getFirstSentence(text.trim());
+				firstSentence = cleanUpText(firstSentence);
 				try {
 					SentenceExtractionApp.esService.insertSentence(pageId,
 							firstSentence, subjectId, wikipediaTitle);
@@ -82,7 +69,29 @@ public class ArticleFilter implements IArticleFilter {
 		}
 	}
 
-	public boolean isValidPage(String subjectId, String wikipediaTitle) {
+	private void logCounts() {
+		count++;
+		if (count % 10000 == 0)
+			SentenceExtractionApp.LOG
+					.info("The number of wikipedia pages processed: " + count);
+		if (noEntryCount % 100 == 0)
+			SentenceExtractionApp.LOG.info(noEntryCount
+					+ " pages has no entry in wikidata");
+		if (invalidCount % 100 == 0)
+			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
+	}
+
+	private boolean isPageValid(WikiArticle page) {
+		boolean isRedirect = false;
+		List<String> redirectList = Arrays.asList(Config.getInstance()
+				.getStringArray(Config.PAGE_REDIRECT));
+		for (String red : redirectList) {
+			isRedirect = isRedirect || page.getText().startsWith(red);
+		}
+		return page != null && page.getText() != null && !isRedirect;
+	}
+
+	private boolean isSubjectValid(String subjectId, String wikipediaTitle) {
 		boolean hasEntry = !subjectId.equals("");
 		boolean isValid = true;
 		for (String invalid : invalidPageTitles) {
@@ -99,15 +108,13 @@ public class ArticleFilter implements IArticleFilter {
 		return hasEntry && isValid;
 	}
 
-	public String getFirstSentence() {
-		return this.sentence;
-	}
-
-	private String cleanUpText(String text) {
+	public String cleanUpText(String text) {
 		String cleanText = text
 				// to remove xml comments
 				.replaceAll("(?m)<!--[\\s\\S]*?-->", "")
-				.replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "");
+				.replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "")
+				.replaceAll("\\{.*?\\}", "").replaceAll("http.*?\\s", "")
+				.replaceAll("&ndash", "");
 		return cleanText;
 	}
 
@@ -129,10 +136,9 @@ public class ArticleFilter implements IArticleFilter {
 			}
 		}
 		return builder.toString();
-
 	}
 
-	public static String removeContentBetweenMatchingBracket(String input,
+	public String removeContentBetweenMatchingBracket(String input,
 			String pattern, char open, char close) {
 		String result = "";
 		try {

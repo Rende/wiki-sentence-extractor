@@ -26,6 +26,7 @@ public final class Config {
 	public static final String NUMBER_OF_SHARDS = "number_of_shards";
 	public static final String NUMBER_OF_REPLICAS = "number_of_replicas";
 	public static final String WIKIPEDIA_INVALID_PAGES = "wikipedia.invalid.page";
+	public static final String PAGE_REDIRECT = "wikipedia.page.redirect";
 
 	private static PropertiesConfiguration config;
 

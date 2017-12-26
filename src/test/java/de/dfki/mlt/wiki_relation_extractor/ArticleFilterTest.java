@@ -16,47 +16,49 @@ import de.dfki.mlt.wre.ArticleFilter;
  *
  */
 public class ArticleFilterTest {
+	private ArticleFilter filter = new ArticleFilter();
 
 	public ArticleFilterTest() {
+
 	}
 
 	@Test
 	public void test() throws IOException {
 
 		assertThat(
-				ArticleFilter.removeContentBetweenMatchingBracket("[[xxx]]",
-						"[[", '[', ']')).isEqualTo("");
+				filter.removeContentBetweenMatchingBracket("[[xxx]]", "[[",
+						'[', ']')).isEqualTo("");
 		assertThat(
-				ArticleFilter.removeContentBetweenMatchingBracket("abc[[xxx]]",
-						"[[", '[', ']')).isEqualTo("abc");
+				filter.removeContentBetweenMatchingBracket("abc[[xxx]]", "[[",
+						'[', ']')).isEqualTo("abc");
 		assertThat(
-				ArticleFilter.removeContentBetweenMatchingBracket("[[xxx]]123",
-						"[[", '[', ']')).isEqualTo("123");
+				filter.removeContentBetweenMatchingBracket("[[xxx]]123", "[[",
+						'[', ']')).isEqualTo("123");
 		assertThat(
-				ArticleFilter.removeContentBetweenMatchingBracket(
-						"a[[x[[x]]x]]1", "[[", '[', ']')).isEqualTo("a1");
+				filter.removeContentBetweenMatchingBracket("a[[x[[x]]x]]1",
+						"[[", '[', ']')).isEqualTo("a1");
 
 		assertThat(
-				ArticleFilter.removeContentBetweenMatchingBracket(
+				filter.removeContentBetweenMatchingBracket(
 						"[[abc[[File:x[[x]]x]]123]]", "[[File:", '[', ']'))
 				.isEqualTo("[[abc123]]");
 
-//		String testInput = new String(Files.readAllBytes(Paths
-//				.get("wiki-test.txt")), StandardCharsets.UTF_8);
-//
-//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-//				testInput, "{{", '{', '}');
-//		// System.out.println(testInput);
-//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-//				testInput, "(", '(', ')');
-//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-//				testInput, "[[File:", '[', ']');
-//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-//				testInput, "[[Image:", '[', ']');
-//		testInput = ArticleFilter.removeContentBetweenMatchingBracket(
-//				testInput, "[[Category:", '[', ']');
-//
-//		System.out.println(testInput);
+		// String testInput = new String(Files.readAllBytes(Paths
+		// .get("wiki-test.txt")), StandardCharsets.UTF_8);
+		//
+		// testInput = filter.removeContentBetweenMatchingBracket(
+		// testInput, "{{", '{', '}');
+		// // System.out.println(testInput);
+		// testInput = filter.removeContentBetweenMatchingBracket(
+		// testInput, "(", '(', ')');
+		// testInput = filter.removeContentBetweenMatchingBracket(
+		// testInput, "[[File:", '[', ']');
+		// testInput = filter.removeContentBetweenMatchingBracket(
+		// testInput, "[[Image:", '[', ']');
+		// testInput = filter.removeContentBetweenMatchingBracket(
+		// testInput, "[[Category:", '[', ']');
+		//
+		// System.out.println(testInput);
 
 	}
 
@@ -69,8 +71,8 @@ public class ArticleFilterTest {
 				+ "of government}}|date=January 2014}}"
 				+ "{{Anarchism sidebar}} r}";
 		String expectedResult = "{a  r}";
-		String actualResult = ArticleFilter
-				.removeContentBetweenMatchingBracket(testText, "{{", '{', '}');
+		String actualResult = filter.removeContentBetweenMatchingBracket(
+				testText, "{{", '{', '}');
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 
@@ -82,8 +84,8 @@ public class ArticleFilterTest {
 				+ "(Use British English(Basic forms \n"
 				+ "of government)|date=January 2014)" + "(Anarchism sidebar) r";
 		String expectedResult = "a  r";
-		String actualResult = ArticleFilter
-				.removeContentBetweenMatchingBracket(testText, "(", '(', ')');
+		String actualResult = filter.removeContentBetweenMatchingBracket(
+				testText, "(", '(', ')');
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 
@@ -94,9 +96,8 @@ public class ArticleFilterTest {
 				+ "from a [[Diggers]] document by [[William Everard (Digger)\n"
 				+ "[[zdssfdjghgjh]]|William Everard]]]] The earliest";
 		String expectedResult = "ABC The earliest";
-		String actualResult = ArticleFilter
-				.removeContentBetweenMatchingBracket(testText, extension, '[',
-						']');
+		String actualResult = filter.removeContentBetweenMatchingBracket(
+				testText, extension, '[', ']');
 		assertThat(actualResult).isEqualTo(expectedResult);
 	}
 
@@ -105,9 +106,40 @@ public class ArticleFilterTest {
 		String extension = "[[Category:";
 		String testText = "ABC* [[Category:Anarchism by country|Anarchism by country]] The earliest";
 		String expectedResult = "ABC*  The earliest";
-		String actualResult = ArticleFilter
-				.removeContentBetweenMatchingBracket(testText, extension, '[',
-						']');
+		String actualResult = filter.removeContentBetweenMatchingBracket(
+				testText, extension, '[', ']');
 		assertThat(actualResult).isEqualTo(expectedResult);
+	}
+
+	@Test
+	public void testCleanTextRemoveComment() {
+		String test = "<!--Please do not delete the language templates \n \n -->";
+		String expected = "";
+		String actual = filter.cleanUpText(test);
+		assertThat(actual).isEqualTo(expected);
+
+	}
+
+	@Test
+	public void testCleanTextRemoveGarbage() {
+		String test = "{ | | } Abc";
+		String expected = " Abc";
+		String actual = filter.cleanUpText(test);
+		assertThat(actual).isEqualTo(expected);
+	}
+
+	@Test
+	public void testCleanTextRemoveParantheses() {
+		String test = "{ | class = \" wikitable \" style = \" margin:auto 1em auto 1em ; "
+				+ "float:right ; text-align:center ; \" | - ! Primary amine ! ! "
+				+ "Secondary amine ! ! Tertiary amine | - | | | | } In [[ organic chemistry ]] ,"
+				+ " ''' amines ''' are [[ organic compound | compounds ]] and [[ functional group ]] s"
+				+ " that contain a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
+		String expected = " In [[ organic chemistry ]] ,"
+				+ " ''' amines ''' are [[ organic compound | compounds ]] and [[ functional group ]] s"
+				+ " that contain a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
+
+		String actual = filter.cleanUpText(test);
+		assertThat(actual).isEqualTo(expected);
 	}
 }

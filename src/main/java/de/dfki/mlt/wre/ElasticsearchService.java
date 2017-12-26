@@ -132,11 +132,9 @@ public class ElasticsearchService {
 	}
 
 	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
-		QueryBuilder query = QueryBuilders
-				.boolQuery()
+		QueryBuilder query = QueryBuilders.boolQuery()
 				.must(QueryBuilders.termQuery("type", "item"))
-				.must(QueryBuilders
-						.termQuery("wikipedia_title", wikipediaTitle));
+				.must(QueryBuilders.termQuery("wiki-title", wikipediaTitle));
 
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
@@ -146,8 +144,7 @@ public class ElasticsearchService {
 					.setTypes(
 							Config.getInstance().getString(
 									Config.WIKIDATA_ENTITY))
-					.addFields("id", "type", "org_label", "label",
-							"wikipedia_title").setQuery(query).setSize(1);
+					.addFields("wiki-title").setQuery(query).setSize(1);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			return response;
 
@@ -265,9 +262,10 @@ public class ElasticsearchService {
 				.startObject(
 						Config.getInstance().getString(
 								Config.WIKIPEDIA_SENTENCE))
-				.startObject("properties")
-				.startObject("page-id").field("type", "integer").field("index", "not_analyzed").endObject()
-				.startObject("title").field("type", "string").field("index", "not_analyzed").endObject()
+				.startObject("properties").startObject("page-id")
+				.field("type", "integer").field("index", "not_analyzed")
+				.endObject().startObject("title").field("type", "string")
+				.field("index", "not_analyzed").endObject()
 				.startObject("subject-id").field("type", "string")
 				.field("index", "not_analyzed").endObject()
 				.startObject("sentence").field("type", "string").endObject()
