@@ -43,23 +43,6 @@ public class ArticleFilterTest {
 						"[[abc[[File:x[[x]]x]]123]]", "[[File:", '[', ']'))
 				.isEqualTo("[[abc123]]");
 
-		// String testInput = new String(Files.readAllBytes(Paths
-		// .get("wiki-test.txt")), StandardCharsets.UTF_8);
-		//
-		// testInput = filter.removeContentBetweenMatchingBracket(
-		// testInput, "{{", '{', '}');
-		// // System.out.println(testInput);
-		// testInput = filter.removeContentBetweenMatchingBracket(
-		// testInput, "(", '(', ')');
-		// testInput = filter.removeContentBetweenMatchingBracket(
-		// testInput, "[[File:", '[', ']');
-		// testInput = filter.removeContentBetweenMatchingBracket(
-		// testInput, "[[Image:", '[', ']');
-		// testInput = filter.removeContentBetweenMatchingBracket(
-		// testInput, "[[Category:", '[', ']');
-		//
-		// System.out.println(testInput);
-
 	}
 
 	@Test
@@ -141,5 +124,26 @@ public class ArticleFilterTest {
 
 		String actual = filter.cleanUpText(test);
 		assertThat(actual).isEqualTo(expected);
+	}
+
+	@Test
+	public void testTokenizer() {
+		String test = " In [[ organic chemistry ]] ,"
+				+ " ''' amines ''' are <<organic compound | compounds>>  and  {functional group} s"
+				+ " that (contain) a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
+		String expected = "in [[ organic chemistry ]] , ''' amine ''' be << organic compound | compound >> "
+				+ "and { functional group } s that ( contain ) a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
+		String actual = filter.tokenizer(test);
+		assertThat(actual).isEqualTo(expected);
+	}
+
+	@Test
+	public void testLemmatizer() {
+		assertThat("[[").isEqualTo(filter.lemmatize("[["));
+		assertThat("]]").isEqualTo(filter.lemmatize("]]"));
+		assertThat("(").isEqualTo(filter.lemmatize("("));
+		assertThat(")").isEqualTo(filter.lemmatize(")"));
+		assertThat("{").isEqualTo(filter.lemmatize("{"));
+		assertThat("}").isEqualTo(filter.lemmatize("}"));
 	}
 }

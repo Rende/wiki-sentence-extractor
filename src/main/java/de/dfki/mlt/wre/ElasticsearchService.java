@@ -199,11 +199,12 @@ public class ElasticsearchService {
 	}
 
 	public void insertSentence(String pageId, String sentence,
-			String subjectId, String wikipediaTitle) throws IOException {
+			String subjectId, String wikipediaTitle, String tokenizedSentence)
+			throws IOException {
 		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
 				.field("page-id", pageId).field("title", wikipediaTitle)
 				.field("subject-id", subjectId).field("sentence", sentence)
-				.endObject();
+				.field("tok-sentence", tokenizedSentence).endObject();
 		String json = builder.string();
 		// System.out.println(json);
 		IndexRequest indexRequest = Requests
@@ -269,7 +270,8 @@ public class ElasticsearchService {
 				.startObject("subject-id").field("type", "string")
 				.field("index", "not_analyzed").endObject()
 				.startObject("sentence").field("type", "string").endObject()
-				.endObject() // properties
+				.startObject("tok-sentence").field("type", "string")
+				.endObject().endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
