@@ -82,8 +82,8 @@ public class ArticleFilter implements IArticleFilter {
 				String tokenizedSentence = tokenizer(firstSentence);
 				try {
 					SentenceExtractionApp.esService.insertSentence(pageId,
-							firstSentence, tokenizedSentence, subjectId,
-							wikipediaTitle);
+							firstSentence, subjectId, wikipediaTitle,
+							tokenizedSentence);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
