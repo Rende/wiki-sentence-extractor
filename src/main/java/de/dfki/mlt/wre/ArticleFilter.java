@@ -11,16 +11,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.lang.StringUtils;
 import org.xml.sax.SAXException;
 
+import de.dfki.lt.tools.tokenizer.JTok;
 import de.dfki.lt.tools.tokenizer.annotate.AnnotatedString;
 import de.dfki.lt.tools.tokenizer.output.Outputter;
 import de.dfki.lt.tools.tokenizer.output.Paragraph;
 import de.dfki.lt.tools.tokenizer.output.TextUnit;
 import de.dfki.lt.tools.tokenizer.output.Token;
 import de.dfki.mlt.wre.preferences.Config;
+import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
 
 /**
  * @author Aydan Rende, DFKI
@@ -33,12 +42,23 @@ public class ArticleFilter implements IArticleFilter {
 	public int noEntryCount = 0;
 	public int invalidCount = 0;
 	public int count = 0;
+	private JTok jtok;
+	protected StanfordCoreNLP pipeline;
 
 	public ArticleFilter() {
 		extensionList = Arrays.asList(Config.getInstance().getStringArray(
 				Config.WIKIPEDIA_EXTENSION));
 		invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(
 				Config.WIKIPEDIA_INVALID_PAGES));
+		try {
+			jtok = new JTok();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Properties props;
+		props = new Properties();
+		props.put("annotators", "tokenize, ssplit, pos, lemma");
+		pipeline = new StanfordCoreNLP(props);
 	}
 
 	public void process(WikiArticle page, Siteinfo siteinfo)
@@ -59,14 +79,49 @@ public class ArticleFilter implements IArticleFilter {
 				text = cleanUpText(text);
 				String firstSentence = getFirstSentence(text.trim());
 				firstSentence = cleanUpText(firstSentence);
+				String tokenizedSentence = tokenizer(firstSentence);
 				try {
 					SentenceExtractionApp.esService.insertSentence(pageId,
-							firstSentence, subjectId, wikipediaTitle);
+							firstSentence, tokenizedSentence, subjectId,
+							wikipediaTitle);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
+	}
+
+	public String tokenizer(String text) {
+		AnnotatedString annString = jtok.tokenize(text, "en");
+		List<Token> tokenList = Outputter.createTokens(annString);
+		StringBuilder builder = new StringBuilder();
+		for (Token token : tokenList) {
+			builder.append(lemmatize(token.getImage()) + " ");
+		}
+		return builder.toString().trim();
+	}
+
+	// method should be used word-based
+	public String lemmatize(String documentText) {
+		StringBuilder builder = new StringBuilder();
+		Annotation document = new Annotation(documentText);
+		this.pipeline.annotate(document);
+		List<CoreMap> sentences = document.get(SentencesAnnotation.class);
+		for (CoreMap sentence : sentences) {
+			for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
+				String image = token.get(LemmaAnnotation.class);
+				image = replaceParantheses(image);
+				builder.append(image);
+			}
+		}
+		return builder.toString();
+	}
+
+	public String replaceParantheses(String image) {
+		return image = image.replaceAll("-lrb-", "\\(")
+				.replaceAll("-rrb-", "\\)").replaceAll("-lcb-", "\\{")
+				.replaceAll("-rcb-", "\\}").replaceAll("-lsb-", "\\[")
+				.replaceAll("-rsb-", "\\]");
 	}
 
 	private void logCounts() {
