@@ -136,11 +136,25 @@ public class ArticleFilterTest {
 		String actual = filter.tokenizer(test);
 		assertThat(actual).isEqualTo(expected);
 	}
+	@Test
+	public void testTokenizerLowerCase(){
+		String test = "''' Saint-Esteben ''' be a [[ commune of France | commune ]] in "
+				+ "the [[ pyrénées-atlantique ]] [[ Departments of France | department ]] "
+				+ "in south-western [[ France ]] .";
+
+		String expected = "''' saint esteben ''' be a [[ commune of france | commune ]] in"
+				+ " the [[ pyrénées atlantique ]] [[ department of france | department ]] "
+				+ "in south western [[ france ]] .";
+		String actual = filter.tokenizer(test);
+		assertThat(actual).isEqualTo(expected);
+	}
 
 	@Test
 	public void testLemmatizer() {
 		assertThat("[[").isEqualTo(filter.lemmatize("[["));
 		assertThat("]]").isEqualTo(filter.lemmatize("]]"));
+		assertThat("[").isEqualTo(filter.lemmatize("["));
+		assertThat("]").isEqualTo(filter.lemmatize("]"));
 		assertThat("(").isEqualTo(filter.lemmatize("("));
 		assertThat(")").isEqualTo(filter.lemmatize(")"));
 		assertThat("{").isEqualTo(filter.lemmatize("{"));

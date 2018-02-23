@@ -29,7 +29,7 @@ public class SentenceExtractionApp {
 
 		try {
 			isIndexCreated = esService.checkAndCreateIndex(Config.getInstance()
-					.getString(Config.WIKIPEDIA_INDEX));
+					.getString(Config.WIKIPEDIA_SENTENCE_INDEX));
 		} catch (InterruptedException | IOException e) {
 			e.printStackTrace();
 		}

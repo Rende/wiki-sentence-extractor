@@ -92,11 +92,12 @@ public class ArticleFilter implements IArticleFilter {
 	}
 
 	public String tokenizer(String text) {
+		text = text.replaceAll("-", " ");
 		AnnotatedString annString = jtok.tokenize(text, "en");
 		List<Token> tokenList = Outputter.createTokens(annString);
 		StringBuilder builder = new StringBuilder();
 		for (Token token : tokenList) {
-			builder.append(lemmatize(token.getImage()) + " ");
+			builder.append(lemmatize(token.getImage().toLowerCase()) + " ");
 		}
 		return builder.toString().trim();
 	}
