@@ -20,7 +20,7 @@ public final class Config {
 	public static final String WIKIDATA_INDEX = "wikidata.index";
 	public static final String WIKIDATA_ENTITY = "wikidata.entity.type";
 	public static final String WIKIDATA_CLAIM = "wikidata.claim.type";
-	public static final String WIKIPEDIA_INDEX = "wikipedia.index";
+	public static final String WIKIPEDIA_SENTENCE_INDEX = "wikipedia.sentence.index";
 	public static final String WIKIPEDIA_SENTENCE = "wikipedia.sentence.type";
 	public static final String WIKIPEDIA_EXTENSION = "wikipedia.extension";
 	public static final String NUMBER_OF_SHARDS = "number_of_shards";

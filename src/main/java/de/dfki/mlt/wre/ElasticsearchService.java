@@ -209,7 +209,8 @@ public class ElasticsearchService {
 		// System.out.println(json);
 		IndexRequest indexRequest = Requests
 				.indexRequest()
-				.index(Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
+				.index(Config.getInstance().getString(
+						Config.WIKIPEDIA_SENTENCE_INDEX))
 				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
 				.source(json);
 		getBulkProcessor().add(indexRequest);
@@ -255,7 +256,7 @@ public class ElasticsearchService {
 				&& createIndexResponse.isAcknowledged();
 	}
 
-	private boolean putMappingForSentence(IndicesAdminClient indicesAdminClient)
+	public boolean putMappingForSentence(IndicesAdminClient indicesAdminClient)
 			throws IOException {
 		XContentBuilder mappingBuilder = XContentFactory
 				.jsonBuilder()
@@ -279,7 +280,8 @@ public class ElasticsearchService {
 				+ mappingBuilder.string());
 		PutMappingResponse putMappingResponse = indicesAdminClient
 				.preparePutMapping(
-						Config.getInstance().getString(Config.WIKIPEDIA_INDEX))
+						Config.getInstance().getString(
+								Config.WIKIPEDIA_SENTENCE_INDEX))
 				.setType(
 						Config.getInstance().getString(
 								Config.WIKIPEDIA_SENTENCE))
