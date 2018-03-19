@@ -160,8 +160,9 @@ public class ElasticsearchService {
 			String subjectId, String wikipediaTitle, String tokenizedSentence)
 			throws IOException {
 		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("page-id", pageId).field("title", wikipediaTitle)
-				.field("subject-id", subjectId).field("sentence", sentence)
+				.field("page-id", Long.parseLong(pageId))
+				.field("title", wikipediaTitle).field("subject-id", subjectId)
+				.field("sentence", sentence)
 				.field("tok-sentence", tokenizedSentence).endObject();
 		String json = builder.string();
 		// System.out.println(json);
@@ -223,7 +224,7 @@ public class ElasticsearchService {
 						Config.getInstance().getString(
 								Config.WIKIPEDIA_SENTENCE))
 				.startObject("properties").startObject("page-id")
-				.field("type", "integer").field("index", "true").endObject()
+				.field("type", "long").field("index", "true").endObject()
 				.startObject("title").field("type", "keyword")
 				.field("index", "true").endObject().startObject("subject-id")
 				.field("type", "keyword").field("index", "true").endObject()

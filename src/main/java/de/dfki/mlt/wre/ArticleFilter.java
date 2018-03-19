@@ -130,10 +130,10 @@ public class ArticleFilter implements IArticleFilter {
 		if (count % 10000 == 0)
 			SentenceExtractionApp.LOG
 					.info("The number of wikipedia pages processed: " + count);
-		if (noEntryCount % 100 == 0)
+		if (noEntryCount % 1000 == 0)
 			SentenceExtractionApp.LOG.info(noEntryCount
 					+ " pages has no entry in wikidata");
-		if (invalidCount % 100 == 0)
+		if (invalidCount % 1000 == 0)
 			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
 	}
 
