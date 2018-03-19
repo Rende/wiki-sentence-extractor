@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>2.2.1</version>
+			<version>6.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -73,6 +73,11 @@
 			<groupId>edu.stanford.nlp</groupId>
 			<artifactId>stanford-english-corenlp-2017-06-09-models</artifactId>
 			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>transport</artifactId>
+			<version>6.2.2</version>
 		</dependency>
 	</dependencies>
 	<build>

@@ -5,12 +5,7 @@ package de.dfki.mlt.wre;
 
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
@@ -27,10 +22,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.IndicesAdminClient;
 import org.elasticsearch.client.Requests;
-import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.cluster.node.DiscoveryNode;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
@@ -40,8 +32,7 @@ import org.elasticsearch.common.xcontent.XContentFactory;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
-
-import com.google.common.collect.ImmutableList;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
 import de.dfki.mlt.wre.preferences.Config;
 
@@ -54,63 +45,31 @@ public class ElasticsearchService {
 	private BulkProcessor bulkProcessor;
 
 	public ElasticsearchService() {
-		getClient();
+		try {
+			getClient();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
 	}
 
-	private Client getClient() {
+	@SuppressWarnings("resource")
+	private Client getClient() throws UnknownHostException {
 		if (client == null) {
-			Map<String, String> userConfig = getUserConfig();
-			List<InetSocketAddress> transportAddresses = getTransportAddresses();
-			List<TransportAddress> transportNodes;
-			transportNodes = new ArrayList<>(transportAddresses.size());
-			for (InetSocketAddress address : transportAddresses) {
-				transportNodes.add(new InetSocketTransportAddress(address));
-			}
-			Settings settings = Settings.settingsBuilder().put(userConfig)
-					.build();
-
-			TransportClient transportClient = TransportClient.builder()
-					.settings(settings).build();
-			for (TransportAddress transport : transportNodes) {
-				transportClient.addTransportAddress(transport);
-			}
-
-			// verify that we actually are connected to a cluster
-			ImmutableList<DiscoveryNode> nodes = ImmutableList
-					.copyOf(transportClient.connectedNodes());
-			if (nodes.isEmpty()) {
-				throw new RuntimeException(
-						"Client is not connected to any Elasticsearch nodes!");
-			}
-
-			client = transportClient;
+			Settings settings = Settings
+					.builder()
+					.put(Config.CLUSTER_NAME,
+							Config.getInstance().getString(Config.CLUSTER_NAME))
+					.put(Config.BULK_FLUSH_MAX_ACTIONS,
+							Config.getInstance().getString(
+									Config.BULK_FLUSH_MAX_ACTIONS)).build();
+			client = new PreBuiltTransportClient(settings)
+					.addTransportAddress(new TransportAddress(InetAddress
+							.getByName("134.96.187.233"), 9300));
 		}
 		return client;
 	}
 
-	public static Map<String, String> getUserConfig() {
-		Map<String, String> config = new HashMap<>();
-		config.put(Config.BULK_FLUSH_MAX_ACTIONS, Config.getInstance()
-				.getString(Config.BULK_FLUSH_MAX_ACTIONS));
-		config.put(Config.CLUSTER_NAME,
-				Config.getInstance().getString(Config.CLUSTER_NAME));
-
-		return config;
-	}
-
-	public static List<InetSocketAddress> getTransportAddresses() {
-		List<InetSocketAddress> transports = new ArrayList<>();
-		try {
-			transports.add(new InetSocketAddress(InetAddress.getByName(Config
-					.getInstance().getString(Config.HOST)), Config
-					.getInstance().getInt(Config.PORT)));
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		}
-		return transports;
-	}
-
-	public void stopConnection() {
+	public void stopConnection() throws UnknownHostException {
 		getBulkProcessor().close();
 		getClient().close();
 	}
@@ -128,7 +87,7 @@ public class ElasticsearchService {
 	}
 
 	public boolean isResponseValid(SearchResponse response) {
-		return response != null && response.getHits().totalHits() > 0;
+		return response != null && response.getHits().totalHits > 0;
 	}
 
 	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
@@ -137,6 +96,7 @@ public class ElasticsearchService {
 				.must(QueryBuilders.termQuery("wiki-title", wikipediaTitle));
 
 		try {
+			@SuppressWarnings("deprecation")
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(
 							Config.getInstance().getString(
@@ -144,7 +104,7 @@ public class ElasticsearchService {
 					.setTypes(
 							Config.getInstance().getString(
 									Config.WIKIDATA_ENTITY))
-					.addFields("wiki-title").setQuery(query).setSize(1);
+					.fields("wiki-title").setQuery(query).setSize(1);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			return response;
 
@@ -154,7 +114,7 @@ public class ElasticsearchService {
 		return null;
 	}
 
-	private BulkProcessor getBulkProcessor() {
+	private BulkProcessor getBulkProcessor() throws UnknownHostException {
 		if (bulkProcessor == null) {
 			bulkProcessor = BulkProcessor
 					.builder(getClient(), new BulkProcessor.Listener() {
@@ -243,7 +203,7 @@ public class ElasticsearchService {
 			String indexName) {
 		final CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient
 				.prepareCreate(indexName).setSettings(
-						Settings.settingsBuilder()
+						Settings.builder()
 								.put(Config.NUMBER_OF_SHARDS,
 										Config.getInstance().getInt(
 												Config.NUMBER_OF_SHARDS))
