@@ -146,7 +146,7 @@ public class ElasticsearchService {
 
 						}
 					})
-					.setBulkActions(10000)
+					.setBulkActions(1000)
 					.setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
 					.setFlushInterval(TimeValue.timeValueSeconds(5))
 					.setConcurrentRequests(1)
