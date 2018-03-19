@@ -223,14 +223,13 @@ public class ElasticsearchService {
 						Config.getInstance().getString(
 								Config.WIKIPEDIA_SENTENCE))
 				.startObject("properties").startObject("page-id")
-				.field("type", "integer").field("index", "not_analyzed")
-				.endObject().startObject("title").field("type", "string")
-				.field("index", "not_analyzed").endObject()
-				.startObject("subject-id").field("type", "string")
-				.field("index", "not_analyzed").endObject()
-				.startObject("sentence").field("type", "string").endObject()
-				.startObject("tok-sentence").field("type", "string")
-				.endObject().endObject() // properties
+				.field("type", "integer").field("index", "true").endObject()
+				.startObject("title").field("type", "keyword")
+				.field("index", "true").endObject().startObject("subject-id")
+				.field("type", "keyword").field("index", "true").endObject()
+				.startObject("sentence").field("type", "text").endObject()
+				.startObject("tok-sentence").field("type", "text").endObject()
+				.endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
