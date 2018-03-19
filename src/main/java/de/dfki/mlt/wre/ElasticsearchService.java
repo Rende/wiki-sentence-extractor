@@ -6,6 +6,7 @@ package de.dfki.mlt.wre;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.HashMap;
 
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
@@ -29,6 +30,7 @@ import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
@@ -159,19 +161,25 @@ public class ElasticsearchService {
 	public void insertSentence(String pageId, String sentence,
 			String subjectId, String wikipediaTitle, String tokenizedSentence)
 			throws IOException {
-		XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-				.field("page-id", Long.parseLong(pageId))
-				.field("title", wikipediaTitle).field("subject-id", subjectId)
-				.field("sentence", sentence)
-				.field("tok-sentence", tokenizedSentence).endObject();
-		String json = builder.string();
+		// XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
+		// .field("page-id", Long.parseLong(pageId))
+		// .field("title", wikipediaTitle).field("subject-id", subjectId)
+		// .field("sentence", sentence)
+		// .field("tok-sentence", tokenizedSentence).endObject();
+		// String json = builder.string();
+		HashMap<String, Object> dataAsMap = new HashMap<String, Object>();
+		dataAsMap.put("page-id", Long.parseLong(pageId));
+		dataAsMap.put("title", wikipediaTitle);
+		dataAsMap.put("subject-id", subjectId);
+		dataAsMap.put("sentence", sentence);
+		dataAsMap.put("tok-sentence", tokenizedSentence);
 		// System.out.println(json);
 		IndexRequest indexRequest = Requests
 				.indexRequest()
 				.index(Config.getInstance().getString(
 						Config.WIKIPEDIA_SENTENCE_INDEX))
 				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
-				.source(json);
+				.source(dataAsMap, XContentType.JSON);
 		getBulkProcessor().add(indexRequest);
 
 	}
