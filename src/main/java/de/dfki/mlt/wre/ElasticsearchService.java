@@ -59,9 +59,7 @@ public class ElasticsearchService {
 					.builder()
 					.put(Config.CLUSTER_NAME,
 							Config.getInstance().getString(Config.CLUSTER_NAME))
-					.put(Config.BULK_FLUSH_MAX_ACTIONS,
-							Config.getInstance().getString(
-									Config.BULK_FLUSH_MAX_ACTIONS)).build();
+					.build();
 			client = new PreBuiltTransportClient(settings)
 					.addTransportAddress(new TransportAddress(InetAddress
 							.getByName("134.96.187.233"), 9300));
