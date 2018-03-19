@@ -71,7 +71,7 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.stanford.nlp</groupId>
-			<artifactId>stanford-english-corenlp-2017-06-09-models</artifactId>
+			<artifactId>stanford-english-corenlp-2018-01-31-models</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>

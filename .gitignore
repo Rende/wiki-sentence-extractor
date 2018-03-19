@@ -7,3 +7,5 @@
 /dumpfiles/
 *.log
 *.txt
+local-repo/
+src/main/resources/stanford-english-corenlp-2018-01-31-models.jar
