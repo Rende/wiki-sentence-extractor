@@ -24,7 +24,7 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.client.IndicesAdminClient;
 import org.elasticsearch.client.Requests;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
@@ -63,7 +63,7 @@ public class ElasticsearchService {
 							Config.getInstance().getString(Config.CLUSTER_NAME))
 					.build();
 			client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new TransportAddress(InetAddress
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress
 							.getByName("134.96.187.233"), 9300));
 		}
 		return client;
