@@ -78,14 +78,17 @@ public class ArticleFilter implements IArticleFilter {
 							'[', ']');
 				text = cleanUpText(text);
 				String firstSentence = getFirstSentence(text.trim());
-				firstSentence = cleanUpText(firstSentence);
-				String tokenizedSentence = tokenizer(firstSentence);
-				try {
-					SentenceExtractionApp.esService.insertSentence(pageId,
-							firstSentence, subjectId, wikipediaTitle,
-							tokenizedSentence);
-				} catch (IOException e) {
-					e.printStackTrace();
+				if (firstSentence.length() > 0
+						&& !firstSentence.contains("may refer to")) {
+					firstSentence = cleanUpText(firstSentence);
+					String tokenizedSentence = tokenizer(firstSentence);
+					try {
+						SentenceExtractionApp.esService.insertSentence(pageId,
+								firstSentence, subjectId, wikipediaTitle,
+								tokenizedSentence);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		}
@@ -130,10 +133,10 @@ public class ArticleFilter implements IArticleFilter {
 		if (count % 10000 == 0)
 			SentenceExtractionApp.LOG
 					.info("The number of wikipedia pages processed: " + count);
-		if (noEntryCount % 1000 == 0)
+		if (noEntryCount % 10000 == 0)
 			SentenceExtractionApp.LOG.info(noEntryCount
 					+ " pages has no entry in wikidata");
-		if (invalidCount % 1000 == 0)
+		if (invalidCount % 10000 == 0)
 			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
 	}
 
@@ -141,8 +144,8 @@ public class ArticleFilter implements IArticleFilter {
 		boolean isRedirect = false;
 		List<String> redirectList = Arrays.asList(Config.getInstance()
 				.getStringArray(Config.PAGE_REDIRECT));
-		for (String red : redirectList) {
-			isRedirect = isRedirect || page.getText().startsWith(red);
+		for (String redirection : redirectList) {
+			isRedirect = isRedirect || page.getText().startsWith(redirection);
 		}
 		return page != null && page.getText() != null && !isRedirect;
 	}

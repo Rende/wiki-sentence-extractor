@@ -63,8 +63,8 @@ public class ElasticsearchService {
 							Config.getInstance().getString(Config.CLUSTER_NAME))
 					.build();
 			client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress
-							.getByName("134.96.187.233"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(
+							InetAddress.getByName("134.96.187.233"), 9300));
 		}
 		return client;
 	}
@@ -91,20 +91,21 @@ public class ElasticsearchService {
 	}
 
 	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
-		QueryBuilder query = QueryBuilders.boolQuery()
+		QueryBuilder query = QueryBuilders
+				.boolQuery()
 				.must(QueryBuilders.termQuery("type.keyword", "item"))
-				.must(QueryBuilders.termQuery("wiki-title.keyword", wikipediaTitle));
+				.must(QueryBuilders.termQuery("wiki-title.keyword",
+						wikipediaTitle));
 
 		try {
-			@SuppressWarnings("deprecation")
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(
 							Config.getInstance().getString(
 									Config.WIKIDATA_INDEX))
 					.setTypes(
 							Config.getInstance().getString(
-									Config.WIKIDATA_ENTITY))
-					.fields("wiki-title").setQuery(query).setSize(1);
+									Config.WIKIDATA_ENTITY)).setQuery(query)
+					.setSize(1);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			return response;
 
@@ -121,9 +122,6 @@ public class ElasticsearchService {
 						@Override
 						public void beforeBulk(long executionId,
 								BulkRequest request) {
-							// WikiRelationExtractionApp.LOG
-							// .info("Number of request processed: "
-							// + request.numberOfActions());
 						}
 
 						@Override
