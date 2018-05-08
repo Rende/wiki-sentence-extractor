@@ -159,12 +159,6 @@ public class ElasticsearchService {
 	public void insertSentence(String pageId, String sentence,
 			String subjectId, String wikipediaTitle, String tokenizedSentence)
 			throws IOException {
-		// XContentBuilder builder = XContentFactory.jsonBuilder().startObject()
-		// .field("page-id", Long.parseLong(pageId))
-		// .field("title", wikipediaTitle).field("subject-id", subjectId)
-		// .field("sentence", sentence)
-		// .field("tok-sentence", tokenizedSentence).endObject();
-		// String json = builder.string();
 		HashMap<String, Object> dataAsMap = new HashMap<String, Object>();
 		dataAsMap.put("page-id", Long.parseLong(pageId));
 		dataAsMap.put("title", wikipediaTitle);

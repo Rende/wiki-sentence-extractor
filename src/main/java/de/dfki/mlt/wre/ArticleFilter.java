@@ -46,10 +46,8 @@ public class ArticleFilter implements IArticleFilter {
 	protected StanfordCoreNLP pipeline;
 
 	public ArticleFilter() {
-		extensionList = Arrays.asList(Config.getInstance().getStringArray(
-				Config.WIKIPEDIA_EXTENSION));
-		invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(
-				Config.WIKIPEDIA_INVALID_PAGES));
+		extensionList = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_EXTENSION));
+		invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_INVALID_PAGES));
 		try {
 			jtok = new JTok();
 		} catch (IOException e) {
@@ -61,30 +59,26 @@ public class ArticleFilter implements IArticleFilter {
 		pipeline = new StanfordCoreNLP(props);
 	}
 
-	public void process(WikiArticle page, Siteinfo siteinfo)
-			throws SAXException {
+	public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
 		if (isPageValid(page)) {
 			logCounts();
 			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
 			String pageId = page.getId();
-			String subjectId = SentenceExtractionApp.esService
-					.getItemId(wikipediaTitle);
+			String subjectId = SentenceExtractionApp.esService.getItemId(wikipediaTitle);
 			if (isSubjectValid(subjectId, wikipediaTitle)) {
 				String text = page.getText();
 				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
 				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
 				for (String extension : extensionList)
-					text = removeContentBetweenMatchingBracket(text, extension,
-							'[', ']');
+					text = removeContentBetweenMatchingBracket(text, extension, '[', ']');
 				text = cleanUpText(text);
 				String firstSentence = getFirstSentence(text.trim());
-				if (firstSentence.length() > 0
-						&& !firstSentence.contains("may refer to")) {
+				if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
 					firstSentence = cleanUpText(firstSentence);
+					firstSentence = fixSubjectAnnotation(firstSentence);
 					String tokenizedSentence = tokenizer(firstSentence);
 					try {
-						SentenceExtractionApp.esService.insertSentence(pageId,
-								firstSentence, subjectId, wikipediaTitle,
+						SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, subjectId, wikipediaTitle,
 								tokenizedSentence);
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -122,28 +116,23 @@ public class ArticleFilter implements IArticleFilter {
 	}
 
 	public String replaceParantheses(String image) {
-		return image = image.replaceAll("-lrb-", "\\(")
-				.replaceAll("-rrb-", "\\)").replaceAll("-lcb-", "\\{")
-				.replaceAll("-rcb-", "\\}").replaceAll("-lsb-", "\\[")
-				.replaceAll("-rsb-", "\\]");
+		return image = image.replaceAll("-lrb-", "\\(").replaceAll("-rrb-", "\\)").replaceAll("-lcb-", "\\{")
+				.replaceAll("-rcb-", "\\}").replaceAll("-lsb-", "\\[").replaceAll("-rsb-", "\\]");
 	}
 
 	private void logCounts() {
 		count++;
 		if (count % 10000 == 0)
-			SentenceExtractionApp.LOG
-					.info("The number of wikipedia pages processed: " + count);
+			SentenceExtractionApp.LOG.info("The number of wikipedia pages processed: " + count);
 		if (noEntryCount % 10000 == 0)
-			SentenceExtractionApp.LOG.info(noEntryCount
-					+ " pages has no entry in wikidata");
+			SentenceExtractionApp.LOG.info(noEntryCount + " pages has no entry in wikidata");
 		if (invalidCount % 10000 == 0)
 			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
 	}
 
 	private boolean isPageValid(WikiArticle page) {
 		boolean isRedirect = false;
-		List<String> redirectList = Arrays.asList(Config.getInstance()
-				.getStringArray(Config.PAGE_REDIRECT));
+		List<String> redirectList = Arrays.asList(Config.getInstance().getStringArray(Config.PAGE_REDIRECT));
 		for (String redirection : redirectList) {
 			isRedirect = isRedirect || page.getText().startsWith(redirection);
 		}
@@ -170,17 +159,39 @@ public class ArticleFilter implements IArticleFilter {
 	public String cleanUpText(String text) {
 		String cleanText = text
 				// to remove xml comments
-				.replaceAll("(?m)<!--[\\s\\S]*?-->", "")
-				.replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "")
-				.replaceAll("\\{.*?\\}", "").replaceAll("http.*?\\s", "")
-				.replaceAll("&ndash", "");
+				.replaceAll("(?m)<!--[\\s\\S]*?-->", "").replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "")
+				.replaceAll("\\{.*?\\}", "").replaceAll("http.*?\\s", "").replaceAll("&ndash", "");
 		return cleanText;
+	}
+
+	/***
+	 * '''abc'''xyz => ''' abc ''' xyz
+	 */
+
+	public String fixSubjectAnnotation(String text) {
+		StringBuilder builder = new StringBuilder();
+		boolean isInQuote = false;
+		for (int i = 0; i < text.length(); i++) {
+			if (text.charAt(i) == '\'') {
+				if (!isInQuote && (i - 1 >= 0 && text.charAt(i - 1) != ' '))
+					builder.append(" ");
+				builder.append(text.charAt(i));
+				isInQuote = true;
+			} else {
+				if (text.charAt(i) != ' ' && isInQuote) {
+					if ((i - 1 >= 0 && text.charAt(i - 1) != ' '))
+						builder.append(" ");
+					isInQuote = false;
+				}
+				builder.append(text.charAt(i));
+			}
+		}
+		return builder.toString().trim();
 	}
 
 	private String getFirstSentence(String inputText) {
 		StringBuilder builder = new StringBuilder();
-		AnnotatedString annString = JtokApi.getInstance().tokenize(inputText,
-				"en");
+		AnnotatedString annString = JtokApi.getInstance().tokenize(inputText, "en");
 		List<Paragraph> paragraphs = Outputter.createParagraphs(annString);
 		for (Paragraph p : paragraphs) {
 			if (p.getStartIndex() != p.getEndIndex()) {
@@ -197,8 +208,7 @@ public class ArticleFilter implements IArticleFilter {
 		return builder.toString();
 	}
 
-	public String removeContentBetweenMatchingBracket(String input,
-			String pattern, char open, char close) {
+	public String removeContentBetweenMatchingBracket(String input, String pattern, char open, char close) {
 		String result = "";
 		try {
 			int openCloseCount = 0;
@@ -223,10 +233,8 @@ public class ArticleFilter implements IArticleFilter {
 			if (end == -1) {
 				result = input.substring(0, start);
 			} else {
-				result = input.substring(0, start)
-						+ removeContentBetweenMatchingBracket(
-								input.substring(end, input.length()), pattern,
-								open, close);
+				result = input.substring(0, start) + removeContentBetweenMatchingBracket(
+						input.substring(end, input.length()), pattern, open, close);
 			}
 		} catch (StackOverflowError e) {
 
