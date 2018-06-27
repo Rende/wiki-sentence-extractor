@@ -16,10 +16,10 @@ import de.dfki.mlt.wre.ArticleFilter;
  *
  */
 public class ArticleFilterTest {
-	private ArticleFilter filter = new ArticleFilter();
+	private ArticleFilter filter;
 
 	public ArticleFilterTest() {
-
+		filter = new ArticleFilter();
 	}
 
 	@Test
