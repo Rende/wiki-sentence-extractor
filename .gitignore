@@ -9,3 +9,5 @@
 *.txt
 local-repo/
 src/main/resources/stanford-english-corenlp-2018-02-27-models.jar
+models/
+*.conf
