@@ -17,8 +17,7 @@ import de.dfki.mlt.wre.preferences.Config;
 public class SentenceExtractionApp {
 
 	public static ElasticsearchService esService = new ElasticsearchService();
-	public static final Logger LOG = LoggerFactory
-			.getLogger(SentenceExtractionApp.class);
+	public static final Logger LOG = LoggerFactory.getLogger(SentenceExtractionApp.class);
 
 	public static void main(String[] args) {
 		System.setProperty("jdk.xml.totalEntitySizeLimit", "0");
@@ -28,15 +27,15 @@ public class SentenceExtractionApp {
 		LOG.info("Wikipedia first sentence extraction started.");
 
 		try {
-			isIndexCreated = esService.checkAndCreateIndex(Config.getInstance()
-					.getString(Config.WIKIPEDIA_SENTENCE_INDEX));
+			isIndexCreated = esService
+					.checkAndCreateIndex(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE_INDEX));
 		} catch (InterruptedException | IOException e) {
 			e.printStackTrace();
 		}
 		if (isIndexCreated) {
-			String dumpfile = Config.getInstance().getString(
-					Config.DIRECTORY_PATH);
-			ArticleFilter handler = new ArticleFilter();
+			String dumpfile = Config.getInstance().getString(Config.DIRECTORY_PATH);
+			String lang = Config.getInstance().getString(Config.LANG);
+			ArticleFilter handler = new ArticleFilter(lang);
 			WikiXMLParser wxp;
 			try {
 				wxp = new WikiXMLParser(dumpfile, handler);

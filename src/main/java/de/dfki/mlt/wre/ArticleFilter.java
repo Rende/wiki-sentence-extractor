@@ -6,13 +6,19 @@ package de.dfki.mlt.wre;
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
 import info.bliki.wiki.dump.WikiArticle;
+import opennlp.tools.lemmatizer.LemmatizerME;
+import opennlp.tools.lemmatizer.LemmatizerModel;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.lang.StringUtils;
 import org.xml.sax.SAXException;
 
@@ -22,6 +28,7 @@ import de.dfki.lt.tools.tokenizer.output.Outputter;
 import de.dfki.lt.tools.tokenizer.output.Paragraph;
 import de.dfki.lt.tools.tokenizer.output.TextUnit;
 import de.dfki.lt.tools.tokenizer.output.Token;
+import de.dfki.mlt.munderline.MunderLine;
 import de.dfki.mlt.wre.preferences.Config;
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
@@ -39,24 +46,52 @@ public class ArticleFilter implements IArticleFilter {
 
 	private List<String> extensionList = new ArrayList<String>();
 	private List<String> invalidPageTitles = new ArrayList<String>();
+	private String lang;
 	public int noEntryCount = 0;
 	public int invalidCount = 0;
 	public int count = 0;
 	private JTok jtok;
-	protected StanfordCoreNLP pipeline;
+	private StanfordCoreNLP pipeline;
+	private LemmatizerME lemmatizer;
+	private MunderLine munderLine;
 
-	public ArticleFilter() {
-		extensionList = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_EXTENSION));
-		invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_INVALID_PAGES));
+	public ArticleFilter(String lang) {
+		this.extensionList = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_EXTENSION));
+		this.invalidPageTitles = Arrays.asList(Config.getInstance().getStringArray(Config.WIKIPEDIA_INVALID_PAGES));
+		this.lang = lang;
 		try {
-			jtok = new JTok();
+			this.jtok = new JTok();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		if (this.lang.equals("en")) {
+			initializeENModuls();
+		} else if (this.lang.equals("de")) {
+			initializeDEModuls();
+		}
+	}
+
+	private void initializeENModuls() {
 		Properties props;
 		props = new Properties();
 		props.put("annotators", "tokenize, ssplit, pos, lemma");
-		pipeline = new StanfordCoreNLP(props);
+		this.pipeline = new StanfordCoreNLP(props);
+	}
+
+	private void initializeDEModuls() {
+		LemmatizerModel lemmatizerModel = null;
+		try {
+			this.munderLine = new MunderLine("DE_pipeline.conf");
+			String lemmatizerModelPath = "models/DE-lemmatizer.bin";
+			InputStream in = this.getClass().getClassLoader().getResourceAsStream(lemmatizerModelPath);
+			if (null == in) {
+				in = Files.newInputStream(Paths.get(lemmatizerModelPath));
+			}
+			lemmatizerModel = new LemmatizerModel(in);
+		} catch (ConfigurationException | IOException e) {
+			e.printStackTrace();
+		}
+		this.lemmatizer = new LemmatizerME(lemmatizerModel);
 	}
 
 	public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
@@ -76,7 +111,7 @@ public class ArticleFilter implements IArticleFilter {
 				if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
 					firstSentence = cleanUpText(firstSentence);
 					firstSentence = fixSubjectAnnotation(firstSentence);
-					String tokenizedSentence = tokenizer(firstSentence);
+					String tokenizedSentence = tokenizeLemmatizeText(firstSentence);
 					try {
 						SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, subjectId, wikipediaTitle,
 								tokenizedSentence);
@@ -88,31 +123,72 @@ public class ArticleFilter implements IArticleFilter {
 		}
 	}
 
-	public String tokenizer(String text) {
-		text = text.replaceAll("-", " ");
-		AnnotatedString annString = jtok.tokenize(text, "en");
-		List<Token> tokenList = Outputter.createTokens(annString);
-		StringBuilder builder = new StringBuilder();
+	public String tokenizeLemmatizeText(String text) {
+		String resultText = new String();
+		List<String> tokensAsString = tokenize(text);
+		if (this.lang.equals("en")) {
+			resultText = lemmatizeEN(tokensAsString);
+		} else if (this.lang.equals("de")) {
+			resultText = lemmatizeDE(tokensAsString);
+		}
+		return resultText;
+	}
+
+	public List<String> tokenize(String text) {
+		AnnotatedString annotatedString = this.jtok.tokenize(text, this.lang);
+		List<Token> tokenList = Outputter.createTokens(annotatedString);
+		List<String> tokensAsString = new ArrayList<String>();
 		for (Token token : tokenList) {
-			builder.append(lemmatize(token.getImage().toLowerCase()) + " ");
+			tokensAsString.add(token.getImage());
+		}
+		return tokensAsString;
+	}
+
+	public String lemmatizeDE(List<String> tokensAsString) {
+		String[][] coNllTable = this.munderLine.processTokenizedSentence(tokensAsString);
+
+		String[] tokens = new String[coNllTable.length];
+		String[] posTags = new String[coNllTable.length];
+		for (int i = 0; i < coNllTable.length; i++) {
+			tokens[i] = coNllTable[i][1];
+			posTags[i] = coNllTable[i][3];
+		}
+		String[] lemmata = this.lemmatizer.lemmatize(tokens, posTags);
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < lemmata.length; i++) {
+			if (containsAnnotation(tokens[i]) || lemmata[i].equals("--"))
+				builder.append(tokens[i] + " ");
+			else
+				builder.append(lemmata[i] + " ");
 		}
 		return builder.toString().trim();
 	}
 
-	// method should be used word-based
-	public String lemmatize(String documentText) {
+	public String lemmatizeEN(List<String> tokensAsString) {
 		StringBuilder builder = new StringBuilder();
-		Annotation document = new Annotation(documentText);
-		this.pipeline.annotate(document);
-		List<CoreMap> sentences = document.get(SentencesAnnotation.class);
-		for (CoreMap sentence : sentences) {
-			for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
-				String image = token.get(LemmaAnnotation.class);
-				image = replaceParantheses(image);
-				builder.append(image);
+		Annotation document = null;
+		for (String token : tokensAsString) {
+			if (!containsAnnotation(token)) {
+				document = new Annotation(token);
+				this.pipeline.annotate(document);
+				List<CoreMap> sentences = document.get(SentencesAnnotation.class);
+				for (CoreMap sentence : sentences) {
+					for (CoreLabel coreLabel : sentence.get(TokensAnnotation.class)) {
+						String image = coreLabel.get(LemmaAnnotation.class);
+						// String tag = coreLabel.get(PartOfSpeechAnnotation.class);
+						image = replaceParantheses(image).toLowerCase();
+						builder.append(image + " ");
+					}
+				}
+			} else {
+				builder.append(token + " ");
 			}
 		}
-		return builder.toString();
+		return builder.toString().trim();
+	}
+
+	private boolean containsAnnotation(String text) {
+		return text.contains("[[") || text.contains("]]") || text.contains("'''");
 	}
 
 	public String replaceParantheses(String image) {
@@ -191,7 +267,7 @@ public class ArticleFilter implements IArticleFilter {
 
 	private String getFirstSentence(String inputText) {
 		StringBuilder builder = new StringBuilder();
-		AnnotatedString annString = JtokApi.getInstance().tokenize(inputText, "en");
+		AnnotatedString annString = this.jtok.tokenize(inputText, this.lang);
 		List<Paragraph> paragraphs = Outputter.createParagraphs(annString);
 		for (Paragraph p : paragraphs) {
 			if (p.getStartIndex() != p.getEndIndex()) {
