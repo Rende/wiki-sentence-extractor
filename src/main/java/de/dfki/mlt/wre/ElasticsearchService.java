@@ -93,8 +93,8 @@ public class ElasticsearchService {
 	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
 		QueryBuilder query = QueryBuilders
 				.boolQuery()
-				.must(QueryBuilders.termQuery("type.keyword", "item"))
-				.must(QueryBuilders.termQuery("wiki-title.keyword",
+				.must(QueryBuilders.termQuery("type", "item"))
+				.must(QueryBuilders.termQuery("wiki-title",
 						wikipediaTitle));
 
 		try {
