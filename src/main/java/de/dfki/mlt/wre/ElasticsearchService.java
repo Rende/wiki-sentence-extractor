@@ -6,7 +6,9 @@ package de.dfki.mlt.wre;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
@@ -57,14 +59,10 @@ public class ElasticsearchService {
 	@SuppressWarnings("resource")
 	private Client getClient() throws UnknownHostException {
 		if (client == null) {
-			Settings settings = Settings
-					.builder()
-					.put(Config.CLUSTER_NAME,
-							Config.getInstance().getString(Config.CLUSTER_NAME))
-					.build();
+			Settings settings = Settings.builder()
+					.put(Config.CLUSTER_NAME, Config.getInstance().getString(Config.CLUSTER_NAME)).build();
 			client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(
-							InetAddress.getByName("134.96.187.233"), 9300));
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("134.96.187.233"), 9300));
 		}
 		return client;
 	}
@@ -86,26 +84,48 @@ public class ElasticsearchService {
 		return itemId;
 	}
 
+	public List<String> getItems(String label) {
+		List<String> idList = new ArrayList<String>();
+		SearchResponse response = searchItemsByLabel(label);
+		String itemId = "";
+		if (isResponseValid(response)) {
+			for (SearchHit hit : response.getHits()) {
+				itemId = hit.getId();
+				idList.add(itemId);
+			}
+		}
+		return idList;
+	}
+
 	public boolean isResponseValid(SearchResponse response) {
 		return response != null && response.getHits().totalHits > 0;
 	}
 
 	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
-		QueryBuilder query = QueryBuilders
-				.boolQuery()
-				.must(QueryBuilders.termQuery("type", "item"))
-				.must(QueryBuilders.termQuery("wiki-title",
-						wikipediaTitle));
+		QueryBuilder query = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("type", "item"))
+				.must(QueryBuilders.termQuery("wiki-title", wikipediaTitle));
 
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
-					.prepareSearch(
-							Config.getInstance().getString(
-									Config.WIKIDATA_INDEX))
-					.setTypes(
-							Config.getInstance().getString(
-									Config.WIKIDATA_ENTITY)).setQuery(query)
-					.setSize(1);
+					.prepareSearch(Config.getInstance().getString(Config.WIKIDATA_INDEX))
+					.setTypes(Config.getInstance().getString(Config.WIKIDATA_ENTITY)).setQuery(query).setSize(1);
+			SearchResponse response = requestBuilder.execute().actionGet();
+			return response;
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private SearchResponse searchItemsByLabel(String label) {
+		QueryBuilder query = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("type", "item"))
+				.must(QueryBuilders.termQuery("label", label));
+
+		try {
+			SearchRequestBuilder requestBuilder = getClient()
+					.prepareSearch(Config.getInstance().getString(Config.WIKIDATA_INDEX))
+					.setTypes(Config.getInstance().getString(Config.WIKIDATA_ENTITY)).setQuery(query).setSize(1000);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			return response;
 
@@ -117,48 +137,34 @@ public class ElasticsearchService {
 
 	private BulkProcessor getBulkProcessor() throws UnknownHostException {
 		if (bulkProcessor == null) {
-			bulkProcessor = BulkProcessor
-					.builder(getClient(), new BulkProcessor.Listener() {
-						@Override
-						public void beforeBulk(long executionId,
-								BulkRequest request) {
-						}
+			bulkProcessor = BulkProcessor.builder(getClient(), new BulkProcessor.Listener() {
+				@Override
+				public void beforeBulk(long executionId, BulkRequest request) {
+				}
 
-						@Override
-						public void afterBulk(long executionId,
-								BulkRequest request, BulkResponse response) {
-							if (response.hasFailures()) {
-								SentenceExtractionApp.LOG
-										.error("Elasticsearch Service getBulkProcessor() "
-												+ response
-														.buildFailureMessage());
-							}
-						}
+				@Override
+				public void afterBulk(long executionId, BulkRequest request, BulkResponse response) {
+					if (response.hasFailures()) {
+						SentenceExtractionApp.LOG
+								.error("Elasticsearch Service getBulkProcessor() " + response.buildFailureMessage());
+					}
+				}
 
-						@Override
-						public void afterBulk(long executionId,
-								BulkRequest request, Throwable failure) {
-							SentenceExtractionApp.LOG
-									.error("Elasticsearch Service getBulkProcessor() "
-											+ failure.getMessage());
+				@Override
+				public void afterBulk(long executionId, BulkRequest request, Throwable failure) {
+					SentenceExtractionApp.LOG.error("Elasticsearch Service getBulkProcessor() " + failure.getMessage());
 
-						}
-					})
-					.setBulkActions(1000)
-					.setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
-					.setFlushInterval(TimeValue.timeValueSeconds(5))
-					.setConcurrentRequests(1)
-					.setBackoffPolicy(
-							BackoffPolicy.exponentialBackoff(
-									TimeValue.timeValueMillis(100), 3)).build();
+				}
+			}).setBulkActions(1000).setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
+					.setFlushInterval(TimeValue.timeValueSeconds(5)).setConcurrentRequests(1)
+					.setBackoffPolicy(BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3)).build();
 		}
 
 		return bulkProcessor;
 	}
 
-	public void insertSentence(String pageId, String sentence,
-			String subjectId, String wikipediaTitle, String tokenizedSentence)
-			throws IOException {
+	public void insertSentence(String pageId, String sentence, String subjectId, String wikipediaTitle,
+			String tokenizedSentence) throws IOException {
 		HashMap<String, Object> dataAsMap = new HashMap<String, Object>();
 		dataAsMap.put("page-id", Long.parseLong(pageId));
 		dataAsMap.put("title", wikipediaTitle);
@@ -166,22 +172,18 @@ public class ElasticsearchService {
 		dataAsMap.put("sentence", sentence);
 		dataAsMap.put("tok-sentence", tokenizedSentence);
 		// System.out.println(json);
-		IndexRequest indexRequest = Requests
-				.indexRequest()
-				.index(Config.getInstance().getString(
-						Config.WIKIPEDIA_SENTENCE_INDEX))
-				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
-				.source(dataAsMap, XContentType.JSON);
+		IndexRequest indexRequest = Requests.indexRequest()
+				.index(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE_INDEX))
+				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).source(dataAsMap, XContentType.JSON);
 		getBulkProcessor().add(indexRequest);
 
 	}
 
-	public boolean checkAndCreateIndex(String indexName) throws IOException,
-			InterruptedException {
+	public boolean checkAndCreateIndex(String indexName) throws IOException, InterruptedException {
 		boolean result = false;
 		IndicesAdminClient indicesAdminClient = getClient().admin().indices();
-		final IndicesExistsResponse indexExistReponse = indicesAdminClient
-				.prepareExists(indexName).execute().actionGet();
+		final IndicesExistsResponse indexExistReponse = indicesAdminClient.prepareExists(indexName).execute()
+				.actionGet();
 		if (indexExistReponse.isExists()) {
 			deleteIndex(indicesAdminClient, indexName);
 		}
@@ -191,59 +193,37 @@ public class ElasticsearchService {
 		return result;
 	}
 
-	private void deleteIndex(IndicesAdminClient indicesAdminClient,
-			String indexName) {
-		final DeleteIndexRequestBuilder delIdx = indicesAdminClient
-				.prepareDelete(indexName);
+	private void deleteIndex(IndicesAdminClient indicesAdminClient, String indexName) {
+		final DeleteIndexRequestBuilder delIdx = indicesAdminClient.prepareDelete(indexName);
 		delIdx.execute().actionGet();
 	}
 
-	private boolean createIndex(IndicesAdminClient indicesAdminClient,
-			String indexName) {
-		final CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient
-				.prepareCreate(indexName).setSettings(
-						Settings.builder()
-								.put(Config.NUMBER_OF_SHARDS,
-										Config.getInstance().getInt(
-												Config.NUMBER_OF_SHARDS))
-								.put(Config.NUMBER_OF_REPLICAS,
-										Config.getInstance().getInt(
-												Config.NUMBER_OF_REPLICAS)));
+	private boolean createIndex(IndicesAdminClient indicesAdminClient, String indexName) {
+		final CreateIndexRequestBuilder createIndexRequestBuilder = indicesAdminClient.prepareCreate(indexName)
+				.setSettings(Settings.builder()
+						.put(Config.NUMBER_OF_SHARDS, Config.getInstance().getInt(Config.NUMBER_OF_SHARDS))
+						.put(Config.NUMBER_OF_REPLICAS, Config.getInstance().getInt(Config.NUMBER_OF_REPLICAS)));
 		CreateIndexResponse createIndexResponse = null;
 		createIndexResponse = createIndexRequestBuilder.execute().actionGet();
-		return createIndexResponse != null
-				&& createIndexResponse.isAcknowledged();
+		return createIndexResponse != null && createIndexResponse.isAcknowledged();
 	}
 
-	public boolean putMappingForSentence(IndicesAdminClient indicesAdminClient)
-			throws IOException {
-		XContentBuilder mappingBuilder = XContentFactory
-				.jsonBuilder()
-				.startObject()
-				.startObject(
-						Config.getInstance().getString(
-								Config.WIKIPEDIA_SENTENCE))
-				.startObject("properties").startObject("page-id")
-				.field("type", "long").field("index", "true").endObject()
-				.startObject("title").field("type", "keyword")
-				.field("index", "true").endObject().startObject("subject-id")
-				.field("type", "keyword").field("index", "true").endObject()
-				.startObject("sentence").field("type", "text").endObject()
-				.startObject("tok-sentence").field("type", "text").endObject()
+	public boolean putMappingForSentence(IndicesAdminClient indicesAdminClient) throws IOException {
+		XContentBuilder mappingBuilder = XContentFactory.jsonBuilder().startObject()
+				.startObject(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).startObject("properties")
+				.startObject("page-id").field("type", "long").field("index", "true").endObject().startObject("title")
+				.field("type", "keyword").field("index", "true").endObject().startObject("subject-id")
+				.field("type", "keyword").field("index", "true").endObject().startObject("sentence")
+				.field("type", "text").endObject().startObject("tok-sentence").field("type", "text").endObject()
 				.endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
-		SentenceExtractionApp.LOG.debug("Mapping for wikipedia sentence: "
-				+ mappingBuilder.string());
+		SentenceExtractionApp.LOG.debug("Mapping for wikipedia sentence: " + mappingBuilder.string());
 		PutMappingResponse putMappingResponse = indicesAdminClient
-				.preparePutMapping(
-						Config.getInstance().getString(
-								Config.WIKIPEDIA_SENTENCE_INDEX))
-				.setType(
-						Config.getInstance().getString(
-								Config.WIKIPEDIA_SENTENCE))
-				.setSource(mappingBuilder).execute().actionGet();
+				.preparePutMapping(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE_INDEX))
+				.setType(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).setSource(mappingBuilder).execute()
+				.actionGet();
 		return putMappingResponse.isAcknowledged();
 	}
 
