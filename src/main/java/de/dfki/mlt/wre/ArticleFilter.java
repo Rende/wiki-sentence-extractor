@@ -99,24 +99,26 @@ public class ArticleFilter implements IArticleFilter {
 			logCounts();
 			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
 			String pageId = page.getId();
-			String subjectId = SentenceExtractionApp.esService.getItemId(wikipediaTitle);
-			if (isSubjectValid(subjectId, wikipediaTitle)) {
-				String text = page.getText();
-				text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
-				text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
-				for (String extension : extensionList)
-					text = removeContentBetweenMatchingBracket(text, extension, '[', ']');
-				text = cleanUpText(text);
-				String firstSentence = getFirstSentence(text.trim());
-				if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
-					firstSentence = cleanUpText(firstSentence);
-					firstSentence = fixSubjectAnnotation(firstSentence);
-					String tokenizedSentence = tokenizeLemmatizeText(firstSentence);
-					try {
-						SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, subjectId, wikipediaTitle,
-								tokenizedSentence);
-					} catch (IOException e) {
-						e.printStackTrace();
+			List<String> candidateSubjIds = SentenceExtractionApp.esService.getItems(page.getTitle());
+			for (String subjectId : candidateSubjIds) {
+				if (isSubjectValid(subjectId, wikipediaTitle)) {
+					String text = page.getText();
+					text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
+					text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
+					for (String extension : extensionList)
+						text = removeContentBetweenMatchingBracket(text, extension, '[', ']');
+					text = cleanUpText(text);
+					String firstSentence = getFirstSentence(text.trim());
+					if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
+						firstSentence = cleanUpText(firstSentence);
+						firstSentence = fixSubjectAnnotation(firstSentence);
+						String tokenizedSentence = tokenizeLemmatizeText(firstSentence);
+						try {
+							SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, subjectId,
+									wikipediaTitle, tokenizedSentence);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
 					}
 				}
 			}
