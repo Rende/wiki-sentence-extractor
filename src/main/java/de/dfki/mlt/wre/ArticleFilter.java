@@ -47,7 +47,6 @@ public class ArticleFilter implements IArticleFilter {
 	private List<String> extensionList = new ArrayList<String>();
 	private List<String> invalidPageTitles = new ArrayList<String>();
 	private String lang;
-	public int noEntryCount = 0;
 	public int invalidCount = 0;
 	public int count = 0;
 	private JTok jtok;
@@ -97,35 +96,28 @@ public class ArticleFilter implements IArticleFilter {
 	public void process(WikiArticle page, Siteinfo siteinfo) throws SAXException {
 		if (isPageValid(page)) {
 			logCounts();
-			String wikipediaTitle = fromStringToWikilabel(page.getTitle());
+			String wikipediaTitle = getWikipediaTitleForm(page.getTitle());
 			String pageId = page.getId();
-			List<String> candidateSubjIds = SentenceExtractionApp.esService.getItems(page.getTitle());
-			for (String subjectId : candidateSubjIds) {
-				if (isSubjectValid(subjectId, wikipediaTitle)) {
-					String text = page.getText();
-					text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
-					text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
-					for (String extension : extensionList)
-						text = removeContentBetweenMatchingBracket(text, extension, '[', ']');
-					text = cleanUpText(text);
-					String firstSentence = getFirstSentence(text.trim());
-					if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
-						firstSentence = cleanUpText(firstSentence);
-						firstSentence = fixSubjectAnnotation(firstSentence);
-						String tokenizedSentence = tokenizeLemmatizeText(firstSentence);
-						try {
-							SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, subjectId,
-									wikipediaTitle, tokenizedSentence);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
+			String cleanText = cleanUpText(page.getText());
+			String firstSentence = getFirstSentence(cleanText.trim());
+			if (firstSentence.length() > 0 && !firstSentence.contains("may refer to")) {
+				firstSentence = removeTags(firstSentence);
+				firstSentence = fixSubjectAnnotation(firstSentence);
+				String tokenizedSentence = lemmatizeText(firstSentence);
+				List<String> candidateSubjIds = SentenceExtractionApp.esService.getRelatedItems(page.getTitle(),
+						this.lang);
+				try {
+					SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, candidateSubjIds, wikipediaTitle,
+							tokenizedSentence);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 		}
+
 	}
 
-	public String tokenizeLemmatizeText(String text) {
+	public String lemmatizeText(String text) {
 		String resultText = new String();
 		List<String> tokensAsString = tokenize(text);
 		if (this.lang.equals("en")) {
@@ -202,43 +194,43 @@ public class ArticleFilter implements IArticleFilter {
 		count++;
 		if (count % 10000 == 0)
 			SentenceExtractionApp.LOG.info("The number of wikipedia pages processed: " + count);
-		if (noEntryCount % 10000 == 0)
-			SentenceExtractionApp.LOG.info(noEntryCount + " pages has no entry in wikidata");
 		if (invalidCount % 10000 == 0)
 			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
 	}
 
 	private boolean isPageValid(WikiArticle page) {
+		// skip redirected pages
 		boolean isRedirect = false;
 		List<String> redirectList = Arrays.asList(Config.getInstance().getStringArray(Config.PAGE_REDIRECT));
 		for (String redirection : redirectList) {
 			isRedirect = isRedirect || page.getText().startsWith(redirection);
 		}
-		return page != null && page.getText() != null && !isRedirect;
-	}
-
-	private boolean isSubjectValid(String subjectId, String wikipediaTitle) {
-		boolean hasEntry = !subjectId.equals("");
+		// skip wikipedia's internal pages
 		boolean isValid = true;
 		for (String invalid : invalidPageTitles) {
-			if (wikipediaTitle.contains(invalid)) {
+			if (page.getTitle().contains(invalid)) {
 				isValid = false;
 				break;
 			}
 		}
-		if (!hasEntry)
-			noEntryCount++;
 		if (!isValid)
 			invalidCount++;
 
-		return hasEntry && isValid;
+		return !(page == null || page.getText() == null || isRedirect || !isValid);
 	}
 
-	public String cleanUpText(String text) {
-		String cleanText = text
-				// to remove xml comments
-				.replaceAll("(?m)<!--[\\s\\S]*?-->", "").replaceAll("\\<.*?\\>", "").replaceAll("==.*?==", "")
-				.replaceAll("\\{.*?\\}", "").replaceAll("http.*?\\s", "").replaceAll("&ndash", "");
+	private String cleanUpText(String text) {
+		text = removeContentBetweenMatchingBracket(text, "{{", '{', '}');
+		text = removeContentBetweenMatchingBracket(text, "(", '(', ')');
+		for (String extension : extensionList)
+			text = removeContentBetweenMatchingBracket(text, extension, '[', ']');
+		return removeTags(text);
+	}
+
+	public String removeTags(String text) {
+		String cleanText = text.replaceAll("(?m)<!--[\\s\\S]*?-->", "").replaceAll("\\<.*?\\>", "")
+				.replaceAll("==.*?==", "").replaceAll("\\{.*?\\}", "").replaceAll("http.*?\\s", "")
+				.replaceAll("&ndash", "");
 		return cleanText;
 	}
 
@@ -320,15 +312,15 @@ public class ArticleFilter implements IArticleFilter {
 		return result;
 	}
 
-	public String fromStringToWikilabel(String image) {
-		String label = "";
-		if (image.contains("|")) {
-			String[] images = image.split("\\|");
-			label = images[0];
+	public String getWikipediaTitleForm(String pageTitle) {
+		String wikiTitle = "";
+		if (pageTitle.contains("|")) {
+			String[] splits = pageTitle.split("\\|");
+			wikiTitle = splits[0];
 		} else {
-			label = image;
+			wikiTitle = pageTitle;
 		}
-		label = StringUtils.capitalize(label.trim().replaceAll(" ", "_"));
-		return label;
+		wikiTitle = StringUtils.capitalize(wikiTitle.trim().replaceAll(" ", "_"));
+		return wikiTitle;
 	}
 }

@@ -53,7 +53,6 @@ public class SentenceExtractionApp {
 
 	private static void logCounts(ArticleFilter handler) {
 		LOG.info("Overall the number of wikipedia pages: " + handler.count);
-		LOG.info(handler.noEntryCount + " pages has no entry in wikidata");
 		LOG.info(handler.invalidCount + " pages are invalid");
 	}
 }

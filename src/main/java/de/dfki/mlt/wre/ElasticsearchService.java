@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.lucene.search.join.ScoreMode;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequestBuilder;
@@ -72,21 +73,9 @@ public class ElasticsearchService {
 		getClient().close();
 	}
 
-	public String getItemId(String wikipediaTitle) {
-		SearchResponse response = searchItemByWikipediaTitle(wikipediaTitle);
-		String itemId = "";
-		if (isResponseValid(response)) {
-			for (SearchHit hit : response.getHits()) {
-				itemId = hit.getId();
-				return itemId;
-			}
-		}
-		return itemId;
-	}
-
-	public List<String> getItems(String label) {
+	public List<String> getRelatedItems(String label, String lang) {
 		List<String> idList = new ArrayList<String>();
-		SearchResponse response = searchItemsByLabel(label);
+		SearchResponse response = searchItemsByLabel(label, lang);
 		String itemId = "";
 		if (isResponseValid(response)) {
 			for (SearchHit hit : response.getHits()) {
@@ -101,31 +90,14 @@ public class ElasticsearchService {
 		return response != null && response.getHits().totalHits > 0;
 	}
 
-	private SearchResponse searchItemByWikipediaTitle(String wikipediaTitle) {
+	private SearchResponse searchItemsByLabel(String label, String lang) {
+		QueryBuilder matchPhrase = QueryBuilders.matchPhraseQuery("labels." + lang, label);
 		QueryBuilder query = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("type", "item"))
-				.must(QueryBuilders.termQuery("wiki-title", wikipediaTitle));
-
+				.must(QueryBuilders.nestedQuery("labels", matchPhrase, ScoreMode.Max));
 		try {
 			SearchRequestBuilder requestBuilder = getClient()
 					.prepareSearch(Config.getInstance().getString(Config.WIKIDATA_INDEX))
-					.setTypes(Config.getInstance().getString(Config.WIKIDATA_ENTITY)).setQuery(query).setSize(1);
-			SearchResponse response = requestBuilder.execute().actionGet();
-			return response;
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	private SearchResponse searchItemsByLabel(String label) {
-		QueryBuilder query = QueryBuilders.boolQuery().must(QueryBuilders.termQuery("type", "item"))
-				.must(QueryBuilders.termQuery("label", label));
-
-		try {
-			SearchRequestBuilder requestBuilder = getClient()
-					.prepareSearch(Config.getInstance().getString(Config.WIKIDATA_INDEX))
-					.setTypes(Config.getInstance().getString(Config.WIKIDATA_ENTITY)).setQuery(query).setSize(1000);
+					.setTypes(Config.getInstance().getString(Config.WIKIDATA_ENTITY)).setQuery(query).setSize(10000);
 			SearchResponse response = requestBuilder.execute().actionGet();
 			return response;
 
@@ -163,15 +135,15 @@ public class ElasticsearchService {
 		return bulkProcessor;
 	}
 
-	public void insertSentence(String pageId, String sentence, String subjectId, String wikipediaTitle,
+	public void insertSentence(String pageId, String sentence, List<String> subjectId, String wikipediaTitle,
 			String tokenizedSentence) throws IOException {
 		HashMap<String, Object> dataAsMap = new HashMap<String, Object>();
 		dataAsMap.put("page-id", Long.parseLong(pageId));
 		dataAsMap.put("title", wikipediaTitle);
 		dataAsMap.put("subject-id", subjectId);
 		dataAsMap.put("sentence", sentence);
-		dataAsMap.put("tok-sentence", tokenizedSentence);
-		// System.out.println(json);
+		dataAsMap.put("lem-sentence", tokenizedSentence);
+
 		IndexRequest indexRequest = Requests.indexRequest()
 				.index(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE_INDEX))
 				.type(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).source(dataAsMap, XContentType.JSON);
@@ -210,11 +182,12 @@ public class ElasticsearchService {
 
 	public boolean putMappingForSentence(IndicesAdminClient indicesAdminClient) throws IOException {
 		XContentBuilder mappingBuilder = XContentFactory.jsonBuilder().startObject()
-				.startObject(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).startObject("properties")
-				.startObject("page-id").field("type", "long").field("index", "true").endObject().startObject("title")
-				.field("type", "keyword").field("index", "true").endObject().startObject("subject-id")
-				.field("type", "keyword").field("index", "true").endObject().startObject("sentence")
-				.field("type", "text").endObject().startObject("tok-sentence").field("type", "text").endObject()
+				.startObject(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).field("dynamic", "true")
+				.startObject("properties")
+				.startObject("page-id").field("type", "long").field("index", "true").endObject()
+				.startObject("subject-id").field("type", "keyword").field("index", "true").endObject()
+				.startObject("sentence").field("type", "text").endObject()
+				.startObject("lem-sentence").field("type", "text").endObject()
 				.endObject() // properties
 				.endObject()// documentType
 				.endObject();
