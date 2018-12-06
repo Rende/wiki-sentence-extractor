@@ -81,7 +81,7 @@ public class ArticleFilterTest {
 	public void testCleanTextRemoveComment() {
 		String test = "<!--Please do not delete the language templates \n \n -->";
 		String expected = "";
-		String actual = filterEN.cleanUpText(test);
+		String actual = filterEN.removeTags(test);
 		assertThat(actual).isEqualTo(expected);
 
 	}
@@ -90,7 +90,7 @@ public class ArticleFilterTest {
 	public void testCleanTextRemoveGarbage() {
 		String test = "{ | | } Abc";
 		String expected = " Abc";
-		String actual = filterEN.cleanUpText(test);
+		String actual = filterEN.removeTags(test);
 		assertThat(actual).isEqualTo(expected);
 	}
 
@@ -105,7 +105,7 @@ public class ArticleFilterTest {
 				+ " ''' amines ''' are [[ organic compound | compounds ]] and [[ functional group ]] s"
 				+ " that contain a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
 
-		String actual = filterEN.cleanUpText(test);
+		String actual = filterEN.removeTags(test);
 		assertThat(actual).isEqualTo(expected);
 	}
 
@@ -116,7 +116,7 @@ public class ArticleFilterTest {
 				+ " that (contain) a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
 		String expected = "in [[ organic chemistry ]] , ''' amine ''' be << organic compound | compound >> "
 				+ "and { functional group } s that ( contain ) a [[ base | basic ]] [[ nitrogen ]] [[ atom ]] with a [[ lone pair ]] .";
-		String actual = filterEN.tokenizeLemmatizeText(test);
+		String actual = filterEN.lemmatizeText(test);
 		assertThat(actual).isEqualTo(expected);
 	}
 
@@ -129,7 +129,7 @@ public class ArticleFilterTest {
 		String expected = "''' saint-esteben ''' be a [[ commune of france | commune ]] in"
 				+ " the [[ pyrénées-atlantique ]] [[ department of france | department ]] "
 				+ "in south-western [[ france ]] .";
-		String actual = filterEN.tokenizeLemmatizeText(test);
+		String actual = filterEN.lemmatizeText(test);
 		assertThat(actual).isEqualTo(expected);
 	}
 
@@ -141,22 +141,22 @@ public class ArticleFilterTest {
 		String expected = "''' st. george ' s bay ''' [ geographical name of canada - st. george ' s bay ] "
 				+ "- informally refer to as ''' bay st. george ''' due to its french translation "
 				+ "''' baie st-george ''' - be a large [[ canada | canadian ]] bay in the province of [[ newfoundland and labrador ]] .";
-		String actual = filterEN.tokenizeLemmatizeText(sentence);
+		String actual = filterEN.lemmatizeText(sentence);
 		assertThat(actual).isEqualTo(expected);
 
 	}
 
 	@Test
 	public void testLemmatizer() {
-		assertThat(filterEN.tokenizeLemmatizeText("[[")).isEqualTo("[[");
-		assertThat(filterEN.tokenizeLemmatizeText("]]")).isEqualTo("]]");
-		assertThat(filterEN.tokenizeLemmatizeText("[")).isEqualTo("[");
-		assertThat(filterEN.tokenizeLemmatizeText("]")).isEqualTo("]");
-		assertThat(filterEN.tokenizeLemmatizeText("(")).isEqualTo("(");
-		assertThat(filterEN.tokenizeLemmatizeText(")")).isEqualTo(")");
-		assertThat(filterEN.tokenizeLemmatizeText("{")).isEqualTo("{");
-		assertThat(filterEN.tokenizeLemmatizeText("}")).isEqualTo("}");
-		assertThat(filterEN.tokenizeLemmatizeText("'s")).isEqualTo("' s");
+		assertThat(filterEN.lemmatizeText("[[")).isEqualTo("[[");
+		assertThat(filterEN.lemmatizeText("]]")).isEqualTo("]]");
+		assertThat(filterEN.lemmatizeText("[")).isEqualTo("[");
+		assertThat(filterEN.lemmatizeText("]")).isEqualTo("]");
+		assertThat(filterEN.lemmatizeText("(")).isEqualTo("(");
+		assertThat(filterEN.lemmatizeText(")")).isEqualTo(")");
+		assertThat(filterEN.lemmatizeText("{")).isEqualTo("{");
+		assertThat(filterEN.lemmatizeText("}")).isEqualTo("}");
+		assertThat(filterEN.lemmatizeText("'s")).isEqualTo("' s");
 	}
 
 	@Test
@@ -183,7 +183,7 @@ public class ArticleFilterTest {
 		String text = "Wie kam es zur [[ Katastrophe von Genua ]] mit Dutzenden Toten? "
 				+ "In Italien tobt eine ''' Debatte über Schuldige ''' . "
 				+ "Nun gibt es erste Hinweise, was das Unglück ausgelöst haben könnte.";
-		String actual = filterDE.tokenizeLemmatizeText(text);
+		String actual = filterDE.lemmatizeText(text);
 		String expected = "wie kommen es zu [[ katastrophe von genua ]] mit dutzend tote ? "
 				+ "in italien toben ein ''' debatte über schuldige ''' . "
 				+ "nun geben es erster hinweis , was der unglück auslösen haben können .";
