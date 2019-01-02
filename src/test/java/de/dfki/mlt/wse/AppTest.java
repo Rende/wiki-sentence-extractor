@@ -1,4 +1,4 @@
-package de.dfki.mlt.wiki_relation_extractor;
+package de.dfki.mlt.wse;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

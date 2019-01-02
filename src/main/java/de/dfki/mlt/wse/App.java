@@ -1,4 +1,4 @@
-package de.dfki.mlt.wre;
+package de.dfki.mlt.wse;
 
 import info.bliki.wiki.dump.WikiXMLParser;
 
@@ -8,16 +8,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import de.dfki.mlt.wre.preferences.Config;
+import de.dfki.mlt.wse.preferences.Config;
 
 /**
  * @author Aydan Rende, DFKI
  *
  */
-public class SentenceExtractionApp {
+public class App {
 
 	public static ElasticsearchService esService = new ElasticsearchService();
-	public static final Logger LOG = LoggerFactory.getLogger(SentenceExtractionApp.class);
+	public static final Logger LOG = LoggerFactory.getLogger(App.class);
+	public static final AppMode APP_MODE = AppMode.fromString(Config.getInstance().getString(Config.APP_MODE));
 
 	public static void main(String[] args) {
 		System.setProperty("jdk.xml.totalEntitySizeLimit", "0");
