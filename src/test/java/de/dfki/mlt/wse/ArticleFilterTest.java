@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wiki_relation_extractor;
+package de.dfki.mlt.wse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import de.dfki.mlt.wre.ArticleFilter;
+import de.dfki.mlt.wse.ArticleFilter;
 
 /**
  * @author Aydan Rende, DFKI
@@ -176,6 +176,25 @@ public class ArticleFilterTest {
 				+ "[[ Roman Catholic ]] church in [[ Shanghai ]] , China .";
 		String actualSentence = filterEN.fixSubjectAnnotation(sentence);
 		assertThat(actualSentence).isEqualTo(expectedSentence);
+	}
+
+	@Test
+	public void testGetSubjectName() {
+		String sentence = "''''' Can \"Live\" Music ''''' is a [[ double album | double ]] "
+				+ "[[ live album ]] by the band [[ Can | Can ]] , released in 1999 and "
+				+ "recorded in the [[ UK ]] and [[ West Germany ]] between 1972 and 1977 .";
+		String expected = "Can \"Live\" Music";
+		String subjectFixed = filterEN.fixSubjectAnnotation(sentence);
+		System.out.println(subjectFixed);
+		String actual = filterEN.getSubjectName(subjectFixed);
+		assertThat(actual).isEqualTo(expected);
+
+		String text = "The following is an overview of the ''' demographics of [[ Myanmar ]] '''"
+				+ " , including statistics such as population , [[ Ethnic group | ethnicity ]]"
+				+ " , language , education level and religious affiliation .";
+		String expectedSubj = "demographics of Myanmar";
+		String actualSubj = filterEN.getSubjectName(text);
+		assertThat(actualSubj).isEqualTo(expectedSubj);
 	}
 
 	@Test

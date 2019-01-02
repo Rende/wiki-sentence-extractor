@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wre;
+package de.dfki.mlt.wse;
 
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.lang.StringUtils;
@@ -29,7 +31,7 @@ import de.dfki.lt.tools.tokenizer.output.Paragraph;
 import de.dfki.lt.tools.tokenizer.output.TextUnit;
 import de.dfki.lt.tools.tokenizer.output.Token;
 import de.dfki.mlt.munderline.MunderLine;
-import de.dfki.mlt.wre.preferences.Config;
+import de.dfki.mlt.wse.preferences.Config;
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
@@ -104,17 +106,25 @@ public class ArticleFilter implements IArticleFilter {
 				firstSentence = removeTags(firstSentence);
 				firstSentence = fixSubjectAnnotation(firstSentence);
 				String tokenizedSentence = lemmatizeText(firstSentence);
-				List<String> candidateSubjIds = SentenceExtractionApp.esService.getRelatedItems(page.getTitle(),
-						this.lang);
-				try {
-					SentenceExtractionApp.esService.insertSentence(pageId, firstSentence, candidateSubjIds, wikipediaTitle,
-							tokenizedSentence);
-				} catch (IOException e) {
-					e.printStackTrace();
+				List<String> candidateSubjIds = new ArrayList<String>();
+				switch (App.APP_MODE) {
+				case TRAIN:
+					candidateSubjIds.add(App.esService.getItemId(wikipediaTitle, this.lang));
+					break;
+				case TEST:
+					candidateSubjIds = App.esService.getRelatedItems(page.getTitle().trim(), this.lang);
+					if (candidateSubjIds.size() == 0) {
+						String subjName = getSubjectName(firstSentence);
+						candidateSubjIds = App.esService.getRelatedItems(subjName, this.lang);
+					}
+					break;
+				default:
+					break;
 				}
+				App.esService.insertSentence(pageId, firstSentence, candidateSubjIds, wikipediaTitle,
+						tokenizedSentence);
 			}
 		}
-
 	}
 
 	public String lemmatizeText(String text) {
@@ -193,9 +203,9 @@ public class ArticleFilter implements IArticleFilter {
 	private void logCounts() {
 		count++;
 		if (count % 10000 == 0)
-			SentenceExtractionApp.LOG.info("The number of wikipedia pages processed: " + count);
+			App.LOG.info("The number of wikipedia pages processed: " + count);
 		if (invalidCount % 10000 == 0)
-			SentenceExtractionApp.LOG.info(invalidCount + " pages are invalid");
+			App.LOG.info(invalidCount + " pages are invalid");
 	}
 
 	private boolean isPageValid(WikiArticle page) {
@@ -322,5 +332,16 @@ public class ArticleFilter implements IArticleFilter {
 		}
 		wikiTitle = StringUtils.capitalize(wikiTitle.trim().replaceAll(" ", "_"));
 		return wikiTitle;
+	}
+
+	public String getSubjectName(String sentence) {
+		Pattern pattern = Pattern.compile("[''']+.*?[''']+");
+		Matcher matcher = pattern.matcher(sentence);
+		String found = "";
+		while (matcher.find()) {
+			found = matcher.group(0).replaceAll("[''']", "").trim();
+		}
+		found = found.replaceAll("\\[\\[ ", "").replaceAll(" \\]\\]", "").trim();
+		return found;
 	}
 }
