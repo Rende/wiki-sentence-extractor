@@ -18,7 +18,6 @@ public class App {
 
 	public static ElasticsearchService esService = new ElasticsearchService();
 	public static final Logger LOG = LoggerFactory.getLogger(App.class);
-	public static final AppMode APP_MODE = AppMode.fromString(Config.getInstance().getString(Config.APP_MODE));
 
 	public static void main(String[] args) {
 		System.setProperty("jdk.xml.totalEntitySizeLimit", "0");

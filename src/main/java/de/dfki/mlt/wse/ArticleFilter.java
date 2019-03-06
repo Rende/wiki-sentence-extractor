@@ -107,24 +107,12 @@ public class ArticleFilter implements IArticleFilter {
 				firstSentence = fixSubjectAnnotation(firstSentence);
 				String tokenizedSentence = lemmatizeText(firstSentence);
 				List<String> candidateSubjIds = new ArrayList<String>();
-				switch (App.APP_MODE) {
-				case TRAIN:
-					candidateSubjIds.add(App.esService.getItemId(wikipediaTitle, this.lang));
-					break;
-				case TEST:
-					candidateSubjIds = App.esService.getRelatedItems(page.getTitle().trim(), this.lang);
-					if (candidateSubjIds.size() == 0) {
-						String subjName = getSubjectName(firstSentence);
-						candidateSubjIds = App.esService.getRelatedItems(subjName, this.lang);
-					}
-					break;
-				default:
-					break;
-				}
+				candidateSubjIds.add(App.esService.getItemId(wikipediaTitle, this.lang));
 				App.esService.insertSentence(pageId, firstSentence, candidateSubjIds, wikipediaTitle,
 						tokenizedSentence);
 			}
 		}
+
 	}
 
 	public String lemmatizeText(String text) {
