@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.lucene.search.join.ScoreMode;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
@@ -27,7 +28,7 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.client.IndicesAdminClient;
 import org.elasticsearch.client.Requests;
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.common.unit.ByteSizeUnit;
 import org.elasticsearch.common.unit.ByteSizeValue;
 import org.elasticsearch.common.unit.TimeValue;
@@ -58,21 +59,27 @@ public class ElasticsearchService {
 	}
 
 	@SuppressWarnings("resource")
-	private Client getClient() throws UnknownHostException {
+	public Client getClient() throws UnknownHostException {
 		if (client == null) {
 			Settings settings = Settings.builder()
 					.put(Config.CLUSTER_NAME, Config.getInstance().getString(Config.CLUSTER_NAME)).build();
-			client = new PreBuiltTransportClient(settings)
-					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("134.96.187.233"), 9300));
+			client = new PreBuiltTransportClient(settings).addTransportAddress(
+					new TransportAddress(InetAddress.getByName(Config.getInstance().getString(Config.HOST)),
+							Config.getInstance().getInt(Config.PORT)));
 		}
 		return client;
 	}
 
-	public void stopConnection() throws UnknownHostException {
+	public void stopConnection() throws UnknownHostException, InterruptedException {
+		TimeUnit.SECONDS.sleep(5);
 		getBulkProcessor().close();
 		getClient().close();
 	}
 
+	/**
+	 * Call this for candidate items
+	 * one-to-many
+	 */
 	public List<String> getRelatedItems(String label, String lang) {
 		List<String> idList = new ArrayList<String>();
 		SearchResponse response = searchItemsByLabel(label, lang);
@@ -86,6 +93,10 @@ public class ElasticsearchService {
 		return idList;
 	}
 
+	/**
+	 * Call this for exact item
+	 * one-to-one
+	 */
 	public String getItemId(String wikiLink, String lang) {
 		String itemId = "";
 		SearchResponse response = searchItemByWikipediaLink(wikiLink, lang);
@@ -99,7 +110,7 @@ public class ElasticsearchService {
 	}
 
 	public boolean isResponseValid(SearchResponse response) {
-		return response != null && response.getHits().totalHits > 0;
+		return response != null && response.getHits().getTotalHits() > 0;
 	}
 
 	/**
@@ -161,7 +172,7 @@ public class ElasticsearchService {
 
 				}
 			}).setBulkActions(1000).setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
-					.setFlushInterval(TimeValue.timeValueSeconds(5)).setConcurrentRequests(1)
+					.setFlushInterval(TimeValue.timeValueSeconds(1)).setConcurrentRequests(1)
 					.setBackoffPolicy(BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3)).build();
 		}
 
@@ -219,15 +230,17 @@ public class ElasticsearchService {
 
 	public boolean putMappingForSentence(IndicesAdminClient indicesAdminClient) throws IOException {
 		XContentBuilder mappingBuilder = XContentFactory.jsonBuilder().startObject()
-				.startObject(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).field("dynamic", "true")
-				.startObject("properties").startObject("page-id").field("type", "long").field("index", "true")
-				.endObject().startObject("subject-id").field("type", "keyword").field("index", "true").endObject()
-				.startObject("sentence").field("type", "text").endObject().startObject("lem-sentence")
-				.field("type", "text").endObject().endObject() // properties
+				.startObject(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE))
+				.field("dynamic", "true")
+				.startObject("properties")
+				.startObject("page-id").field("type", "long").endObject()
+				.startObject("subject-id").field("type", "keyword").endObject()
+				.startObject("sentence").field("type", "text").endObject()
+				.startObject("lem-sentence").field("type", "text").endObject()
+				.endObject() // properties
 				.endObject()// documentType
 				.endObject();
 
-		App.LOG.debug("Mapping for wikipedia sentence: " + mappingBuilder.string());
 		PutMappingResponse putMappingResponse = indicesAdminClient
 				.preparePutMapping(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE_INDEX))
 				.setType(Config.getInstance().getString(Config.WIKIPEDIA_SENTENCE)).setSource(mappingBuilder).execute()
