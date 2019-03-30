@@ -71,8 +71,8 @@ public class ElasticsearchService {
 	}
 
 	public void stopConnection() throws UnknownHostException, InterruptedException {
-		TimeUnit.SECONDS.sleep(5);
-		getBulkProcessor().close();
+		if (!getBulkProcessor().awaitClose(60, TimeUnit.SECONDS))
+			throw new InterruptedException("The bulk process is unfinished!");
 		getClient().close();
 	}
 
@@ -171,7 +171,7 @@ public class ElasticsearchService {
 					App.LOG.error("Elasticsearch Service getBulkProcessor() " + failure.getMessage());
 
 				}
-			}).setBulkActions(1000).setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
+			}).setBulkActions(20000).setBulkSize(new ByteSizeValue(10, ByteSizeUnit.MB))
 					.setFlushInterval(TimeValue.timeValueSeconds(1)).setConcurrentRequests(1)
 					.setBackoffPolicy(BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3)).build();
 		}
