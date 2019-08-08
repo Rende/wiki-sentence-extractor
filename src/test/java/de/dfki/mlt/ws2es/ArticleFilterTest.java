@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wse;
+package de.dfki.mlt.ws2es;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import de.dfki.mlt.wse.ArticleFilter;
+import de.dfki.mlt.ws2es.ArticleFilter;
 
 /**
  * @author Aydan Rende, DFKI

@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wse;
+package de.dfki.mlt.ws2es;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -40,7 +40,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 
-import de.dfki.mlt.wse.preferences.Config;
+import de.dfki.mlt.ws2es.preferences.Config;
 
 /**
  * @author Aydan Rende, DFKI

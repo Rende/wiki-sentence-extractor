@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.dfki.mlt</groupId>
-	<artifactId>wiki-sentence-extractor</artifactId>
+	<artifactId>ws2es</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -106,14 +106,13 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.0.0</version>
 				<configuration>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
 					<archive>
 						<manifestEntries>
-							<Main-Class>de.dfki.mlt.wse.App</Main-Class>
+							<Main-Class>de.dfki.mlt.ws2es.App</Main-Class>
 						</manifestEntries>
 					</archive>
 				</configuration>

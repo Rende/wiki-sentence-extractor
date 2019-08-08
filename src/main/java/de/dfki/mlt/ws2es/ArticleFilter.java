@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wse;
+package de.dfki.mlt.ws2es;
 
 import info.bliki.wiki.dump.IArticleFilter;
 import info.bliki.wiki.dump.Siteinfo;
@@ -31,7 +31,7 @@ import de.dfki.lt.tools.tokenizer.output.Paragraph;
 import de.dfki.lt.tools.tokenizer.output.TextUnit;
 import de.dfki.lt.tools.tokenizer.output.Token;
 import de.dfki.mlt.munderline.MunderLine;
-import de.dfki.mlt.wse.preferences.Config;
+import de.dfki.mlt.ws2es.preferences.Config;
 import edu.stanford.nlp.ling.CoreAnnotations.LemmaAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;

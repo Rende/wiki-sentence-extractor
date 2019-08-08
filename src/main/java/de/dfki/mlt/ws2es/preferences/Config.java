@@ -1,7 +1,7 @@
 /**
  *
  */
-package de.dfki.mlt.wse.preferences;
+package de.dfki.mlt.ws2es.preferences;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;

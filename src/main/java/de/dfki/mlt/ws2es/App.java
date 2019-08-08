@@ -1,4 +1,4 @@
-package de.dfki.mlt.wse;
+package de.dfki.mlt.ws2es;
 
 import info.bliki.wiki.dump.WikiXMLParser;
 
@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import de.dfki.mlt.wse.preferences.Config;
+import de.dfki.mlt.ws2es.preferences.Config;
 
 /**
  * @author Aydan Rende, DFKI

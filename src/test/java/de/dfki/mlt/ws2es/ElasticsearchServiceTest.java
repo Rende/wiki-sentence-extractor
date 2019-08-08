@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.dfki.mlt.wse;
+package de.dfki.mlt.ws2es;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.dfki.mlt.wse.ElasticsearchService;
+import de.dfki.mlt.ws2es.ElasticsearchService;
 
 /**
  * @author Aydan Rende, DFKI
